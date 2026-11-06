@@ -1,0 +1,104 @@
+# Flying BRICKS patch for AVBGuns.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "0054AB"
+ammo = "Fallout4.esm|01F66B"
+name = "AVBolt"
+
+[[weapon]]
+id = "00648B"
+ammo = "Fallout4.esm|01F66C"
+name = "SMMinigun"
+
+[[weapon]]
+id = "237848"
+ammo = "Fallout4.esm|01F66A"
+name = "AVMG"
+
+[[weapon]]
+id = "2378A5"
+ammo = "Fallout4.esm|01F276"
+name = "AV10mm"
+
+[[weapon]]
+id = "2378F6"
+ammo = "Fallout4.esm|04CE87"
+name = "AVCarabin"
+
+[[weapon]]
+id = "237941"
+ammo = "Fallout4.esm|04CE87"
+name = "AVMagnum"
+
+[[part]]
+id = "0054D0"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_AVBolt_Receiver_AmmoConversion"
+
+[[part]]
+id = "0054D4"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AVBolt_Receiver_MoreDamage3_AmmoConversion"
+
+[[part]]
+id = "237844"
+ammo = "Fallout4.esm|01F278"
+name = "mod_AVMG_Receiver_Automatic1"
+
+[[part]]
+id = "237845"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AVMG_Receiver_Automatic1_and_MoreDamage2"
+
+[[part]]
+id = "23786F"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AVMG_Receiver_Marksman"
+
+[[part]]
+id = "2378A0"
+ammo = "Fallout4.esm|01F278"
+name = "mod_AVMG_Receiver_Marksman556"
+
+[[part]]
+id = "2378D4"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_AVCarabin_Receiver_MoreDamage3_AmmoConversion"
+
+[[part]]
+id = "237929"
+ammo = "Fallout4.esm|09221C"
+name = "mod_AVCarabin_Receiver_MoreDamage4_AmmoConversion"
+
+[[part]]
+id = "23792C"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_AVCarabin_Receiver_Automatic1_and_MoreDamage3_45_AmmoConversion"
+
+[[part]]
+id = "23792F"
+ammo = "Fallout4.esm|09221C"
+name = "mod_AVCarabin_Receiver_Automatic1_and_MoreDamage4_44_AmmoConversion"
+
+[[part]]
+id = "23794F"
+ammo = "Fallout4.esm|09221C"
+name = "mod_AVMagnum_Receiver_v44"
+
+[[part]]
+id = "23795C"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_AVMagnum_Receiver_v45"
+
+[[part]]
+id = "23795E"
+ammo = "Fallout4.esm|09221C"
+name = "mod_AVMagnum_Receiver_v44_MoreDamage"

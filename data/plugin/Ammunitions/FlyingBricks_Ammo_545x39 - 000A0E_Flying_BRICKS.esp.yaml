@@ -1,0 +1,28 @@
+FormKey: 000A0E:Flying_BRICKS.esp
+EditorID: FlyingBricks_Ammo_545x39
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '5.45x39mm Round'
+Model:
+  File: Ammo\556\556Ammo.nif
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 2
+Weight: 0.008571
+Projectile: 000817:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 83
+ShortName:
+  TargetLanguage: English
+  Value: '5.45x39mm'
+CasingModel: Ammo\556\556Casing.nif

@@ -1,0 +1,49 @@
+# Flying BRICKS patch for CombatRifleAttachment+WeaponryExpansion.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00002E"
+caliber = "762x25"
+name = "Spadey01SovietSMG"
+
+[[weapon]]
+id = "000064"
+caliber = "30carbine"
+name = "Spadey01ParatrooperRifle"
+
+[[weapon]]
+id = "00008B"
+caliber = "303"
+name = "Spadey01CounterAssaultRifle"
+
+[[weapon]]
+id = "0000AA"
+caliber = "8x57"
+name = "Spadey01CombatLMG"
+
+[[weapon]]
+id = "00012F"
+ammo = "Fallout4.esm|01F673"
+name = "Spadey01Olympus"
+
+[[weapon]]
+id = "00014F"
+caliber = "8x57"
+name = "Spadey01DoubleTrouble"
+
+[[weapon]]
+id = "000150"
+caliber = "762x25"
+name = "Spadey01PrototypePCR"
+
+[[weapon]]
+id = "000F9B"
+caliber = "3006"
+name = "Spadey01Co-BattleRifle"

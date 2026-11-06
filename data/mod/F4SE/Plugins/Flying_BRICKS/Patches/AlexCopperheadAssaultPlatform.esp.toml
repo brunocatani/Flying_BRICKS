@@ -1,0 +1,234 @@
+# Flying BRICKS patch for AlexCopperheadAssaultPlatform.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "001066"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadRifle"
+
+[[weapon]]
+id = "002294"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_DiesIrae"
+
+[[weapon]]
+id = "0077D5"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_LittleFriend762"
+
+[[weapon]]
+id = "0077DB"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_RequiemServiceRifle"
+
+[[weapon]]
+id = "008035"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_HECU"
+
+[[weapon]]
+id = "008038"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_TheWall"
+
+[[weapon]]
+id = "00803A"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_Contractor"
+
+[[weapon]]
+id = "00803B"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_Desertfox"
+
+[[weapon]]
+id = "00803E"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_Constrictor"
+
+[[weapon]]
+id = "00D55B"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_EddiesVengeance"
+
+[[weapon]]
+id = "00D55C"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_AMCAR"
+
+[[weapon]]
+id = "00E541"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_CopperheadUniques_Heatseeker"
+
+[[part]]
+id = "001067"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_30Round"
+
+[[part]]
+id = "00108F"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_20Round"
+
+[[part]]
+id = "001095"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_30RoundJungle"
+
+[[part]]
+id = "001096"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_45Round"
+
+[[part]]
+id = "001097"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_60Round"
+
+[[part]]
+id = "001098"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_120Round"
+
+[[part]]
+id = "0010AD"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Cobra_Magazine_125Round"
+
+[[part]]
+id = "0010B0"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Cobra_Magazine_50Round"
+
+[[part]]
+id = "0010B3"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Cobra_Magazine_200Round"
+
+[[part]]
+id = "0010B8"
+ammo = "Fallout4.esm|01F66B"
+name = "ACAP_mod_Receivers_Rattlesnake_Magazine_10Round"
+
+[[part]]
+id = "0010B9"
+ammo = "Fallout4.esm|01F66B"
+name = "ACAP_mod_Receivers_Rattlesnake_Magazine_25Round"
+
+[[part]]
+id = "0010BE"
+ammo = "Fallout4.esm|01F66C"
+name = "ACAP_mod_Receivers_Anaconda_Magazine_24Round"
+
+[[part]]
+id = "0010C1"
+ammo = "Fallout4.esm|01F66C"
+name = "ACAP_mod_Receivers_Anaconda_Magazine_30Round"
+
+[[part]]
+id = "0019C8"
+ammo = "Fallout4.esm|01F66B"
+name = "ACAP_mod_Receivers_Contractor_Magazine_20Round"
+
+[[part]]
+id = "0019E1"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_30RoundFast"
+
+[[part]]
+id = "001A10"
+caliber = "410"
+name = "ACAP_mod_Receivers_Boomslang_Magazine_12Round"
+
+[[part]]
+id = "001A12"
+caliber = "410"
+name = "ACAP_mod_Receivers_Boomslang_Magazine_25Round"
+
+[[part]]
+id = "001A13"
+caliber = "410"
+name = "ACAP_mod_Receivers_Boomslang_Magazine_40Round"
+
+[[part]]
+id = "002284"
+ammo = "DLCNukaWorld.esm|037897"
+name = "ACAP_mod_Receivers_Cottonmouth_Magazine_20Round"
+
+[[part]]
+id = "002285"
+ammo = "DLCNukaWorld.esm|037897"
+name = "ACAP_mod_Receivers_Cottonmouth_Magazine_35Round"
+
+[[part]]
+id = "002286"
+caliber = "22lr"
+name = "ACAP_mod_Receivers_GarterSnake_Magazine_40Round"
+
+[[part]]
+id = "002287"
+caliber = "223"
+name = "ACAP_mod_Receivers_Sidewinder_Magazine_20Round"
+
+[[part]]
+id = "002288"
+caliber = "223"
+name = "ACAP_mod_Receivers_Sidewinder_Magazine_30Round"
+
+[[part]]
+id = "002289"
+caliber = "223"
+name = "ACAP_mod_Receivers_Sidewinder_Magazine_45Round"
+
+[[part]]
+id = "00228A"
+caliber = "9x19"
+name = "ACAP_mod_Receivers_Viper_Magazine_25Round"
+
+[[part]]
+id = "00228B"
+caliber = "9x19"
+name = "ACAP_mod_Receivers_Viper_Magazine_40Round"
+
+[[part]]
+id = "0055C9"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_30RoundBurst"
+
+[[part]]
+id = "0077D3"
+caliber = "762x51"
+name = "ACAP_mod_Receivers_Contractor_Magazine_LittleFriend"
+
+[[part]]
+id = "008036"
+caliber = "9x19"
+name = "ACAP_mod_Legendary_HECU_DamageWhileUnsighted"
+
+[[part]]
+id = "00A1E3"
+caliber = "410"
+name = "ACAP_mod_Receivers_Boomslang_Magazine_12RoundBurst"
+
+[[part]]
+id = "00A1E4"
+caliber = "410"
+name = "ACAP_mod_Receivers_Boomslang_Magazine_24RoundBurst"
+
+[[part]]
+id = "00A1E5"
+caliber = "410"
+name = "ACAP_mod_Receivers_Boomslang_Magazine_42RoundBurst"
+
+[[part]]
+id = "00CCB1"
+ammo = "Fallout4.esm|01F278"
+name = "ACAP_mod_Receivers_Diamondback_Magazine_20RoundBurst"

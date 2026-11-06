@@ -1,0 +1,22 @@
+{
+ "about": "Where our world ammo list goes in the game's leveled lists, written to a RobCo Patcher file by tools/generate_esp.py. A vendor list rolls every entry, so one entry with a count of several rolls gives several calibers. A loot list picks one entry, so entries sets our share of it, about one pick in five or six. Per-gun lists such as LL_Ammo_10mm are never hosts: they also feed the NPC carrying that gun.",
+ "hosts": [
+  { "plugin": "Fallout4.esm", "id": "1FE31C", "editorID": "LLI_Vendor_Ammo_Base", "entries": 1, "count": 8 },
+  { "plugin": "Fallout4.esm", "id": "1FE31D", "editorID": "LLI_Vendor_Ammo_WeaponStore", "entries": 1, "count": 12 },
+  { "plugin": "Fallout4.esm", "id": "07580A", "editorID": "LLI_Vendor_Ammo_Basic", "entries": 1, "count": 5 },
+  { "plugin": "Fallout4.esm", "id": "18F658", "editorID": "LLC_DCShopAmmo", "entries": 1, "count": 5 },
+  { "plugin": "Fallout4.esm", "id": "06738B", "editorID": "LL_Ammo_Any", "entries": 4, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "06738C", "editorID": "LL_Ammo_Any_25", "entries": 2, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "06738D", "editorID": "LL_Ammo_Any_50", "entries": 2, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "06738E", "editorID": "LL_Ammo_Any_75", "entries": 2, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "18DFE2", "editorID": "LL_Ammo_Any_Raider", "entries": 2, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "087926", "editorID": "LL_Ammo_Any_Same", "entries": 4, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "18DFE0", "editorID": "LL_Ammo_Any_Same_Raider", "entries": 3, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "0CFC91", "editorID": "LLI_Loot_Ammo_Basic", "entries": 2, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "085318", "editorID": "LLC_Ammo_Basic", "entries": 1, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "18F653", "editorID": "LLC_DCAmmo_Any", "entries": 3, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "18F654", "editorID": "LLC_DCAmmo_Any_75", "entries": 3, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "05859B", "editorID": "LLE_Perk_Scrounger100", "entries": 2, "count": 1 },
+  { "plugin": "Fallout4.esm", "id": "1081B9", "editorID": "LLE_Perk_ScroungerSmall", "entries": 2, "count": 1 }
+ ]
+}

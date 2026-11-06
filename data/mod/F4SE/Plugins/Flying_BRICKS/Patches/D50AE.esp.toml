@@ -1,0 +1,44 @@
+# Flying BRICKS patch for D50AE.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000800"
+caliber = "50ae"
+name = "WPND50AE"
+
+[[weapon]]
+id = "000851"
+caliber = "50ae"
+name = "WPND50AEAkimbo"
+
+[[weapon]]
+id = "00096B"
+caliber = "50ae"
+name = "WPND50AE_Damascus"
+
+[[weapon]]
+id = "00096C"
+caliber = "50ae"
+name = "WPND50AE_Engraved"
+
+[[weapon]]
+id = "00096D"
+caliber = "50ae"
+name = "WPND50AE_Gold"
+
+[[weapon]]
+id = "00096E"
+caliber = "50ae"
+name = "WPND50AE_Hardened"
+
+[[weapon]]
+id = "00096F"
+caliber = "50ae"
+name = "WPND50AE_Painted"

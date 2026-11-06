@@ -1,0 +1,30 @@
+FormKey: 01F66C:Fallout4.esm
+EditorID: Ammo5mm
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 8
+PreviewTransform: 23CA35:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '5mm Round'
+Model:
+  File: Ammo\5mm\5mmAmmo.nif
+  Data: 0x0400000008000000000000000400000002000000413E9C0E64647300511B80B098529A6D64647300511B80B06B1828D56464730063761D64B2742EB66464730063761D64AC9DFB566464730063761D647503E0D7646473001CDB88C586BB4F8D64647300511B80B0B8EC307B646473001CDB88C5FC228EDB6267736D95C2215FBB8458E16267736D497E8861
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 1
+Weight: 0.009
+Projectile: 000801:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 91
+ShortName:
+  TargetLanguage: English
+  Value: '5mm'
+CasingModel: Ammo\5mm\5mmCasing.nif
+ModelInfo: 0x0400000000000000000000000000000000000000

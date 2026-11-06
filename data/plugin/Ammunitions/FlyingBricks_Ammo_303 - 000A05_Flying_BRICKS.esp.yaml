@@ -1,0 +1,28 @@
+FormKey: 000A05:Flying_BRICKS.esp
+EditorID: FlyingBricks_Ammo_303
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.303 British Round'
+Model:
+  File: Ammo\308\308Ammo.nif
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 5
+Weight: 0.021385
+Projectile: 00080E:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 152
+ShortName:
+  TargetLanguage: English
+  Value: '.303'
+CasingModel: Weapons\HuntingRifle\Casing308.nif

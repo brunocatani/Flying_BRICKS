@@ -1,0 +1,584 @@
+# Flying BRICKS patch for CombinedArmsNV.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "00204D"
+caliber = "338lm"
+name = ".338 Lapua Magnum"
+
+[[round]]
+id = "00204F"
+caliber = "762x54r"
+name = "7.62x54mmR Rimmed"
+
+[[round]]
+id = "00290F"
+caliber = "300blk"
+name = ".300 AAC Blackout"
+
+[[round]]
+id = "002F0F"
+caliber = "50beowulf"
+name = ".50 Beowulf"
+
+[[round]]
+id = "00392D"
+caliber = "357mag"
+name = ".357 Pistol"
+
+[[round]]
+id = "005C0D"
+caliber = "50ae"
+name = ".50 Pistol"
+
+[[round]]
+id = "009E0C"
+caliber = "9x39"
+name = "9x39mm SP-5"
+
+[[round]]
+id = "009E0D"
+caliber = "762x39"
+name = "7.62x39mm Soviet"
+
+[[round]]
+id = "009E0E"
+caliber = "9x19"
+name = "9x19mm Parabellum"
+
+[[round]]
+id = "0170C2"
+caliber = "408cheytec"
+name = ".416 Barrett"
+
+[[round]]
+id = "0170C3"
+caliber = "20mm"
+name = "20x102mm Vulcan"
+
+[[round]]
+id = "04742B"
+caliber = "762x25"
+name = "7.62x25mm Tokarev"
+
+[[round]]
+id = "04742C"
+caliber = "545x39"
+name = "5.45x39mm"
+
+[[weapon]]
+id = "000F9C"
+caliber = "50ae"
+name = "CombinedArms_Deagle"
+
+[[weapon]]
+id = "000FBF"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_SteyrAUG"
+
+[[weapon]]
+id = "0017D3"
+caliber = "762x39"
+name = "CombinedArms_WPNAKM_Preset_AKM"
+
+[[weapon]]
+id = "001852"
+caliber = "762x39"
+name = "CombinedArms_WPNAKM_Preset_AKS74U"
+
+[[weapon]]
+id = "001854"
+caliber = "762x39"
+name = "CombinedArms_WPNAKM_Preset_RPK"
+
+[[weapon]]
+id = "00185B"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_SteyrAUG_Preset_A1"
+
+[[weapon]]
+id = "00185C"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_SteyrAUG_Preset_Para"
+
+[[weapon]]
+id = "00185D"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_SteyrAUG_Preset_HBAR"
+
+[[weapon]]
+id = "001862"
+caliber = "9x39"
+name = "CombinedArms_ASVAL_Preset_ASVAL"
+
+[[weapon]]
+id = "001863"
+caliber = "9x39"
+name = "CombinedArms_ASVAL_Preset_VSS"
+
+[[weapon]]
+id = "002A40"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_WPNG36_Preset_G36C"
+
+[[weapon]]
+id = "002A41"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_WPNG36_Preset_MG36"
+
+[[weapon]]
+id = "006C94"
+caliber = "762x25"
+name = "CombinedArms_WPNMk23Tokarev"
+
+[[weapon]]
+id = "00704A"
+caliber = "9x39"
+name = "CombinedArms_ASVAL"
+
+[[weapon]]
+id = "00818C"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_WPNG36"
+
+[[weapon]]
+id = "00A94A"
+caliber = "9x19"
+name = "CombinedArms_WPN_M9A1"
+
+[[weapon]]
+id = "0123A3"
+ammo = "Fallout4.esm|01F279"
+name = "CombinedArms_M82A1"
+
+[[weapon]]
+id = "0178D6"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_M249SAW"
+
+[[weapon]]
+id = "01C5E4"
+caliber = "9x39"
+name = "Cheat_CombinedArms_ASVAL"
+
+[[weapon]]
+id = "01C5E5"
+caliber = "50ae"
+name = "Cheat_CombinedArms_Deagle"
+
+[[weapon]]
+id = "01C5E6"
+ammo = "Fallout4.esm|01F278"
+name = "Cheat_CombinedArms_M249SAW"
+
+[[weapon]]
+id = "01C5E7"
+ammo = "Fallout4.esm|01F279"
+name = "Cheat_CombinedArms_M82A1"
+
+[[weapon]]
+id = "01C5E8"
+ammo = "Fallout4.esm|01F278"
+name = "Cheat_CombinedArms_SG550"
+
+[[weapon]]
+id = "01C5E9"
+ammo = "Fallout4.esm|01F673"
+name = "Cheat_CombinedArms_SPAS-12"
+
+[[weapon]]
+id = "01C5EA"
+ammo = "Fallout4.esm|01F278"
+name = "Cheat_CombinedArms_SteyrAUG"
+
+[[weapon]]
+id = "01C5EB"
+caliber = "762x54r"
+name = "Cheat_CombinedArms_SV-98"
+
+[[weapon]]
+id = "01C5EC"
+caliber = "9x19"
+name = "Cheat_CombinedArms_WPN_M9A1"
+
+[[weapon]]
+id = "01C5ED"
+caliber = "762x39"
+name = "Cheat_CombinedArms_WPNAKM"
+
+[[weapon]]
+id = "01C5EE"
+ammo = "Fallout4.esm|01F278"
+name = "Cheat_CombinedArms_WPNG36"
+
+[[weapon]]
+id = "01C5EF"
+ammo = "Fallout4.esm|01F66A"
+name = "Cheat_CombinedArms_WPNM1911"
+
+[[weapon]]
+id = "01C5F0"
+caliber = "762x25"
+name = "Cheat_CombinedArms_WPNMk23Tokarev"
+
+[[weapon]]
+id = "01C5F1"
+caliber = "9x19"
+name = "Cheat_CombinedArms_WPNPL14"
+
+[[weapon]]
+id = "01C613"
+caliber = "9x39"
+name = "LeveledList_CombinedArms_ASVAL"
+
+[[weapon]]
+id = "01C614"
+caliber = "50ae"
+name = "LeveledList_CombinedArms_Deagle"
+
+[[weapon]]
+id = "01C615"
+ammo = "Fallout4.esm|01F278"
+name = "LeveledList_CombinedArms_M249SAW"
+
+[[weapon]]
+id = "01C616"
+ammo = "Fallout4.esm|01F279"
+name = "LeveledList_CombinedArms_M82A1"
+
+[[weapon]]
+id = "01C617"
+ammo = "Fallout4.esm|01F278"
+name = "LeveledList_CombinedArms_SG550"
+
+[[weapon]]
+id = "01C618"
+ammo = "Fallout4.esm|01F673"
+name = "LeveledList_CombinedArms_SPAS-12"
+
+[[weapon]]
+id = "01C619"
+ammo = "Fallout4.esm|01F278"
+name = "LeveledList_CombinedArms_SteyrAUG"
+
+[[weapon]]
+id = "01C61A"
+caliber = "762x54r"
+name = "LeveledList_CombinedArms_SV-98"
+
+[[weapon]]
+id = "01C61B"
+caliber = "9x19"
+name = "LeveledList_CombinedArms_WPN_M9A1"
+
+[[weapon]]
+id = "01C61C"
+caliber = "762x39"
+name = "LeveledList_CombinedArms_WPNAKM"
+
+[[weapon]]
+id = "01C61D"
+ammo = "Fallout4.esm|01F278"
+name = "LeveledList_CombinedArms_WPNG36"
+
+[[weapon]]
+id = "01C61E"
+ammo = "Fallout4.esm|01F66A"
+name = "LeveledList_CombinedArms_WPNM1911"
+
+[[weapon]]
+id = "01C61F"
+caliber = "762x25"
+name = "LeveledList_CombinedArms_WPNMk23Tokarev"
+
+[[weapon]]
+id = "01C620"
+caliber = "9x19"
+name = "LeveledList_CombinedArms_WPNPL14"
+
+[[weapon]]
+id = "01E4B0"
+ammo = "Fallout4.esm|01F673"
+name = "CombinedArms_SPAS-12_Vault81"
+
+[[weapon]]
+id = "047465"
+caliber = "762x39"
+name = "CombinedArms_WPNAKM"
+
+[[weapon]]
+id = "0474D7"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_SG550"
+
+[[weapon]]
+id = "047580"
+caliber = "9x19"
+name = "CombinedArms_WPNPL14"
+
+[[weapon]]
+id = "04760D"
+caliber = "762x54r"
+name = "CombinedArms_SV-98"
+
+[[weapon]]
+id = "0477F0"
+ammo = "Fallout4.esm|01F66A"
+name = "CombinedArms_WPNM1911"
+
+[[weapon]]
+id = "083528"
+ammo = "Fallout4.esm|01F673"
+name = "CombinedArms_SPAS-12"
+
+[[part]]
+id = "000F9D"
+caliber = "762x39"
+name = "mod_AKM_Mag_1Standard_30"
+
+[[part]]
+id = "0017DB"
+ammo = "Fallout4.esm|01F276"
+name = "mod_AUG_Magazine_10mm"
+
+[[part]]
+id = "0017E5"
+caliber = "9x19"
+name = "mod_PL14_Mag_Standard15"
+
+[[part]]
+id = "00200A"
+caliber = "9x19"
+name = "mod_PL14_Mag_Extended32"
+
+[[part]]
+id = "00204A"
+ammo = "Fallout4.esm|01F276"
+name = "mod_PL14_Mag_10mm_12"
+
+[[part]]
+id = "002050"
+caliber = "762x54r"
+name = "mod_SV-98_Mag_8_Rimmed"
+
+[[part]]
+id = "002051"
+caliber = "338lm"
+name = "mod_SV-98_Mag_5_338"
+
+[[part]]
+id = "00206A"
+ammo = "Fallout4.esm|01F278"
+name = "mod_AKM_Mag_4Mag556_60"
+
+[[part]]
+id = "002113"
+caliber = "300blk"
+name = "mod_G36_Magazine_3_300BLK"
+
+[[part]]
+id = "0026B5"
+caliber = "9x19"
+name = "mod_AUG_Magazine_9mm"
+
+[[part]]
+id = "0026F1"
+ammo = "Fallout4.esm|01F278"
+name = "mod_AUG_Magazine_556_30rnd"
+
+[[part]]
+id = "002766"
+caliber = "545x39"
+name = "mod_AKM_Mag_6ExtMag545"
+
+[[part]]
+id = "002878"
+caliber = "762x39"
+name = "mod_AKM_Mag_2Polymer_35"
+
+[[part]]
+id = "0028B0"
+caliber = "762x54r"
+name = "mod_AKM_Mag_4Mag762Rimmed"
+
+[[part]]
+id = "00290E"
+ammo = "Fallout4.esm|01F278"
+name = "mod_AUG_Magazine_556_60rnd"
+
+[[part]]
+id = "002913"
+caliber = "300blk"
+name = "mod_AUG_Magazine_300BLK_30rnd"
+
+[[part]]
+id = "002F10"
+caliber = "50beowulf"
+name = "mod_AKM_Mag_8Mag458SOCOM"
+
+[[part]]
+id = "0036D7"
+caliber = "762x39"
+name = "mod_AKM_Mag_9Cursed_100rnd"
+
+[[part]]
+id = "00392E"
+caliber = "357mag"
+name = "mod_Deagle_Magazine_3_357"
+
+[[part]]
+id = "005F8E"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_M1911_Mag_1StandardACP"
+
+[[part]]
+id = "005F8F"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_M1911_Mag_2ExtendedACP"
+
+[[part]]
+id = "005F90"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_M1911_Mag_3ExtendedLrgACP"
+
+[[part]]
+id = "005F91"
+caliber = "50gi"
+name = "mod_M1911_Mag_4Conversion50"
+
+[[part]]
+id = "006A7C"
+caliber = "9x19"
+name = "mod_Tokarev_Magazine_2_9mm"
+
+[[part]]
+id = "006B50"
+ammo = "Fallout4.esm|09221C"
+name = "mod_Deagle_Magazine_2_44"
+
+[[part]]
+id = "007751"
+caliber = "762x39"
+name = "mod_SG550_Mag_2ConversionAK_30"
+
+[[part]]
+id = "007753"
+caliber = "762x51"
+name = "mod_SG550_Mag_4Conversion762_20"
+
+[[part]]
+id = "007BF7"
+caliber = "762x25"
+name = "mod_Tokarev_Magazine_1Standard"
+
+[[part]]
+id = "0082A7"
+caliber = "762x25"
+name = "mod_Tokarev_Magazine_7Drum"
+
+[[part]]
+id = "008A9D"
+caliber = "762x25"
+name = "mod_Tokarev_Magazine_3Extended_Tk"
+
+[[part]]
+id = "008A9E"
+caliber = "9x19"
+name = "mod_Tokarev_Magazine_4_9mm_Extended"
+
+[[part]]
+id = "009A8F"
+caliber = "762x39"
+name = "mod_AKM_Mag_0Low_20"
+
+[[part]]
+id = "009E0B"
+caliber = "9x39"
+name = "mod_AKM_Mag_5Mag939"
+
+[[part]]
+id = "00A944"
+caliber = "9x19"
+name = "mod_M9A1_Magazine_1_9mm"
+
+[[part]]
+id = "00B8E1"
+ammo = "Fallout4.esm|01F276"
+name = "mod_M9A1_Magazine_2_10mmAuto"
+
+[[part]]
+id = "00B8E2"
+caliber = "357mag"
+name = "mod_M9A1_Magazine_3_357SIG"
+
+[[part]]
+id = "00B8E3"
+caliber = "9x19"
+name = "mod_M9A1_Magazine_4_9mm_Extended"
+
+[[part]]
+id = "0123A6"
+ammo = "Fallout4.esm|01F279"
+name = "mod_M82A1_Magazine_1_50BMG"
+
+[[part]]
+id = "0170D0"
+caliber = "408cheytec"
+name = "mod_M82A1_Magazine_2_416Barrett"
+
+[[part]]
+id = "0170D3"
+caliber = "20mm"
+name = "mod_M82A1_Magazine_4_20mmVulcan"
+
+[[part]]
+id = "018834"
+caliber = "762x51"
+name = "mod_M249_Magazine_5_Belt_762_100rnd"
+
+[[part]]
+id = "018835"
+caliber = "762x51"
+name = "mod_M249_Magazine_6_Belt_762_200rnd"
+
+[[part]]
+id = "01F3F7"
+caliber = "300blk"
+name = "mod_M249_Magazine_6a_Mag_300BLK_30rnd"
+
+[[part]]
+id = "047429"
+caliber = "762x25"
+name = "mod_AKM_Mag_7MagTokarev"
+
+[[part]]
+id = "04742A"
+ammo = "Fallout4.esm|01F276"
+name = "mod_AKM_Mag_5Mag10mm"
+
+[[part]]
+id = "047430"
+ammo = "Fallout4.esm|01F278"
+name = "mod_AKM_Mag_4Mag556"
+
+[[part]]
+id = "047431"
+caliber = "545x39"
+name = "mod_AKM_Mag_3Mag545"
+
+[[part]]
+id = "047432"
+caliber = "762x39"
+name = "mod_AKM_Mag_6Drum"
+
+[[part]]
+id = "047433"
+caliber = "762x39"
+name = "mod_AKM_Mag_2Bakelite"

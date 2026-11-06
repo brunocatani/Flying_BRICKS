@@ -1,0 +1,99 @@
+# Flying BRICKS patch for SKS.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000800"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Type_56_All"
+
+[[weapon]]
+id = "0010B9"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_washed_up"
+
+[[weapon]]
+id = "00220D"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Raider"
+
+[[weapon]]
+id = "0044CF"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Yugo"
+
+[[weapon]]
+id = "00451B"
+ammo = "Fallout4.esm|01F276"
+name = "SKS_Bubba1"
+
+[[weapon]]
+id = "00451C"
+ammo = "Fallout4.esm|01F276"
+name = "SKS_Bubba2"
+
+[[weapon]]
+id = "004557"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Diamond_City"
+
+[[weapon]]
+id = "0056E4"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Raider_Custom1"
+
+[[weapon]]
+id = "0056E5"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Raider_Custom2"
+
+[[weapon]]
+id = "005717"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Type_56_Late"
+
+[[weapon]]
+id = "005718"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_ThePack"
+
+[[weapon]]
+id = "00792E"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Diamond_City_Sniper"
+
+[[weapon]]
+id = "008A36"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_Albanian"
+
+[[weapon]]
+id = "008A37"
+ammo = "DLCNukaWorld.esm|037897"
+name = "SKS_DDR"
+
+[[part]]
+id = "002AB3"
+caliber = "9x19"
+name = "mod_SKS_Detachable_Mag9mm"
+
+[[part]]
+id = "0044F9"
+caliber = "9x19"
+name = "mod_SKS_Receiver_9mm"
+
+[[part]]
+id = "00450D"
+caliber = "545x39"
+name = "mod_SKS_Detachable_Mag45_556"
+
+[[part]]
+id = "00450E"
+ammo = "Fallout4.esm|01F278"
+name = "mod_SKS_Detachable_Mag20_556"

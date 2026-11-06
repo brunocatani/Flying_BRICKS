@@ -1,0 +1,30 @@
+FormKey: 01F279:Fallout4.esm
+EditorID: Ammo50Caliber
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 9
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.50 Caliber'
+Model:
+  File: Ammo\50Cal\50CalAmmo.nif
+  Data: 0x0400000007000000000000000300000002000000FA43CB166464730026C66F52232FCD756464730026C66F526B1828D56464730063761D64B2742EB66464730063761D64AC9DFB566464730063761D647503E0D7646473001CDB88C53DC618956464730026C66F52FC228EDB6267736D95C2215FBBCD99EB6267736D05C9C7A5
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 4
+Weight: 0.075
+Projectile: 000802:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 490
+ShortName:
+  TargetLanguage: English
+  Value: '.50'
+CasingModel: Ammo\50Cal\50CalCasing.nif
+ModelInfo: 0x0400000000000000000000000000000000000000

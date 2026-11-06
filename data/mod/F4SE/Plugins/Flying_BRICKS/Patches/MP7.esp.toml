@@ -1,0 +1,39 @@
+# Flying BRICKS patch for MP7.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "005457"
+caliber = "hk46x30mm"
+name = "4.6x30 Round"
+
+[[weapon]]
+id = "00174B"
+caliber = "hk46x30mm"
+name = "WPNHuK_MP7"
+
+[[weapon]]
+id = "00BF31"
+caliber = "hk46x30mm"
+name = "WPNHuK_MP7DesertWarrior"
+
+[[part]]
+id = "006B3E"
+ammo = "Fallout4.esm|01F276"
+name = "mod_HuK_MP7_Ammo_10mm"
+
+[[part]]
+id = "006B3F"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_HuK_MP7_Ammo_45mm"
+
+[[part]]
+id = "006B40"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_HuK_MP7_Ammo_38mm"

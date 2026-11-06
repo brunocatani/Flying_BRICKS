@@ -1,0 +1,69 @@
+# Flying BRICKS patch for MWIIGolf17.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000F9B"
+caliber = "9x19"
+name = "WPNMWIIGolf17"
+
+[[weapon]]
+id = "008CFF"
+caliber = "9x19"
+name = "WPNMWIIGolf17_SteelFire"
+
+[[weapon]]
+id = "008D00"
+caliber = "9x19"
+name = "WPNMWIIGolf17_Downforce"
+
+[[weapon]]
+id = "008D01"
+caliber = "9x19"
+name = "WPNMWIIGolf17_Damysus"
+
+[[weapon]]
+id = "008D02"
+caliber = "9x19"
+name = "WPNMWIIGolf17_TacticalMatch"
+
+[[weapon]]
+id = "008D03"
+caliber = "9x19"
+name = "WPNMWIIGolf17_TheKnack"
+
+[[weapon]]
+id = "008D04"
+caliber = "9x19"
+name = "WPNMWIIGolf17_SilentRaid"
+
+[[weapon]]
+id = "008D05"
+caliber = "9x19"
+name = "WPNMWIIGolf17_Barbed"
+
+[[weapon]]
+id = "008D06"
+caliber = "9x19"
+name = "WPNMWIIGolf17_Maniples"
+
+[[weapon]]
+id = "008D07"
+caliber = "9x19"
+name = "WPNMWIIGolf17_NoIdentity"
+
+[[weapon]]
+id = "008D08"
+caliber = "9x19"
+name = "WPNMWIIGolf17_TrueStripes"
+
+[[weapon]]
+id = "008D09"
+caliber = "9x19"
+name = "WPNMWIIGolf17_MutedMoments"

@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "model": {
+    "name": "BRICK 100-HP unarmored-human damage scale",
+    "humanReferenceHealth": 100.0,
+    "referenceEnergyFtLb": 1200.0,
+    "referenceDiameterIn": 0.308,
+    "energyExponent": 0.6,
+    "diameterExponent": 0.3,
+    "minimumDamage": 1.0,
+    "rounding": "nearest-away-from-zero",
+    "formula": "damage = round(health * (energyFtLb / referenceEnergyFtLb)^energyExponent * (diameterIn / referenceDiameterIn)^diameterExponent)",
+    "caveat": "Muzzle energy is only a rough severity indicator. Projectile construction, barrel length, range, penetration, hit placement, and physiology remain outside this caliber-level game model."
+  },
+  "sources": {
+    "wikipedia-cartridge-table": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Table_of_handgun_and_rifle_cartridges",
+      "description": "Bulk small-arms muzzle-energy and bullet-diameter reference; the table states that listed maxima may come from different loads."
+    },
+    "wikipedia-muzzle-energy": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Muzzle_energy",
+      "description": "Model caveat authority: muzzle energy is a rough indication and does not alone determine terminal effect."
+    },
+    "wikipedia-shotgun-slug": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shotgun_slug",
+      "description": "Representative 12-gauge one-ounce Foster slug energy."
+    },
+    "wikipedia-gauge": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gauge_(firearms)",
+      "description": "Shotgun gauge definition and nominal bore diameters."
+    },
+    "wikipedia-9x39": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/9%C3%9739mm",
+      "description": "9x39mm energy and diameter reference."
+    },
+    "wikipedia-277-fury": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.277_Fury",
+      "description": ".277 Fury / 6.8x51mm energy and diameter reference."
+    },
+    "wikipedia-458-socom": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.458_SOCOM",
+      "description": ".458 SOCOM representative load reference."
+    },
+    "wikipedia-277-wolverine": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.277_Wolverine",
+      "description": ".277 Wolverine energy and diameter reference."
+    },
+    "wikipedia-65x25-cbj": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/6.5%C3%9725mm_CBJ",
+      "description": "6.5x25mm CBJ pistol energy and penetrator diameter reference."
+    },
+    "wikipedia-127x55": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/12.7%C3%9755mm_STs-130",
+      "description": "12.7x55mm STs-130 standard-load energy and diameter reference."
+    },
+    "wikipedia-75-fk": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/7.5_FK",
+      "description": "7.5 FK energy and diameter reference."
+    },
+    "wikipedia-45-super": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.45_Super",
+      "description": ".45 Super energy and diameter reference."
+    },
+    "wikipedia-9x21-gyurza": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/9%C3%9721mm_Gyurza",
+      "description": "9x21mm Gyurza energy and diameter reference."
+    },
+    "wikipedia-9x25-dillon": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/9%C3%9725mm_Dillon",
+      "description": "9x25mm Dillon energy and diameter reference."
+    },
+    "wikipedia-224-valkyrie": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.224_Valkyrie",
+      "description": ".224 Valkyrie energy and diameter reference."
+    },
+    "wikipedia-500-nitro": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.500_Nitro_Express",
+      "description": ".500 Nitro Express energy and diameter reference."
+    },
+    "wikipedia-585-nyati": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.585_Nyati",
+      "description": ".585 Nyati energy and diameter reference."
+    },
+    "wikipedia-510-whisper": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.510_Whisper",
+      "description": ".510 Whisper energy and diameter reference."
+    },
+    "wikipedia-577-tyrannosaur": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.577_Tyrannosaur",
+      "description": ".577 Tyrannosaur energy and diameter reference."
+    },
+    "wikipedia-408-cheytac": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical",
+      "description": ".408 and .375 CheyTac energy and diameter reference."
+    },
+    "wikipedia-127x108": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/12.7_%C3%97_108_mm",
+      "description": "12.7x108mm B-32 service-load energy and bullet-diameter reference."
+    },
+    "wikipedia-132x92tuf": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/13.2%C3%9792mmSR",
+      "description": "13.2x92mmSR TuF solid-projectile energy and bullet-diameter reference."
+    },
+    "wikipedia-357-remington-maximum": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/.357_Remington_Maximum",
+      "description": ".357 Remington Maximum energy and diameter reference for the SuperMag identity."
+    },
+    "wikipedia-5mm35-smc": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/5_mm/35_SMc",
+      "description": "5mm/35 SMC energy and diameter reference."
+    },
+    "wikipedia-hk-g11": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Heckler_%26_Koch_G11",
+      "description": "4.73x33mm caseless projectile energy and diameter reference."
+    },
+    "wikipedia-20mm": {
+      "kind": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/20_mm_caliber",
+      "description": "20mm caliber diameter and broad cartridge-family context; energy remains explicitly estimated."
+    },
+    "family-estimate": {
+      "kind": "estimate",
+      "description": "Explicit engineering estimate for fictional, wildcat, generic, or underspecified identities, based on the named real cartridge family."
+    }
+  },
+  "cartridges": [
+    { "id": "10x25", "energyFtLb": 680.0, "diameterIn": 0.400, "source": "wikipedia-cartridge-table" },
+    { "id": "556x45", "energyFtLb": 1196.0, "diameterIn": 0.224, "source": "wikipedia-cartridge-table" },
+    { "id": "50bmg", "energyFtLb": 13196.0, "diameterIn": 0.510, "source": "wikipedia-cartridge-table" },
+    { "id": "45acp", "energyFtLb": 369.0, "diameterIn": 0.451, "source": "wikipedia-cartridge-table" },
+    { "id": "308", "energyFtLb": 3009.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "762x51", "energyFtLb": 2997.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "12ga", "energyFtLb": 2363.0, "diameterIn": 0.729, "source": "wikipedia-shotgun-slug" },
+    { "id": "9x19", "energyFtLb": 342.0, "diameterIn": 0.355, "source": "wikipedia-cartridge-table" },
+    { "id": "44mag", "energyFtLb": 999.0, "diameterIn": 0.430, "source": "wikipedia-cartridge-table" },
+    { "id": "4570", "energyFtLb": 2518.0, "diameterIn": 0.458, "source": "wikipedia-cartridge-table" },
+    { "id": "762x39", "energyFtLb": 1521.0, "diameterIn": 0.312, "source": "wikipedia-cartridge-table" },
+    { "id": "57x28", "energyFtLb": 400.0, "diameterIn": 0.224, "source": "wikipedia-cartridge-table" },
+    { "id": "8x57", "energyFtLb": 3171.0, "diameterIn": 0.323, "source": "wikipedia-cartridge-table" },
+    { "id": "300wm", "energyFtLb": 3893.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "303", "energyFtLb": 2401.0, "diameterIn": 0.311, "source": "wikipedia-cartridge-table" },
+    { "id": "762x54r", "energyFtLb": 2713.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "9x18", "energyFtLb": 212.0, "diameterIn": 0.365, "source": "wikipedia-cartridge-table" },
+    { "id": "9x39", "energyFtLb": 556.0, "diameterIn": 0.365, "source": "wikipedia-9x39" },
+    { "id": "40sw", "energyFtLb": 479.0, "diameterIn": 0.400, "source": "wikipedia-cartridge-table" },
+    { "id": "300blk", "energyFtLb": 1487.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "338lm", "energyFtLb": 4768.0, "diameterIn": 0.338, "source": "wikipedia-cartridge-table" },
+    { "id": "223", "energyFtLb": 1243.0, "diameterIn": 0.224, "source": "wikipedia-cartridge-table" },
+    { "id": "50ae", "energyFtLb": 1449.0, "diameterIn": 0.500, "source": "wikipedia-cartridge-table" },
+    { "id": "545x39", "energyFtLb": 1052.0, "diameterIn": 0.215, "source": "wikipedia-cartridge-table" },
+    { "id": "68spc", "energyFtLb": 1613.0, "diameterIn": 0.277, "source": "wikipedia-cartridge-table" },
+    { "id": "28ga", "energyFtLb": 1013.0, "diameterIn": 0.550, "source": "family-estimate", "basis": "One-ounce 12-gauge Foster-slug energy scaled by the Wikipedia gauge mass ratio 12/28 at the same representative velocity; bore from the gauge table." },
+    { "id": "50beowulf", "energyFtLb": 2878.0, "diameterIn": 0.500, "source": "wikipedia-cartridge-table" },
+    { "id": "458socom", "energyFtLb": 2405.0, "diameterIn": 0.458, "source": "wikipedia-458-socom" },
+    { "id": "3006", "energyFtLb": 3178.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "22lr", "energyFtLb": 137.0, "diameterIn": 0.223, "source": "wikipedia-cartridge-table" },
+    { "id": "762x25", "energyFtLb": 650.0, "diameterIn": 0.311, "source": "wikipedia-cartridge-table" },
+    { "id": "277sig", "energyFtLb": 2694.0, "diameterIn": 0.278, "source": "wikipedia-277-fury" },
+    { "id": "30carbine", "energyFtLb": 977.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "32", "energyFtLb": 129.0, "diameterIn": 0.312, "source": "wikipedia-cartridge-table" },
+    { "id": "455", "energyFtLb": 285.0, "diameterIn": 0.455, "source": "wikipedia-cartridge-table" },
+    { "id": "47caseless", "energyFtLb": 1084.0, "diameterIn": 0.194, "source": "wikipedia-hk-g11" },
+    { "id": "20ga", "energyFtLb": 1418.0, "diameterIn": 0.615, "source": "family-estimate", "basis": "One-ounce 12-gauge Foster-slug energy scaled by the Wikipedia gauge mass ratio 12/20 at the same representative velocity; bore from the gauge table." },
+    { "id": "50ball", "energyFtLb": 1000.0, "diameterIn": 0.500, "source": "family-estimate", "basis": "Generic .50 caliber black-powder round-ball loading; the source record does not identify a case or charge." },
+    { "id": "65", "energyFtLb": 393.0, "diameterIn": 0.157, "source": "wikipedia-65x25-cbj" },
+    { "id": "bb", "energyFtLb": 3.0, "diameterIn": 0.177, "source": "family-estimate", "basis": "Representative high-velocity steel BB airgun projectile; the source record identifies only BB Pellet." },
+    { "id": "4ga", "energyFtLb": 7089.0, "diameterIn": 1.052, "source": "family-estimate", "basis": "One-ounce 12-gauge Foster-slug energy scaled by the Wikipedia gauge mass ratio 12/4 at the same representative velocity; bore from the gauge table." },
+    { "id": "8ga", "energyFtLb": 3545.0, "diameterIn": 0.835, "source": "family-estimate", "basis": "One-ounce 12-gauge Foster-slug energy scaled by the Wikipedia gauge mass ratio 12/8 at the same representative velocity; bore from the gauge table." },
+    { "id": "410", "energyFtLb": 650.0, "diameterIn": 0.410, "source": "family-estimate", "basis": "Representative quarter-ounce .410-bore slug loading; .410 is a bore designation rather than a gauge." },
+    { "id": "3030", "energyFtLb": 2046.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "280british", "energyFtLb": 2019.0, "diameterIn": 0.283, "source": "wikipedia-cartridge-table" },
+    { "id": "357mag", "energyFtLb": 624.0, "diameterIn": 0.357, "source": "wikipedia-cartridge-table" },
+    { "id": "4440", "energyFtLb": 656.0, "diameterIn": 0.428, "source": "wikipedia-cartridge-table" },
+    { "id": "127x55", "energyFtLb": 1893.0, "diameterIn": 0.512, "source": "wikipedia-127x55" },
+    { "id": "14mm", "energyFtLb": 20000.0, "diameterIn": 0.551, "source": "family-estimate", "basis": "Fictional 14mm Ultra Hauer treated as a 14.5mm-class heavy machine-gun cartridge." },
+    { "id": "20mm", "energyFtLb": 39000.0, "diameterIn": 0.787, "source": "family-estimate", "basis": "Generic 20mm autocannon-class estimate; Wikipedia identifies 20mm as a family with materially different cases, so no single cartridge energy is claimed." },
+    { "id": "500express", "energyFtLb": 5851.0, "diameterIn": 0.510, "source": "wikipedia-500-nitro" },
+    { "id": "25cal", "energyFtLb": 73.0, "diameterIn": 0.251, "source": "family-estimate", "basis": "Munitions generic .25 Round treated as .25 ACP because no case designation is present and the record belongs to the pistol-tier family." },
+    { "id": "38super", "energyFtLb": 500.0, "diameterIn": 0.356, "source": "wikipedia-cartridge-table" },
+    { "id": "38special", "energyFtLb": 290.0, "diameterIn": 0.357, "source": "wikipedia-cartridge-table" },
+    { "id": "22spitfire", "energyFtLb": 1200.0, "diameterIn": 0.224, "source": "family-estimate", "basis": ".22 Spitfire / 5.7mm Johnson-class lightweight carbine loading." },
+    { "id": "22magnum", "energyFtLb": 322.0, "diameterIn": 0.224, "source": "wikipedia-cartridge-table" },
+    { "id": "380acp", "energyFtLb": 200.0, "diameterIn": 0.355, "source": "wikipedia-cartridge-table" },
+    { "id": "9x18ultra", "energyFtLb": 350.0, "diameterIn": 0.355, "source": "family-estimate", "basis": "9x18mm Ultra/Police service-pistol loading between .380 ACP and 9x19mm high-energy table loads." },
+    { "id": "9x21mmgyurza", "energyFtLb": 443.0, "diameterIn": 0.356, "source": "wikipedia-9x21-gyurza" },
+    { "id": "9x25mmdillon", "energyFtLb": 888.0, "diameterIn": 0.356, "source": "wikipedia-9x25-dillon" },
+    { "id": "45super", "energyFtLb": 694.0, "diameterIn": 0.451, "source": "wikipedia-45-super" },
+    { "id": "545x18mmsoviet", "energyFtLb": 94.0, "diameterIn": 0.222, "source": "wikipedia-cartridge-table" },
+    { "id": "400corbon", "energyFtLb": 588.0, "diameterIn": 0.401, "source": "wikipedia-cartridge-table" },
+    { "id": "50gi", "energyFtLb": 591.0, "diameterIn": 0.500, "source": "wikipedia-cartridge-table" },
+    { "id": "357sig", "energyFtLb": 502.0, "diameterIn": 0.355, "source": "wikipedia-cartridge-table" },
+    { "id": "763x25mmmauser", "energyFtLb": 375.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "765x21mmvintageparabellum", "energyFtLb": 325.0, "diameterIn": 0.309, "source": "wikipedia-cartridge-table" },
+    { "id": "hk46x30mm", "energyFtLb": 400.0, "diameterIn": 0.183, "source": "wikipedia-cartridge-table" },
+    { "id": "224boz", "energyFtLb": 694.0, "diameterIn": 0.223, "source": "wikipedia-cartridge-table" },
+    { "id": "75fk", "energyFtLb": 850.0, "diameterIn": 0.307, "source": "wikipedia-75-fk" },
+    { "id": "41ae", "energyFtLb": 457.0, "diameterIn": 0.410, "source": "wikipedia-cartridge-table" },
+    { "id": "16gaugevintage", "energyFtLb": 1772.0, "diameterIn": 0.663, "source": "family-estimate", "basis": "One-ounce 12-gauge Foster-slug energy scaled by the Wikipedia gauge mass ratio 12/16 at the same representative velocity; bore from the gauge table." },
+    { "id": "10gauge", "energyFtLb": 2836.0, "diameterIn": 0.775, "source": "family-estimate", "basis": "One-ounce 12-gauge Foster-slug energy scaled by the Wikipedia gauge mass ratio 12/10 at the same representative velocity; bore from the gauge table." },
+    { "id": "222remington", "energyFtLb": 1099.0, "diameterIn": 0.224, "source": "wikipedia-cartridge-table" },
+    { "id": "6mmacr", "energyFtLb": 1813.0, "diameterIn": 0.243, "source": "family-estimate", "basis": "Underspecified 6mm ACR identity treated as the Wikipedia 6mm ARC intermediate-rifle envelope." },
+    { "id": "58x42mmchinese", "energyFtLb": 1395.0, "diameterIn": 0.236, "source": "wikipedia-cartridge-table" },
+    { "id": "485x49mmbritish", "energyFtLb": 1500.0, "diameterIn": 0.197, "source": "family-estimate", "basis": "Experimental 4.85x49mm British intermediate-rifle family estimate." },
+    { "id": "224valkyrie", "energyFtLb": 1594.0, "diameterIn": 0.2245, "source": "wikipedia-224-valkyrie" },
+    { "id": "300whisper", "energyFtLb": 480.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "65grendel", "energyFtLb": 1875.0, "diameterIn": 0.264, "source": "wikipedia-cartridge-table" },
+    { "id": "68spear", "energyFtLb": 2694.0, "diameterIn": 0.278, "source": "wikipedia-277-fury" },
+    { "id": "792x33mmkurz", "energyFtLb": 1305.0, "diameterIn": 0.323, "source": "wikipedia-cartridge-table" },
+    { "id": "277wolverine", "energyFtLb": 1500.0, "diameterIn": 0.277, "source": "wikipedia-277-wolverine" },
+    { "id": "22nosler", "energyFtLb": 1400.0, "diameterIn": 0.224, "source": "family-estimate", "basis": ".22 Nosler high-velocity AR-15 cartridge family estimate." },
+    { "id": "500automaxx", "energyFtLb": 2533.0, "diameterIn": 0.500, "source": "wikipedia-cartridge-table" },
+    { "id": "450bushmaster", "energyFtLb": 2744.0, "diameterIn": 0.452, "source": "wikipedia-cartridge-table" },
+    { "id": "400ar", "energyFtLb": 2255.0, "diameterIn": 0.400, "source": "family-estimate", "basis": ".400 AR big-bore AR cartridge estimate between 10mm Auto and .450 Bushmaster rifle energies." },
+    { "id": "416spike", "energyFtLb": 1700.0, "diameterIn": 0.416, "source": "family-estimate", "basis": ".416 Spike subsonic/big-bore AR family estimate." },
+    { "id": "44automag", "energyFtLb": 1600.0, "diameterIn": 0.429, "source": "wikipedia-cartridge-table" },
+    { "id": "475widleymagnum", "energyFtLb": 1800.0, "diameterIn": 0.475, "source": "family-estimate", "basis": ".475 Wildey Magnum hunting-pistol load estimate." },
+    { "id": "458lott", "energyFtLb": 5873.0, "diameterIn": 0.458, "source": "wikipedia-cartridge-table" },
+    { "id": "45longcolt", "energyFtLb": 460.0, "diameterIn": 0.452, "source": "wikipedia-cartridge-table" },
+    { "id": "500sw", "energyFtLb": 2533.0, "diameterIn": 0.500, "source": "wikipedia-cartridge-table" },
+    { "id": "444marlin", "energyFtLb": 3389.0, "diameterIn": 0.429, "source": "wikipedia-cartridge-table" },
+    { "id": "458winmag", "energyFtLb": 5084.0, "diameterIn": 0.458, "source": "wikipedia-cartridge-table" },
+    { "id": "357supermag", "energyFtLb": 1548.0, "diameterIn": 0.357, "source": "wikipedia-357-remington-maximum" },
+    { "id": "450alaskan", "energyFtLb": 3500.0, "diameterIn": 0.458, "source": "family-estimate", "basis": ".450 Alaskan lever-rifle wildcat estimate in the .45-caliber dangerous-game envelope." },
+    { "id": "35remington", "energyFtLb": 1958.0, "diameterIn": 0.358, "source": "wikipedia-cartridge-table" },
+    { "id": "375hhmag", "energyFtLb": 4700.0, "diameterIn": 0.375, "source": "wikipedia-cartridge-table" },
+    { "id": "500nitroexpress", "energyFtLb": 5851.0, "diameterIn": 0.510, "source": "wikipedia-500-nitro" },
+    { "id": "454casull", "energyFtLb": 1924.0, "diameterIn": 0.452, "source": "wikipedia-cartridge-table" },
+    { "id": "45schofield", "energyFtLb": 350.0, "diameterIn": 0.454, "source": "family-estimate", "basis": "Representative .45 Schofield black-powder/service revolver loading." },
+    { "id": "22250remington", "energyFtLb": 1776.0, "diameterIn": 0.224, "source": "wikipedia-cartridge-table" },
+    { "id": "300normamagnum", "energyFtLb": 4404.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "65creedmoor", "energyFtLb": 2493.0, "diameterIn": 0.264, "source": "wikipedia-cartridge-table" },
+    { "id": "338normamagnum", "energyFtLb": 4768.0, "diameterIn": 0.338, "source": "family-estimate", "basis": ".338 Norma Magnum treated at the Wikipedia .338 Lapua Magnum maximum-energy envelope." },
+    { "id": "300wsm", "energyFtLb": 3872.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "7mmremingtonmagnum", "energyFtLb": 3302.0, "diameterIn": 0.284, "source": "wikipedia-cartridge-table" },
+    { "id": "2506", "energyFtLb": 2513.0, "diameterIn": 0.257, "source": "wikipedia-cartridge-table" },
+    { "id": "243winchester", "energyFtLb": 2140.0, "diameterIn": 0.243, "source": "wikipedia-cartridge-table" },
+    { "id": "792x41mmcetme", "energyFtLb": 2400.0, "diameterIn": 0.323, "source": "family-estimate", "basis": "Experimental 7.92x41mm CETME full-size rifle family estimate." },
+    { "id": "22cheetah", "energyFtLb": 2000.0, "diameterIn": 0.224, "source": "family-estimate", "basis": ".22 CHeetah overbore varmint-rifle wildcat estimate." },
+    { "id": "220swift", "energyFtLb": 1727.0, "diameterIn": 0.224, "source": "wikipedia-cartridge-table" },
+    { "id": "408cheytec", "energyFtLb": 8373.0, "diameterIn": 0.408, "source": "wikipedia-408-cheytac" },
+    { "id": "127x108", "energyFtLb": 13174.0, "diameterIn": 0.511, "source": "wikipedia-127x108" },
+    { "id": "132x92tuf", "energyFtLb": 11704.0, "diameterIn": 0.525, "source": "wikipedia-132x92tuf" },
+    { "id": "375cheytec", "energyFtLb": 7744.0, "diameterIn": 0.375, "source": "wikipedia-408-cheytac" },
+    { "id": "93x64mmbrenneke", "energyFtLb": 4317.0, "diameterIn": 0.366, "source": "wikipedia-cartridge-table" },
+    { "id": "75x55mmswiss", "energyFtLb": 2924.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "65x55swedishmauser", "energyFtLb": 2325.0, "diameterIn": 0.264, "source": "wikipedia-cartridge-table" },
+    { "id": "222remingtonmagnum", "energyFtLb": 1400.0, "diameterIn": 0.224, "source": "family-estimate", "basis": ".222 Remington Magnum high-velocity varmint-rifle load estimate." },
+    { "id": "5mm35smc", "energyFtLb": 1564.0, "diameterIn": 0.2039, "source": "wikipedia-5mm35-smc" },
+    { "id": "300hamr", "energyFtLb": 2200.0, "diameterIn": 0.308, "source": "family-estimate", "basis": ".300 HAM'R high-end published-family envelope represented as a full-energy AR-15 .30-caliber load." },
+    { "id": "700nitroexpress", "energyFtLb": 10566.0, "diameterIn": 0.700, "source": "wikipedia-cartridge-table" },
+    { "id": "300ossm", "energyFtLb": 3500.0, "diameterIn": 0.308, "source": "family-estimate", "basis": ".300 Olympic Short Super Magnum estimate between .300 WSM and .30-06 energy envelopes." },
+    { "id": "25wssm", "energyFtLb": 2384.0, "diameterIn": 0.257, "source": "family-estimate", "basis": ".25 WSSM short-magnum hunting-rifle load estimate near .25-06 energy." },
+    { "id": "577450martini", "energyFtLb": 1870.0, "diameterIn": 0.455, "source": "wikipedia-cartridge-table" },
+    { "id": "204ruger", "energyFtLb": 1351.0, "diameterIn": 0.204, "source": "wikipedia-cartridge-table" },
+    { "id": "510whisper", "energyFtLb": 1837.0, "diameterIn": 0.510, "source": "wikipedia-510-whisper" },
+    { "id": "375rum", "energyFtLb": 5421.0, "diameterIn": 0.375, "source": "wikipedia-cartridge-table" },
+    { "id": "65prc", "energyFtLb": 2800.0, "diameterIn": 0.264, "source": "family-estimate", "basis": "6.5 PRC magnum hunting-rifle load estimate above 6.5 Creedmoor." },
+    { "id": "6xc", "energyFtLb": 1937.0, "diameterIn": 0.243, "source": "wikipedia-cartridge-table" },
+    { "id": "6mmbr", "energyFtLb": 1800.0, "diameterIn": 0.243, "source": "family-estimate", "basis": "6mm BR Norma competition-rifle estimate between 6mm PPC and 6mm XC energies." },
+    { "id": "6mmppc", "energyFtLb": 1660.0, "diameterIn": 0.243, "source": "wikipedia-cartridge-table" },
+    { "id": "6mmdasher", "energyFtLb": 1900.0, "diameterIn": 0.243, "source": "family-estimate", "basis": "6mm Dasher competition-rifle estimate slightly above 6mm BR." },
+    { "id": "30378", "energyFtLb": 4956.0, "diameterIn": 0.308, "source": "wikipedia-cartridge-table" },
+    { "id": "600nitroexpress", "energyFtLb": 7614.0, "diameterIn": 0.622, "source": "wikipedia-cartridge-table" },
+    { "id": "782warbird", "energyFtLb": 5000.0, "diameterIn": 0.308, "source": "family-estimate", "basis": "7.82 Warbird overbore .30-caliber magnum estimate near .30-378 Weatherby energy." },
+    { "id": "2545sharps", "energyFtLb": 1300.0, "diameterIn": 0.257, "source": "family-estimate", "basis": ".25-45 Sharps AR-15 hunting-cartridge load estimate." },
+    { "id": "585nyati", "energyFtLb": 10130.0, "diameterIn": 0.585, "source": "wikipedia-585-nyati" },
+    { "id": "577tyrannosaur", "energyFtLb": 10240.0, "diameterIn": 0.585, "source": "wikipedia-577-tyrannosaur" },
+    { "id": "500max", "energyFtLb": 3000.0, "diameterIn": 0.500, "source": "family-estimate", "basis": ".500 Maximum identity treated as an upper-end .500-caliber hunting-pistol cartridge." }
+  ]
+}

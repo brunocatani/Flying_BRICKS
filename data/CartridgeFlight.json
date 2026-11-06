@@ -1,0 +1,858 @@
+{
+ "schemaVersion": 1,
+ "sources": "table: Wikipedia Table of handgun and rifle cartridges, the row with this energy and diameter. table corrected: that row's top speed implied a bullet too light for the caliber because its speed and energy come from different loads, so the speed is the one a plausible bullet needs for that energy. page: the cartridge's own Wikipedia page cited by RealisticDamageModel.json. estimate: a typical value with no source read. Shotguns use a buckshot pellet's speed and coefficient. A coefficient the table lacks is computed from implied bullet mass, diameter and a form factor.",
+ "cartridges": [
+  {
+   "id": "10x25",
+   "fps": 1307,
+   "bc": 0.164,
+   "source": "table corrected"
+  },
+  {
+   "id": "556x45",
+   "fps": 3130.0,
+   "bc": 0.395,
+   "source": "table"
+  },
+  {
+   "id": "50bmg",
+   "fps": 2815.0,
+   "bc": 1.05,
+   "source": "table"
+  },
+  {
+   "id": "45acp",
+   "fps": 850.0,
+   "bc": 0.188,
+   "source": "table"
+  },
+  {
+   "id": "308",
+   "fps": 2857,
+   "bc": 0.53,
+   "source": "table corrected"
+  },
+  {
+   "id": "762x51",
+   "fps": 2851,
+   "bc": 0.588,
+   "source": "table corrected"
+  },
+  {
+   "id": "12ga",
+   "fps": 1300,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "9x19",
+   "fps": 1155.0,
+   "bc": 0.212,
+   "source": "table"
+  },
+  {
+   "id": "44mag",
+   "fps": 1474,
+   "bc": 0.245,
+   "source": "table corrected"
+  },
+  {
+   "id": "4570",
+   "fps": 2071,
+   "bc": 0.23,
+   "source": "table corrected"
+  },
+  {
+   "id": "762x39",
+   "fps": 2360.0,
+   "bc": 0.328,
+   "source": "table"
+  },
+  {
+   "id": "57x28",
+   "fps": 2800.0,
+   "bc": 0.119,
+   "source": "table"
+  },
+  {
+   "id": "8x57",
+   "fps": 2796,
+   "bc": 0.45,
+   "source": "table corrected"
+  },
+  {
+   "id": "300wm",
+   "fps": 3249,
+   "bc": 0.73,
+   "source": "table corrected"
+  },
+  {
+   "id": "303",
+   "fps": 2527,
+   "bc": 0.361,
+   "source": "table corrected"
+  },
+  {
+   "id": "762x54r",
+   "fps": 2713,
+   "bc": 0.462,
+   "source": "table corrected"
+  },
+  {
+   "id": "9x18",
+   "fps": 1012,
+   "bc": 0.105,
+   "source": "table corrected"
+  },
+  {
+   "id": "9x39",
+   "fps": 968,
+   "bc": 0.521,
+   "source": "page"
+  },
+  {
+   "id": "40sw",
+   "fps": 1097,
+   "bc": 0.164,
+   "source": "table corrected"
+  },
+  {
+   "id": "300blk",
+   "fps": 2300,
+   "bc": 0.347,
+   "source": "estimate"
+  },
+  {
+   "id": "338lm",
+   "fps": 2900.0,
+   "bc": 0.7,
+   "source": "table"
+  },
+  {
+   "id": "223",
+   "fps": 3168.0,
+   "bc": 0.289,
+   "source": "table"
+  },
+  {
+   "id": "50ae",
+   "fps": 1475.0,
+   "bc": 0.12,
+   "source": "table"
+  },
+  {
+   "id": "545x39",
+   "fps": 2810.0,
+   "bc": 0.337,
+   "source": "table"
+  },
+  {
+   "id": "68spc",
+   "fps": 2570.0,
+   "bc": 0.37,
+   "source": "table"
+  },
+  {
+   "id": "28ga",
+   "fps": 1300,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "50beowulf",
+   "fps": 1800.0,
+   "bc": 0.416,
+   "source": "table"
+  },
+  {
+   "id": "458socom",
+   "fps": 1903,
+   "bc": 0.214,
+   "source": "page"
+  },
+  {
+   "id": "3006",
+   "fps": 2936,
+   "bc": 0.48,
+   "source": "table corrected"
+  },
+  {
+   "id": "22lr",
+   "fps": 1241,
+   "bc": 0.121,
+   "source": "table corrected"
+  },
+  {
+   "id": "762x25",
+   "fps": 1650,
+   "bc": 0.289,
+   "source": "estimate"
+  },
+  {
+   "id": "277sig",
+   "fps": 3000,
+   "bc": 0.453,
+   "source": "page"
+  },
+  {
+   "id": "30carbine",
+   "fps": 2000.0,
+   "bc": 0.301,
+   "source": "table"
+  },
+  {
+   "id": "32",
+   "fps": 861,
+   "bc": 0.09,
+   "source": "table corrected"
+  },
+  {
+   "id": "455",
+   "fps": 700.0,
+   "bc": 0.19,
+   "source": "table"
+  },
+  {
+   "id": "47caseless",
+   "fps": 3035,
+   "bc": 0.366,
+   "source": "page"
+  },
+  {
+   "id": "20ga",
+   "fps": 1300,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "50ball",
+   "fps": 1500,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "65",
+   "fps": 2575,
+   "bc": 0.281,
+   "source": "estimate"
+  },
+  {
+   "id": "bb",
+   "fps": 515,
+   "bc": 0.02,
+   "source": "estimate"
+  },
+  {
+   "id": "4ga",
+   "fps": 1300,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "8ga",
+   "fps": 1300,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "410",
+   "fps": 1250,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "3030",
+   "fps": 2500.0,
+   "bc": 0.33,
+   "source": "table"
+  },
+  {
+   "id": "280british",
+   "fps": 2547,
+   "bc": 0.455,
+   "source": "table corrected"
+  },
+  {
+   "id": "357mag",
+   "fps": 1500.0,
+   "bc": 0.206,
+   "source": "table"
+  },
+  {
+   "id": "4440",
+   "fps": 1117.0,
+   "bc": 0.123,
+   "source": "table"
+  },
+  {
+   "id": "127x55",
+   "fps": 968,
+   "bc": 0.901,
+   "source": "page"
+  },
+  {
+   "id": "14mm",
+   "fps": 2700,
+   "bc": 1.057,
+   "source": "estimate"
+  },
+  {
+   "id": "20mm",
+   "fps": 2950,
+   "bc": 0.846,
+   "source": "estimate"
+  },
+  {
+   "id": "500express",
+   "fps": 2150,
+   "bc": 0.569,
+   "source": "page"
+  },
+  {
+   "id": "25cal",
+   "fps": 970.0,
+   "bc": 0.072,
+   "source": "table"
+  },
+  {
+   "id": "38super",
+   "fps": 1300.0,
+   "bc": 0.158,
+   "source": "table"
+  },
+  {
+   "id": "38special",
+   "fps": 1090.0,
+   "bc": 0.206,
+   "source": "table"
+  },
+  {
+   "id": "22spitfire",
+   "fps": 3200,
+   "bc": 0.273,
+   "source": "estimate"
+  },
+  {
+   "id": "22magnum",
+   "fps": 1895,
+   "bc": 0.095,
+   "source": "table corrected"
+  },
+  {
+   "id": "380acp",
+   "fps": 1000.0,
+   "bc": 0.107,
+   "source": "table"
+  },
+  {
+   "id": "9x18ultra",
+   "fps": 1350,
+   "bc": 0.103,
+   "source": "estimate"
+  },
+  {
+   "id": "9x21mmgyurza",
+   "fps": 1345,
+   "bc": 0.131,
+   "source": "page"
+  },
+  {
+   "id": "9x25mmdillon",
+   "fps": 2000,
+   "bc": 0.119,
+   "source": "page"
+  },
+  {
+   "id": "45super",
+   "fps": 1300,
+   "bc": 0.137,
+   "source": "page"
+  },
+  {
+   "id": "545x18mmsoviet",
+   "fps": 1000.0,
+   "bc": 0.223,
+   "source": "table"
+  },
+  {
+   "id": "400corbon",
+   "fps": 1212,
+   "bc": 0.168,
+   "source": "table corrected"
+  },
+  {
+   "id": "50gi",
+   "fps": 975,
+   "bc": 0.291,
+   "source": "table corrected"
+  },
+  {
+   "id": "357sig",
+   "fps": 1350.0,
+   "bc": 0.212,
+   "source": "table"
+  },
+  {
+   "id": "763x25mmmauser",
+   "fps": 1410.0,
+   "bc": 0.135,
+   "source": "table"
+  },
+  {
+   "id": "765x21mmvintageparabellum",
+   "fps": 1085.0,
+   "bc": 0.196,
+   "source": "table"
+  },
+  {
+   "id": "hk46x30mm",
+   "fps": 2410.0,
+   "bc": 0.24,
+   "source": "table"
+  },
+  {
+   "id": "224boz",
+   "fps": 2500.0,
+   "bc": 0.261,
+   "source": "table"
+  },
+  {
+   "id": "75fk",
+   "fps": 2000,
+   "bc": 0.153,
+   "source": "page"
+  },
+  {
+   "id": "41ae",
+   "fps": 1045,
+   "bc": 0.168,
+   "source": "table corrected"
+  },
+  {
+   "id": "16gaugevintage",
+   "fps": 1300,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "10gauge",
+   "fps": 1300,
+   "bc": 0.05,
+   "source": "estimate"
+  },
+  {
+   "id": "222remington",
+   "fps": 3065,
+   "bc": 0.242,
+   "source": "table corrected"
+  },
+  {
+   "id": "6mmacr",
+   "fps": 2750.0,
+   "bc": 0.536,
+   "source": "table"
+  },
+  {
+   "id": "58x42mmchinese",
+   "fps": 3100.0,
+   "bc": 0.305,
+   "source": "table"
+  },
+  {
+   "id": "485x49mmbritish",
+   "fps": 3000,
+   "bc": 0.502,
+   "source": "estimate"
+  },
+  {
+   "id": "224valkyrie",
+   "fps": 3459,
+   "bc": 0.309,
+   "source": "page"
+  },
+  {
+   "id": "300whisper",
+   "fps": 1020.0,
+   "bc": 0.648,
+   "source": "table"
+  },
+  {
+   "id": "65grendel",
+   "fps": 2620.0,
+   "bc": 0.509,
+   "source": "table"
+  },
+  {
+   "id": "68spear",
+   "fps": 3000,
+   "bc": 0.453,
+   "source": "page"
+  },
+  {
+   "id": "792x33mmkurz",
+   "fps": 2247.0,
+   "bc": 0.29,
+   "source": "table"
+  },
+  {
+   "id": "277wolverine",
+   "fps": 2600,
+   "bc": 0.338,
+   "source": "page"
+  },
+  {
+   "id": "22nosler",
+   "fps": 3350,
+   "bc": 0.291,
+   "source": "estimate"
+  },
+  {
+   "id": "500automaxx",
+   "fps": 1950.0,
+   "bc": 0.185,
+   "source": "table"
+  },
+  {
+   "id": "450bushmaster",
+   "fps": 2180.0,
+   "bc": 0.191,
+   "source": "table"
+  },
+  {
+   "id": "400ar",
+   "fps": 2300,
+   "bc": 0.18,
+   "source": "estimate"
+  },
+  {
+   "id": "416spike",
+   "fps": 1800,
+   "bc": 0.205,
+   "source": "estimate"
+  },
+  {
+   "id": "44automag",
+   "fps": 1485.0,
+   "bc": 0.461,
+   "source": "table"
+  },
+  {
+   "id": "475widleymagnum",
+   "fps": 1700,
+   "bc": 0.323,
+   "source": "estimate"
+  },
+  {
+   "id": "458lott",
+   "fps": 2300.0,
+   "bc": 0.389,
+   "source": "table"
+  },
+  {
+   "id": "45longcolt",
+   "fps": 951,
+   "bc": 0.14,
+   "source": "table corrected"
+  },
+  {
+   "id": "500sw",
+   "fps": 1950,
+   "bc": 0.312,
+   "source": "estimate"
+  },
+  {
+   "id": "444marlin",
+   "fps": 2400.0,
+   "bc": 0.225,
+   "source": "table"
+  },
+  {
+   "id": "458winmag",
+   "fps": 2150,
+   "bc": 0.613,
+   "source": "estimate"
+  },
+  {
+   "id": "357supermag",
+   "fps": 1968,
+   "bc": 0.212,
+   "source": "page"
+  },
+  {
+   "id": "450alaskan",
+   "fps": 2200,
+   "bc": 0.233,
+   "source": "estimate"
+  },
+  {
+   "id": "35remington",
+   "fps": 2302.0,
+   "bc": 0.3,
+   "source": "table"
+  },
+  {
+   "id": "375hhmag",
+   "fps": 2800.0,
+   "bc": 0.43,
+   "source": "table"
+  },
+  {
+   "id": "500nitroexpress",
+   "fps": 2150,
+   "bc": 0.569,
+   "source": "page"
+  },
+  {
+   "id": "454casull",
+   "fps": 1900.0,
+   "bc": 0.18,
+   "source": "table"
+  },
+  {
+   "id": "45schofield",
+   "fps": 800,
+   "bc": 0.18,
+   "source": "estimate"
+  },
+  {
+   "id": "22250remington",
+   "fps": 3896,
+   "bc": 0.264,
+   "source": "table corrected"
+  },
+  {
+   "id": "300normamagnum",
+   "fps": 3003.0,
+   "bc": 0.602,
+   "source": "table"
+  },
+  {
+   "id": "65creedmoor",
+   "fps": 3034,
+   "bc": 0.585,
+   "source": "table corrected"
+  },
+  {
+   "id": "338normamagnum",
+   "fps": 2900.0,
+   "bc": 0.7,
+   "source": "table"
+  },
+  {
+   "id": "300wsm",
+   "fps": 3241,
+   "bc": 0.73,
+   "source": "table corrected"
+  },
+  {
+   "id": "7mmremingtonmagnum",
+   "fps": 3240.0,
+   "bc": 0.652,
+   "source": "table"
+  },
+  {
+   "id": "2506",
+   "fps": 3129,
+   "bc": 0.391,
+   "source": "table corrected"
+  },
+  {
+   "id": "243winchester",
+   "fps": 3054,
+   "bc": 0.405,
+   "source": "table corrected"
+  },
+  {
+   "id": "792x41mmcetme",
+   "fps": 2400,
+   "bc": 0.467,
+   "source": "estimate"
+  },
+  {
+   "id": "22cheetah",
+   "fps": 3900,
+   "bc": 0.306,
+   "source": "estimate"
+  },
+  {
+   "id": "220swift",
+   "fps": 3842,
+   "bc": 0.264,
+   "source": "table corrected"
+  },
+  {
+   "id": "408cheytec",
+   "fps": 3500,
+   "bc": 0.48,
+   "source": "page"
+  },
+  {
+   "id": "127x108",
+   "fps": 2690,
+   "bc": 0.815,
+   "source": "page"
+  },
+  {
+   "id": "132x92tuf",
+   "fps": 2575,
+   "bc": 0.749,
+   "source": "page"
+  },
+  {
+   "id": "375cheytec",
+   "fps": 3051,
+   "bc": 0.692,
+   "source": "page"
+  },
+  {
+   "id": "93x64mmbrenneke",
+   "fps": 2600,
+   "bc": 0.558,
+   "source": "estimate"
+  },
+  {
+   "id": "75x55mmswiss",
+   "fps": 2816,
+   "bc": 0.455,
+   "source": "table corrected"
+  },
+  {
+   "id": "65x55swedishmauser",
+   "fps": 2735.0,
+   "bc": 0.509,
+   "source": "table"
+  },
+  {
+   "id": "222remingtonmagnum",
+   "fps": 3400,
+   "bc": 0.282,
+   "source": "estimate"
+  },
+  {
+   "id": "5mm35smc",
+   "fps": 3100,
+   "bc": 0.458,
+   "source": "estimate"
+  },
+  {
+   "id": "300hamr",
+   "fps": 2700,
+   "bc": 0.372,
+   "source": "estimate"
+  },
+  {
+   "id": "700nitroexpress",
+   "fps": 2000.0,
+   "bc": 0.63,
+   "source": "table"
+  },
+  {
+   "id": "300ossm",
+   "fps": 3100,
+   "bc": 0.449,
+   "source": "estimate"
+  },
+  {
+   "id": "25wssm",
+   "fps": 3000,
+   "bc": 0.469,
+   "source": "estimate"
+  },
+  {
+   "id": "577450martini",
+   "fps": 1600.0,
+   "bc": 0.413,
+   "source": "table"
+  },
+  {
+   "id": "204ruger",
+   "fps": 4456.0,
+   "bc": 0.275,
+   "source": "table"
+  },
+  {
+   "id": "510whisper",
+   "fps": 1050,
+   "bc": 0.749,
+   "source": "page"
+  },
+  {
+   "id": "375rum",
+   "fps": 3293.0,
+   "bc": 0.416,
+   "source": "table"
+  },
+  {
+   "id": "65prc",
+   "fps": 2960,
+   "bc": 0.536,
+   "source": "estimate"
+  },
+  {
+   "id": "6xc",
+   "fps": 2905,
+   "bc": 0.517,
+   "source": "table corrected"
+  },
+  {
+   "id": "6mmbr",
+   "fps": 3000,
+   "bc": 0.396,
+   "source": "estimate"
+  },
+  {
+   "id": "6mmppc",
+   "fps": 3200,
+   "bc": 0.321,
+   "source": "estimate"
+  },
+  {
+   "id": "6mmdasher",
+   "fps": 3300,
+   "bc": 0.346,
+   "source": "estimate"
+  },
+  {
+   "id": "30378",
+   "fps": 3666,
+   "bc": 0.73,
+   "source": "table corrected"
+  },
+  {
+   "id": "600nitroexpress",
+   "fps": 2050.0,
+   "bc": 0.548,
+   "source": "table"
+  },
+  {
+   "id": "782warbird",
+   "fps": 3700,
+   "bc": 0.45,
+   "source": "estimate"
+  },
+  {
+   "id": "2545sharps",
+   "fps": 2900,
+   "bc": 0.274,
+   "source": "estimate"
+  },
+  {
+   "id": "585nyati",
+   "fps": 2466,
+   "bc": 0.569,
+   "source": "page"
+  },
+  {
+   "id": "577tyrannosaur",
+   "fps": 2480,
+   "bc": 0.569,
+   "source": "page"
+  },
+  {
+   "id": "500max",
+   "fps": 2200,
+   "bc": 0.29,
+   "source": "estimate"
+  }
+ ]
+}

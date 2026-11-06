@@ -1,0 +1,99 @@
+# Flying BRICKS patch for RussianAssaultPack.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000F99"
+caliber = "9x18"
+name = "PPBizon"
+
+[[weapon]]
+id = "000F9D"
+caliber = "762x54r"
+name = "SVD"
+
+[[weapon]]
+id = "00173B"
+caliber = "9x18"
+name = "StechkinAPS"
+
+[[weapon]]
+id = "004E5E"
+caliber = "357mag"
+name = "MP412"
+
+[[weapon]]
+id = "007C99"
+ammo = "Fallout4.esm|01F673"
+name = "Saiga12"
+
+[[part]]
+id = "001783"
+caliber = "9x18"
+name = "mod_Bizon_Magazine_86_LC"
+
+[[part]]
+id = "001784"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_Bizon_Magazine_48_HC"
+
+[[part]]
+id = "002039"
+caliber = "762x54r"
+name = "mod_SVD_Magazine_10_AP"
+
+[[part]]
+id = "00203A"
+caliber = "762x54r"
+name = "mod_SVD_Magazine_10_Flechette"
+
+[[part]]
+id = "00203B"
+caliber = "762x54r"
+name = "mod_SVD_Magazine_10_HV"
+
+[[part]]
+id = "00203C"
+ammo = "Fallout4.esm|01F278"
+name = "mod_SVD_Magazine_14_LC"
+
+[[part]]
+id = "00203D"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_SVD_Magazine_6_HC"
+
+[[part]]
+id = "00203E"
+caliber = "762x54r"
+name = "mod_SVD_Magazine_10_HE"
+
+[[part]]
+id = "002FD6"
+ammo = "Fallout4.esm|01F276"
+name = "mod_APS_AmmoType_10mm"
+
+[[part]]
+id = "002FD7"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_APS_AmmoType_45Cal"
+
+[[part]]
+id = "0037F6"
+caliber = "762x54r"
+name = "mod_SVD_Magazine_10"
+
+[[part]]
+id = "005DB2"
+ammo = "Fallout4.esm|01F279"
+name = "mod_MP412_Cylinder_HighCaliber"
+
+[[part]]
+id = "005DB3"
+ammo = "Fallout4.esm|01F673"
+name = "mod_MP412_Cylinder_Shotgun"

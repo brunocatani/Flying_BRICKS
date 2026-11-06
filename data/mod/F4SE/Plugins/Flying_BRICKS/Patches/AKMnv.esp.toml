@@ -1,0 +1,104 @@
+# Flying BRICKS patch for AKMnv.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "0026E7"
+caliber = "545x39"
+name = "5.45x39mm Round"
+
+[[round]]
+id = "0026E8"
+caliber = "762x25"
+name = "7.62x25mm Tokarev"
+
+[[round]]
+id = "002F0F"
+caliber = "458socom"
+name = ".458 SOCOM Round"
+
+[[weapon]]
+id = "000FA4"
+caliber = "762x39"
+name = "WPNAKM"
+
+[[weapon]]
+id = "00175E"
+caliber = "762x39"
+name = "WPNAKM_LL"
+
+[[weapon]]
+id = "001F7E"
+caliber = "762x39"
+name = "WPNAKM_Unique_AK74"
+
+[[weapon]]
+id = "001F7F"
+caliber = "762x39"
+name = "WPNAKM_Preset_AKM"
+
+[[weapon]]
+id = "001F80"
+caliber = "762x39"
+name = "WPNAKM_Preset_AKS74U"
+
+[[weapon]]
+id = "001F81"
+caliber = "762x39"
+name = "WPNAKM_Preset_RPK"
+
+[[weapon]]
+id = "001F84"
+caliber = "762x39"
+name = "WPNAKM_Unique_Metro"
+
+[[weapon]]
+id = "0036C1"
+caliber = "9x39"
+name = "WPNAKM_Unique_Prizrak"
+
+[[weapon]]
+id = "005D3B"
+caliber = "762x39"
+name = "WPNAKM_Preset_AKM_Cheat"
+
+[[weapon]]
+id = "006C94"
+caliber = "762x25"
+name = "WPNMk23Tokarev"
+
+[[part]]
+id = "0026E2"
+caliber = "545x39"
+name = "mod_AKM_Mag_3Mag545"
+
+[[part]]
+id = "0026E3"
+ammo = "Fallout4.esm|01F278"
+name = "mod_AKM_Mag_4Mag556"
+
+[[part]]
+id = "0026E9"
+ammo = "Fallout4.esm|01F276"
+name = "mod_AKM_Mag_5Mag10mm"
+
+[[part]]
+id = "0026EA"
+caliber = "762x25"
+name = "mod_AKM_Mag_7MagTokarev"
+
+[[part]]
+id = "002766"
+caliber = "545x39"
+name = "mod_AKM_Mag_6ExtMag545"
+
+[[part]]
+id = "002F10"
+caliber = "458socom"
+name = "mod_AKM_Mag_8Mag458SOCOM"

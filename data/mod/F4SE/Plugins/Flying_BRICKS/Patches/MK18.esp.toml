@@ -1,0 +1,69 @@
+# Flying BRICKS patch for MK18.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "008A81"
+caliber = "300blk"
+name = ".300 BLK Round"
+
+[[round]]
+id = "008A82"
+caliber = "458socom"
+name = ".458 SOCOM Round"
+
+[[weapon]]
+id = "000F9D"
+ammo = "Fallout4.esm|01F278"
+name = "WPNMK18"
+
+[[weapon]]
+id = "00ED71"
+ammo = "Fallout4.esm|01F278"
+name = "WPNMK18UNIQUE"
+
+[[part]]
+id = "001802"
+caliber = "300blk"
+name = "mod_MK18_Mag_300BlackOutALT"
+
+[[part]]
+id = "00465E"
+caliber = "458socom"
+name = "mod_MK18_Mag_458SOCOMALT"
+
+[[part]]
+id = "00465F"
+caliber = "458socom"
+name = "mod_MK18_Mag_458SOCOMQuick"
+
+[[part]]
+id = "004660"
+caliber = "458socom"
+name = "mod_MK18_Mag_458SOCOMQuickALT"
+
+[[part]]
+id = "005522"
+caliber = "300blk"
+name = "mod_MK18_Mag_300BlackOut"
+
+[[part]]
+id = "005525"
+caliber = "458socom"
+name = "mod_MK18_Mag_458SOCOM"
+
+[[part]]
+id = "0082E4"
+caliber = "300blk"
+name = "mod_MK18_Mag_300BlackOutQuick"
+
+[[part]]
+id = "00C7D6"
+caliber = "300blk"
+name = "mod_MK18_Mag_300BlackOutQuickALT"

@@ -1,0 +1,104 @@
+# Flying BRICKS patch for Skb_MachinegunsRebirth.esl. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "00003C"
+caliber = "20mm"
+name = "20mm Round"
+
+[[weapon]]
+id = "00003B"
+ammo = "Fallout4.esm|01F66B"
+name = "skb_Mk19"
+
+[[weapon]]
+id = "00013E"
+ammo = "Fallout4.esm|01F66B"
+name = "Skb_TurretMountedMk19"
+
+[[weapon]]
+id = "00013F"
+ammo = "Fallout4.esm|01F279"
+name = "Skb_TurretMountedFlack"
+
+[[weapon]]
+id = "000140"
+ammo = "Fallout4.esm|01F279"
+name = "Skb_TurretMountedAGL"
+
+[[weapon]]
+id = "000141"
+ammo = "Fallout4.esm|01F279"
+name = "Skb_TurretMountedMk22"
+
+[[weapon]]
+id = "000166"
+ammo = "Fallout4.esm|01F279"
+name = "Skb_TurretMountedMk22Enemy"
+
+[[weapon]]
+id = "000167"
+ammo = "Fallout4.esm|01F66B"
+name = "Skb_TurretMountedMk19Enemy"
+
+[[weapon]]
+id = "000EE2"
+ammo = "Fallout4.esm|01F279"
+name = "skb_Mk22"
+
+[[weapon]]
+id = "000F99"
+caliber = "20mm"
+name = "Skb_FlackGun"
+
+[[part]]
+id = "000124"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_Mk19_Receiver556_Automatic1"
+
+[[part]]
+id = "000125"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_Mk19_Receiver556_Automatic1_Damage1"
+
+[[part]]
+id = "000126"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_Mk19_Receiver556_Automatic2"
+
+[[part]]
+id = "000127"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_Mk19_Receiver556_Automatic2_Damage1"
+
+[[part]]
+id = "000128"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_skibsHMG_Receiver_5mm_Automatic1"
+
+[[part]]
+id = "000129"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_skibsHMG_Receiver_5mm_Automatic1_Damage1"
+
+[[part]]
+id = "00012A"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_skibsHMG_Receiver_5mm_Automatic2"
+
+[[part]]
+id = "00012B"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_skibsHMG_Receiver_5mm_Automatic2_Damage1"
+
+[[damage]]
+id = "00003A"
+damage = 5
+name = "skb_AGL"

@@ -1,0 +1,515 @@
+FormKey: 000BA0:Flying_BRICKS.esp
+EditorID: FlyingBricks_AmmoList_World
+MaxCount: 0
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000B00:Flying_BRICKS.esp
+    Count: 1

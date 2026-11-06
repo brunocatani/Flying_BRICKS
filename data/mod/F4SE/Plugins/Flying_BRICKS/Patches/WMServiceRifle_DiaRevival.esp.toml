@@ -1,0 +1,34 @@
+# Flying BRICKS patch for WMServiceRifle_DiaRevival.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000041"
+ammo = "Fallout4.esm|01F278"
+name = "1CAS_ServiceRifleUnique"
+
+[[part]]
+id = "000034"
+ammo = "Fallout4.esm|01F66A"
+name = "1CAS_mod_ServiceRifle_MagPistol"
+
+[[part]]
+id = "000035"
+ammo = "Fallout4.esm|01F66A"
+name = "1CAS_mod_ServiceRifle_MagPistolQuick"
+
+[[part]]
+id = "000044"
+ammo = "Fallout4.esm|01F66C"
+name = "1CAS_mod_ServiceRifle_AmmoType_5mm"
+
+[[part]]
+id = "00004B"
+ammo = "Fallout4.esm|01F66B"
+name = "1CAS_mod_ServiceRifle_AmmoType_308"

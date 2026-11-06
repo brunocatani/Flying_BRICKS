@@ -1,0 +1,99 @@
+# Flying BRICKS patch for WZXM4.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "006304"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4"
+
+[[weapon]]
+id = "00B29D"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4SwattMaster"
+
+[[weapon]]
+id = "00B39D"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZM16"
+
+[[weapon]]
+id = "00B3AB"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZM16Rattler"
+
+[[weapon]]
+id = "00B3AC"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZM16SpaceExplorer"
+
+[[weapon]]
+id = "00B3AD"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZM16TalonEnvy"
+
+[[weapon]]
+id = "00B3AE"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZM16Warlock"
+
+[[weapon]]
+id = "00B3B3"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4BattleDoc"
+
+[[weapon]]
+id = "00B3E9"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZM16A1"
+
+[[weapon]]
+id = "00B432"
+ammo = "Fallout4.esm|01F66A"
+name = "WPNWZM16K"
+
+[[weapon]]
+id = "00B433"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZCAR15"
+
+[[weapon]]
+id = "00B43B"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4VexLord"
+
+[[weapon]]
+id = "00B43D"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4WesternWall"
+
+[[weapon]]
+id = "00B44D"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4WhiteRabbit"
+
+[[weapon]]
+id = "00B453"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4Souvenir"
+
+[[weapon]]
+id = "00C3AE"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWZXM4GreatPacific"
+
+[[weapon]]
+id = "00C3D1"
+ammo = "Fallout4.esm|01F278"
+name = "WPNWMK18"
+
+[[part]]
+id = "00C3E1"
+ammo = "Fallout4.esm|01F279"
+name = "[MAGAZINE] .50 SOCOM 10-Round Mags"

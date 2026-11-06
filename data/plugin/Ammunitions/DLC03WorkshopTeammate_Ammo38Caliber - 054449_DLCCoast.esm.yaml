@@ -1,0 +1,36 @@
+FormKey: 054449:DLCCoast.esm
+MajorRecordFlagsRaw: 4
+EditorID: DLC03WorkshopTeammate_Ammo38Caliber
+Fallout4MajorRecordFlags:
+- NotPlayable
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 2
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.38 Round'
+Model:
+  File: Ammo\38\38Ammo.nif
+  Data: 0x040000000700000000000000030000000200000074EB88046464730028D6D9C4AD878E676464730028D6D9C4C9EECF6664647300D1B850631082C90564647300D1B850630E6B1CE564647300D1B85063B36E5B876464730028D6D9C47503E0D7646473001CDB88C52C2F23D96267736D347954B8ADC5F27E6267736D1B4664D7
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 1
+Weight: 0.015
+Projectile: 000835:Flying_BRICKS.esp
+Flags:
+- NonPlayable
+- HasCountBased3d
+Damage: 45
+ShortName:
+  TargetLanguage: English
+  Value: '.38'
+CasingModel: Ammo\38\38Casing.nif
+ModelInfo: 0x0400000000000000000000000000000000000000
+MajorFlags:
+- NonPlayable

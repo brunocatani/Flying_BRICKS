@@ -1,0 +1,374 @@
+# Flying BRICKS patch for DOOMMerged.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000800"
+caliber = "9x19"
+name = "Nailgun"
+
+[[weapon]]
+id = "000881"
+ammo = "Fallout4.esm|01F673"
+name = "DOOMPumpShotgunSS"
+
+[[weapon]]
+id = "010000"
+ammo = "Fallout4.esm|01F66A"
+name = "1911"
+
+[[weapon]]
+id = "020000"
+ammo = "Fallout4.esm|09221C"
+name = "DEagle"
+
+[[weapon]]
+id = "030000"
+ammo = "Fallout4.esm|01F278"
+name = "Jaguar"
+
+[[weapon]]
+id = "040000"
+caliber = "545x39"
+name = "Kalash"
+
+[[weapon]]
+id = "050000"
+ammo = "Fallout4.esm|01F278"
+name = "LK05"
+
+[[weapon]]
+id = "060000"
+caliber = "9x19"
+name = "MAC11"
+
+[[weapon]]
+id = "070000"
+caliber = "357mag"
+name = "Rhino"
+
+[[weapon]]
+id = "080000"
+ammo = "Fallout4.esm|01F278"
+name = "SCAR"
+
+[[weapon]]
+id = "090000"
+caliber = "223"
+name = "ThatGun"
+
+[[weapon]]
+id = "0A0000"
+ammo = "Fallout4.esm|01F673"
+name = "Catalyst"
+
+[[weapon]]
+id = "0A00B1"
+ammo = "Fallout4.esm|01F673"
+name = "TripleBarrelShotgun"
+
+[[weapon]]
+id = "0A00F8"
+caliber = "9x19"
+name = "Glock"
+
+[[weapon]]
+id = "0A01DF"
+ammo = "Fallout4.esm|01F673"
+name = "DOOMPumpShotgun"
+
+[[weapon]]
+id = "0A02A0"
+caliber = "762x51"
+name = "FN-FAL"
+
+[[weapon]]
+id = "0A0367"
+caliber = "9x39"
+name = "VSV"
+
+[[part]]
+id = "000854"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Glock_Caliber_38"
+
+[[part]]
+id = "000855"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_Glock_Caliber_45"
+
+[[part]]
+id = "0094D4"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_DEagle_AmmoConversion_38"
+
+[[part]]
+id = "0094D6"
+ammo = "Fallout4.esm|01F279"
+name = "mod_DEagle_AmmoConversion_50"
+
+[[part]]
+id = "009564"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_AP308"
+
+[[part]]
+id = "009565"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_AP50"
+
+[[part]]
+id = "009567"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_Default308"
+
+[[part]]
+id = "009568"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_Default50"
+
+[[part]]
+id = "00956A"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_FMJ308"
+
+[[part]]
+id = "00956B"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_FMJ50"
+
+[[part]]
+id = "00956D"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_HollowPoint308"
+
+[[part]]
+id = "00956E"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_HollowPoint50"
+
+[[part]]
+id = "009570"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_Weapon_APIncendiaryBullets308"
+
+[[part]]
+id = "009571"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_Weapon_APIncendiaryBullets50"
+
+[[part]]
+id = "009573"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_Weapon_ExplosiveBullets308"
+
+[[part]]
+id = "009574"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_Weapon_ExplosiveBullets50"
+
+[[part]]
+id = "009576"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_Weapon_IncendiaryBullets308"
+
+[[part]]
+id = "009577"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_Weapon_IncendiaryBullets50"
+
+[[part]]
+id = "009579"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_Jaguar_Ammunition_Weapon_PlasmaBullets308"
+
+[[part]]
+id = "00957A"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_Jaguar_Ammunition_Weapon_PlasmaBullets50"
+
+[[part]]
+id = "00962D"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_Default308"
+
+[[part]]
+id = "00962E"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_AP308"
+
+[[part]]
+id = "00962F"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_HollowPoint308"
+
+[[part]]
+id = "009630"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_FMJ308"
+
+[[part]]
+id = "009631"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_Weapon_ExplosiveBullets308"
+
+[[part]]
+id = "009632"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_Weapon_IncendiaryBullets308"
+
+[[part]]
+id = "009633"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_Weapon_PlasmaBullets308"
+
+[[part]]
+id = "009634"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_AK_Ammunition_Weapon_APIncendiaryBullets308"
+
+[[part]]
+id = "009645"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_Default50"
+
+[[part]]
+id = "009646"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_AP50"
+
+[[part]]
+id = "009647"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_HollowPoint50"
+
+[[part]]
+id = "009648"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_FMJ50"
+
+[[part]]
+id = "009649"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_Weapon_ExplosiveBullets50"
+
+[[part]]
+id = "00964A"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_Weapon_IncendiaryBullets50"
+
+[[part]]
+id = "00964B"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_Weapon_PlasmaBullets50"
+
+[[part]]
+id = "00964C"
+ammo = "Fallout4.esm|01F279"
+name = "mod_AK_Ammunition_Weapon_APIncendiaryBullets50"
+
+[[part]]
+id = "009724"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_LK05_AmmoConversion_308"
+
+[[part]]
+id = "009725"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_LK05_AmmoConversion_38"
+
+[[part]]
+id = "009726"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_LK05_AmmoConversion_45"
+
+[[part]]
+id = "009727"
+ammo = "Fallout4.esm|01F279"
+name = "mod_LK05_AmmoConversion_50"
+
+[[part]]
+id = "009783"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_MAC11_AmmoConversion_38"
+
+[[part]]
+id = "009784"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_MAC11_AmmoConversion_45"
+
+[[part]]
+id = "009900"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_SCAR_AmmoConversion_308"
+
+[[part]]
+id = "009901"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_SCAR_AmmoConversion_38"
+
+[[part]]
+id = "009902"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_SCAR_AmmoConversion_45"
+
+[[part]]
+id = "009903"
+ammo = "Fallout4.esm|01F279"
+name = "mod_SCAR_AmmoConversion_50"
+
+[[part]]
+id = "00991C"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_ThatGun_AmmoConversion_38"
+
+[[part]]
+id = "00991D"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_ThatGun_AmmoConversion_45"
+
+[[part]]
+id = "009942"
+ammo = "Fallout4.esm|01F278"
+name = "mod_ThatGun_AmmoConversion_556"
+
+[[part]]
+id = "0A0203"
+caliber = "762x51"
+name = "mod_FN-FAL_ammo_5mm"
+
+[[part]]
+id = "0A0204"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_FN-FAL_ammo_308"
+
+[[part]]
+id = "0A02E4"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_VSV_AmmoConversion_38"
+
+[[part]]
+id = "0A02E6"
+ammo = "Fallout4.esm|01F279"
+name = "mod_VSV_AmmoConversion_50"
+
+[[part]]
+id = "0A02E7"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_VSV_AmmoConversion_308"
+
+[[damage]]
+id = "001F21"
+damage = 18
+name = "Nailgun2"
+
+[[damage]]
+id = "0A022A"
+damage = 80
+name = "Pasta-FAL"

@@ -1,0 +1,224 @@
+# Flying BRICKS patch for AnotherAnotherMillenia.esl. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00020D"
+caliber = "300wm"
+name = "00UWWA2k"
+
+[[weapon]]
+id = "00020F"
+caliber = "4ga"
+name = "00UWKS23"
+
+[[weapon]]
+id = "000211"
+ammo = "Fallout4.esm|01F278"
+name = "00UWFNC"
+
+[[weapon]]
+id = "000212"
+caliber = "9x19"
+name = "00UWB92"
+
+[[weapon]]
+id = "000213"
+ammo = "Fallout4.esm|01F673"
+name = "00UWClassicCombatShotgun"
+
+[[weapon]]
+id = "000214"
+ammo = "Fallout4.esm|01F673"
+name = "00UWClassicCombatShotgunUnique"
+
+[[weapon]]
+id = "000215"
+caliber = "9x19"
+name = "00UWC96"
+
+[[weapon]]
+id = "000217"
+caliber = "50ae"
+name = "00AMDeagle"
+
+[[weapon]]
+id = "000218"
+ammo = "Fallout4.esm|01F278"
+name = "00UWWPNRetroAR15"
+
+[[weapon]]
+id = "000219"
+ammo = "Fallout4.esm|01F66C"
+name = "00UWWPNRetroAR15Unique"
+
+[[weapon]]
+id = "00021A"
+ammo = "Fallout4.esm|01F278"
+name = "00UWWPNRetroAR15UniqueGold"
+
+[[weapon]]
+id = "00021B"
+caliber = "9x19"
+name = "00UWSten"
+
+[[weapon]]
+id = "00021C"
+caliber = "32"
+name = "00UWBorz"
+
+[[weapon]]
+id = "00021D"
+caliber = "9x19"
+name = "00UWStenRadium"
+
+[[weapon]]
+id = "00021E"
+ammo = "Fallout4.esm|01F673"
+name = "00AMPoliceRiotShotgun"
+
+[[weapon]]
+id = "00021F"
+ammo = "Fallout4.esm|01F673"
+name = "00AMPoliceRiotShotgunUnique"
+
+[[weapon]]
+id = "000220"
+ammo = "Fallout4.esm|01F66A"
+name = "00AM1911"
+
+[[weapon]]
+id = "000221"
+ammo = "Fallout4.esm|01F276"
+name = "00AM1911Alyx"
+
+[[weapon]]
+id = "000222"
+caliber = "25cal"
+name = "00AMBabyBrowning"
+
+[[weapon]]
+id = "0006FA"
+ammo = "Fallout4.esm|01F673"
+name = "00UW1897"
+
+[[weapon]]
+id = "0006FB"
+ammo = "Fallout4.esm|01F673"
+name = "00UW1897Unique"
+
+[[weapon]]
+id = "0006FD"
+ammo = "Fallout4.esm|01F673"
+name = "00UW1897UniqueTF2"
+
+[[weapon]]
+id = "000F9B"
+ammo = "Fallout4.esm|01F673"
+name = "00UWDuplet"
+
+[[weapon]]
+id = "000FAF"
+ammo = "Fallout4.esm|01F673"
+name = "00UWQuadlet"
+
+[[part]]
+id = "000508"
+ammo = "Fallout4.esm|01F66C"
+name = "00UWmod_FNC_Mag_Small5mm"
+
+[[part]]
+id = "000509"
+ammo = "Fallout4.esm|01F66C"
+name = "00UWmod_FNC_Mag_Large5mm"
+
+[[part]]
+id = "00050A"
+ammo = "Fallout4.esm|01F66C"
+name = "00UWmod_FNC_Mag_ExtraLarge5mm"
+
+[[part]]
+id = "000585"
+ammo = "Fallout4.esm|01F66A"
+name = "00UWmod_C96_Receiver_MoreDamage3_AmmoConversion"
+
+[[part]]
+id = "00058B"
+ammo = "Fallout4.esm|01F66A"
+name = "00UWmod_C96_Receiver_Automatic1_and_MoreDamage3_AmmoConversion"
+
+[[part]]
+id = "0005C4"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_Large357"
+
+[[part]]
+id = "0005C5"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_LargeQuick357"
+
+[[part]]
+id = "0005C6"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_Medium357"
+
+[[part]]
+id = "0005C7"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_MediumQuick357"
+
+[[part]]
+id = "0005C8"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_Large127"
+
+[[part]]
+id = "0005C9"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_LargeQuick127"
+
+[[part]]
+id = "0005CA"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_Medium127"
+
+[[part]]
+id = "0005CB"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_MediumQuick127"
+
+[[part]]
+id = "0005EA"
+ammo = "Fallout4.esm|01F276"
+name = "00UWmod_AR15_Mag_SMG"
+
+[[part]]
+id = "00061A"
+ammo = "Fallout4.esm|01F66A"
+name = "00UWmod_Sten_Mag_Medium45"
+
+[[part]]
+id = "00061B"
+ammo = "Fallout4.esm|01F66A"
+name = "00UWmod_Sten_Mag_Small45"
+
+[[part]]
+id = "00061C"
+ammo = "Fallout4.esm|01F66A"
+name = "00UWmod_Sten_Mag_Medium45Quick"
+
+[[part]]
+id = "00061D"
+ammo = "Fallout4.esm|01F66A"
+name = "00UWmod_Sten_Mag_Small45Quick"
+
+[[damage]]
+id = "00020E"
+damage = 32
+name = "00UWGyroJet"

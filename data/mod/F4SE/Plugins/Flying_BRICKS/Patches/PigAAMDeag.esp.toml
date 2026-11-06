@@ -1,0 +1,54 @@
+# Flying BRICKS patch for PigAAMDeag.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "001736"
+caliber = "50ae"
+name = "00AMDeagle"
+
+[[part]]
+id = "0121E9"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_Large357"
+
+[[part]]
+id = "0121EA"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_LargeQuick357"
+
+[[part]]
+id = "0121EB"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_Medium357"
+
+[[part]]
+id = "0121EC"
+caliber = "357mag"
+name = "00AMMod_Deag_Mag_MediumQuick357"
+
+[[part]]
+id = "0121ED"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_Large127"
+
+[[part]]
+id = "0121EE"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_LargeQuick127"
+
+[[part]]
+id = "0121EF"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_Medium127"
+
+[[part]]
+id = "0121F0"
+caliber = "127x55"
+name = "00AMMod_Deag_Mag_MediumQuick127"

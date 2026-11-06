@@ -1,0 +1,79 @@
+# Flying BRICKS patch for Bolt Actions of the Wasteland.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00061F"
+ammo = "Fallout4.esm|01F278"
+name = "GeckoHuntingVarmintRifle"
+
+[[weapon]]
+id = "000708"
+ammo = "Fallout4.esm|01F278"
+name = "GeckoHunting223Pistol"
+
+[[weapon]]
+id = "000745"
+ammo = "Fallout4.esm|01F66B"
+name = "GeckoHuntingRifle"
+
+[[weapon]]
+id = "000F99"
+ammo = "Fallout4.esm|01F66B"
+name = "GeckoHuntingRifle"
+
+[[weapon]]
+id = "006BB4"
+ammo = "Fallout4.esm|01F278"
+name = "GeckoHuntingVarmintRifle"
+
+[[weapon]]
+id = "00B0FE"
+ammo = "Fallout4.esm|01F278"
+name = "GeckoHunting223Pistol"
+
+[[part]]
+id = "000699"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_GeckoHuntingRifle_CALIBER_308"
+
+[[part]]
+id = "00069A"
+ammo = "Fallout4.esm|01F278"
+name = "mod_GeckoHuntingRifle_CALIBER_556"
+
+[[part]]
+id = "00069B"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_GeckoHuntingRifle_CALIBER_38"
+
+[[part]]
+id = "0006A2"
+ammo = "Fallout4.esm|01F279"
+name = "mod_GeckoHuntingRifle_CALIBER_50"
+
+[[part]]
+id = "007B60"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_GeckoHuntingRifle_CALIBER_308"
+
+[[part]]
+id = "007B61"
+ammo = "Fallout4.esm|01F278"
+name = "mod_GeckoHuntingRifle_CALIBER_556"
+
+[[part]]
+id = "007B62"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_GeckoHuntingRifle_CALIBER_38"
+
+[[part]]
+id = "007B69"
+ammo = "Fallout4.esm|01F279"
+name = "mod_GeckoHuntingRifle_CALIBER_50"

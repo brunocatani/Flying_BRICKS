@@ -1,0 +1,69 @@
+# Flying BRICKS patch for Fallout4.esm. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[damage]]
+id = "05DE31"
+damage = 33
+name = "WorkshopArtilleryWeapon"
+
+[[damage]]
+id = "063B72"
+damage = 33
+name = "WorkshopArtilleryWeaponClose"
+
+[[damage]]
+id = "063B73"
+damage = 33
+name = "WorkshopArtilleryWeaponFar"
+
+[[damage]]
+id = "065DF2"
+damage = 33
+name = "MS02NukeMissileFar"
+
+[[damage]]
+id = "0D1EB0"
+damage = 110
+name = "GaussRifle"
+
+[[damage]]
+id = "0E942B"
+damage = 40
+name = "JunkJet"
+
+[[damage]]
+id = "0FD11B"
+damage = 33
+name = "Broadsider"
+
+[[damage]]
+id = "0FE268"
+damage = 100
+name = "RailwayRifle"
+
+[[damage]]
+id = "1025AC"
+damage = 10
+name = "FlareGun"
+
+[[damage]]
+id = "15B0DA"
+damage = 15
+name = "Protectron02LeftArmFlamer"
+
+[[damage]]
+id = "15B0DB"
+damage = 1
+name = "Protectron02RightArmFlamer"
+
+[[damage]]
+id = "232261"
+damage = 33
+name = "MinFlareWeapon"

@@ -1,0 +1,99 @@
+# Flying BRICKS patch for Revolvers of the wasteland.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "0004AB"
+ammo = "Fallout4.esm|01F66B"
+name = "WasteRev_HuntingPistol"
+
+[[weapon]]
+id = "000555"
+caliber = "45longcolt"
+name = "WasteRevolverSAA"
+
+[[weapon]]
+id = "000578"
+ammo = "Fallout4.esm|09221C"
+name = "WasteRevolver32rev"
+
+[[weapon]]
+id = "00063D"
+ammo = "Fallout4.esm|09221C"
+name = "WasteRevolver"
+
+[[weapon]]
+id = "000F99"
+ammo = "Fallout4.esm|09221C"
+name = "WasteRevolver"
+
+[[weapon]]
+id = "001F48"
+ammo = "Fallout4.esm|01F66B"
+name = "WasteRev_HuntingPistol"
+
+[[weapon]]
+id = "011AAC"
+caliber = "45longcolt"
+name = "WasteRevolverSAA"
+
+[[weapon]]
+id = "01319A"
+ammo = "Fallout4.esm|09221C"
+name = "WasteRevolver32rev"
+
+[[part]]
+id = "0004BC"
+ammo = "Fallout4.esm|09221C"
+name = "mod_WasteRev_caliber44"
+
+[[part]]
+id = "0004BE"
+ammo = "Fallout4.esm|01F276"
+name = "mod_WasteRev_caliber10mm"
+
+[[part]]
+id = "0004C3"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_WasteRev_caliber38"
+
+[[part]]
+id = "0004C4"
+caliber = "45longcolt"
+name = "mod_WasteRev_caliber45"
+
+[[part]]
+id = "00062B"
+ammo = "Fallout4.esm|01F673"
+name = "mod_WasteRev_caliber12g"
+
+[[part]]
+id = "0026F2"
+ammo = "Fallout4.esm|09221C"
+name = "mod_WasteRev_caliber44"
+
+[[part]]
+id = "0026F4"
+ammo = "Fallout4.esm|01F276"
+name = "mod_WasteRev_caliber10mm"
+
+[[part]]
+id = "0026F9"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_WasteRev_caliber38"
+
+[[part]]
+id = "0026FA"
+caliber = "45longcolt"
+name = "mod_WasteRev_caliber45"
+
+[[part]]
+id = "02070C"
+ammo = "Fallout4.esm|01F673"
+name = "mod_WasteRev_caliber12g"

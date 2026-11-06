@@ -1,0 +1,74 @@
+# Flying BRICKS patch for PKMnv.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "0027C0"
+caliber = "762x54r"
+name = "9x53mm Rimmed"
+
+[[round]]
+id = "0116AE"
+caliber = "762x54r"
+name = "7.62x54mm Rimmed"
+
+[[weapon]]
+id = "002836"
+caliber = "762x54r"
+name = "PKM_LevelledList"
+
+[[weapon]]
+id = "00427B"
+caliber = "762x54r"
+name = "PKM"
+
+[[part]]
+id = "00181F"
+ammo = "Fallout4.esm|01F673"
+name = "mod_PKM_Mag_x1_12Gauge_75"
+
+[[part]]
+id = "00182D"
+ammo = "Fallout4.esm|01F673"
+name = "mod_PKM_Mag_x2_12Gauge_115"
+
+[[part]]
+id = "0027AF"
+ammo = "Fallout4.esm|01F278"
+name = "mod_PKM_Mag_3_556_150"
+
+[[part]]
+id = "0027B0"
+ammo = "Fallout4.esm|01F278"
+name = "mod_PKM_Mag_4_556_300"
+
+[[part]]
+id = "0027B1"
+caliber = "762x51"
+name = "mod_PKM_Mag_5_762x51_100"
+
+[[part]]
+id = "0027B2"
+caliber = "762x51"
+name = "mod_PKM_Mag_6_762x51_200"
+
+[[part]]
+id = "0027BF"
+caliber = "762x54r"
+name = "mod_PKM_Mag_7_9x54_90"
+
+[[part]]
+id = "0027C1"
+caliber = "762x54r"
+name = "mod_PKM_Mag_8_9x53_180"
+
+[[part]]
+id = "00427F"
+caliber = "762x54r"
+name = "mod_PKM_Mag_1_762_100"

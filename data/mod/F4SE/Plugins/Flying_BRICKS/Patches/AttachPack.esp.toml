@@ -1,0 +1,104 @@
+# Flying BRICKS patch for AttachPack.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[part]]
+id = "0090BC"
+ammo = "Fallout4.esm|01F278"
+name = "00APDLC04_mod_HandmadeGun_Mag_InfilSmall"
+
+[[part]]
+id = "0090BD"
+ammo = "Fallout4.esm|01F278"
+name = "00APDLC04_mod_HandmadeGun_Mag_InfilLarge"
+
+[[part]]
+id = "012158"
+ammo = "Fallout4.esm|01F278"
+name = "00APDLC03_mod_RadiumRifle_Mag_556"
+
+[[part]]
+id = "01215C"
+ammo = "Fallout4.esm|01F278"
+name = "00APDLC03_mod_RadiumRifle_Mag_556Small"
+
+[[part]]
+id = "01AA55"
+ammo = "Fallout4.esm|01F279"
+name = "00APmod_RailwayRifle_Receiver_50"
+
+[[part]]
+id = "01EEAC"
+ammo = "Fallout4.esm|01F278"
+name = "00APDLC03_mod_RadiumRifle_Mag_556Drum"
+
+[[part]]
+id = "026F2A"
+ammo = "Fallout4.esm|04CE87"
+name = "00APmod_44_Receiver_38"
+
+[[part]]
+id = "02B37D"
+ammo = "DLCCoast.esm|02C8B1"
+name = "00APDLC04mod_Revolver_Receiver_4570"
+
+[[part]]
+id = "02B38C"
+ammo = "DLCCoast.esm|02C8B1"
+name = "00APDLC04mod_Revolver_Receiver_SnakeShot"
+
+[[part]]
+id = "02F7DF"
+ammo = "Fallout4.esm|09221C"
+name = "00APmod_10mm_Receiver_Magnum"
+
+[[part]]
+id = "038915"
+ammo = "Fallout4.esm|04CE87"
+name = "00APmod_PipeRevolver_Receiver_8Shot38"
+
+[[part]]
+id = "038916"
+ammo = "Fallout4.esm|01F673"
+name = "00APmod_PipeRevolver_Receiver_Shotgun"
+
+[[part]]
+id = "0746B9"
+ammo = "Fallout4.esm|01F66B"
+name = "00APmod_CombatRifle_Receiver_Automatic1_and_AmmoConversion"
+
+[[part]]
+id = "0746BC"
+ammo = "Fallout4.esm|04CE87"
+name = "00APmod_CombatRifle_Receiver_AmmoConversion_Automatic"
+
+[[part]]
+id = "0781AB"
+ammo = "Fallout4.esm|01F276"
+name = "00APmod_SubmachineGun_Receiver_Annilhalator"
+
+[[part]]
+id = "09600F"
+ammo = "Fallout4.esm|01F276"
+name = "00APmod_SubmachineGun_Receiver_Marine"
+
+[[part]]
+id = "0A7B11"
+ammo = "Fallout4.esm|04CE87"
+name = "00APmod_44_Receiver_38Improved"
+
+[[part]]
+id = "0EB6D3"
+ammo = "Fallout4.esm|01F276"
+name = "00APmod_Minigun_BarrelMinigun_SMMG10mm"
+
+[[part]]
+id = "11A6BF"
+ammo = "Fallout4.esm|01F279"
+name = "00APmod_DoubleBarrelShotgun_Receiver_50Cal"

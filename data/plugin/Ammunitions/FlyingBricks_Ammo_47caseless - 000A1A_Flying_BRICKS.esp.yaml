@@ -1,0 +1,28 @@
+FormKey: 000A1A:Flying_BRICKS.esp
+EditorID: FlyingBricks_Ammo_47caseless
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: 'HK 4.73x33mm Caseless Round'
+Model:
+  File: Ammo\5mm\5mmAmmo.nif
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 8
+Weight: 0.025
+Projectile: 000823:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 82
+ShortName:
+  TargetLanguage: English
+  Value: '4.73x33mm'
+CasingModel: Ammo\5mm\5mmCasing.nif

@@ -1,0 +1,36 @@
+FormKey: 245D68:Fallout4.esm
+MajorRecordFlagsRaw: 4
+EditorID: CompanionAmmoShotgunShell
+Fallout4MajorRecordFlags:
+- NotPlayable
+ObjectBounds:
+  First: 0, -1, 0
+  Second: 2, 1, 5
+PreviewTransform: 23CA3E:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: 'Shotgun Shell'
+Model:
+  File: Ammo\ShotgunShell\ShotgunShellAmmo.nif
+  Data: 0x040000000700000000000000030000000200000005E07B59646473009D00A704DC8C7D3A646473009D00A704E1C24A366464730093660B5F38AE4C556464730093660B5F264799B56464730093660B5F7503E0D7646473001CDB88C5C265A8DA646473009D00A704B99450E16267736DEEBF9BFD6D8F430A6267736DC6CF3961
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 3
+Weight: 0
+Projectile: 000806:Flying_BRICKS.esp
+Flags:
+- NonPlayable
+- HasCountBased3d
+Damage: 194
+ShortName:
+  TargetLanguage: English
+  Value: 'Shell'
+CasingModel: Ammo\ShotgunShell\SpentShotgunShell.nif
+ModelInfo: 0x0400000000000000000000000000000000000000
+MajorFlags:
+- NonPlayable

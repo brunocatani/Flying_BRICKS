@@ -1,0 +1,25 @@
+FormKey: 00082D:Flying_BRICKS.esp
+EditorID: FlyingBricks_Projectile_357mag
+Model:
+  File: Ammo\45Cal\Projectile45cal.nif
+Unused: '[]'
+Flags:
+- MuzzleFlash
+- PassThroughSmallTransparent
+- PenetratesGeometry
+Type: Missile
+Gravity: 2
+Speed: 24966
+Range: 16000
+MuzzleFlash: 004B29:Fallout4.esm
+Sound: 01D565:Fallout4.esm
+MuzzleFlashDuration: 0.05
+FadeDuration: 0.5
+ImpactForce: 20
+CollisionRadius: 0.4
+Lifetime: 0.5
+RelaunchInterval: 0.25
+CollisionLayer: 088767:Fallout4.esm
+TracerFrequency: 0
+MuzzleFlashModel: Effects\MuzPistolSmall01.nif
+SoundLevel: 1

@@ -1,0 +1,40 @@
+# Flying BRICKS patch for Eb_1911.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000808"
+ammo = "Fallout4.esm|01F66A"
+name = "Weap_Eb_1911"
+
+[[weapon]]
+id = "0064BD"
+ammo = "Fallout4.esm|01F66A"
+name = "Weap_Eb_Compact1911"
+
+[[weapon]]
+id = "007445"
+ammo = "Fallout4.esm|01F66A"
+name = "Weap_Eb_1911_Thomas"
+
+[[weapon]]
+id = "015159"
+ammo = "Fallout4.esm|01F66A"
+name = "Weap_Eb_1911_Giant"
+
+[[part]]
+id = "01511A"
+ammo = "Fallout4.esm|01F276"
+name = "mod_Eb_Compact1911_Mag_Colt_10mm"
+
+[[default]]
+id = "0064BD"
+from = "Eb_1911.esp|01511A"
+to = "Eb_1911.esp|0064B7"
+name = "Burning Judgement spawns on .45, not 10mm"

@@ -1,0 +1,28 @@
+FormKey: 000A11:Flying_BRICKS.esp
+EditorID: FlyingBricks_Ammo_50beowulf
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.50 Beowulf'
+Model:
+  File: Ammo\50Cal\50CalAmmo.nif
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 14
+Weight: 0.048
+Projectile: 00081A:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 195
+ShortName:
+  TargetLanguage: English
+  Value: '.50 Beowulf'
+CasingModel: Ammo\50Cal\50CalCasing.nif

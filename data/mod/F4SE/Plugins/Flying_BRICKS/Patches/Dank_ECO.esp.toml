@@ -1,0 +1,279 @@
+# Flying BRICKS patch for Dank_ECO.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[part]]
+id = "0001C4"
+caliber = "455"
+name = "mod_ECO_W_AC_455Caliber"
+
+[[part]]
+id = "0002A1"
+caliber = "14mm"
+name = "mod_ECO_W_AC_14mm"
+
+[[part]]
+id = "0002A2"
+caliber = "500express"
+name = "mod_ECO_W_AC_500Caliber"
+
+[[part]]
+id = "0002A3"
+caliber = "25cal"
+name = "mod_ECO_W_AC_25Caliber"
+
+[[part]]
+id = "0002A4"
+caliber = "4ga"
+name = "mod_ECO_W_AC_Shell04ga"
+
+[[part]]
+id = "0002A5"
+caliber = "8ga"
+name = "mod_ECO_W_AC_Shell08ga"
+
+[[part]]
+id = "000912"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_ECO_W_AC_308Caliber"
+
+[[part]]
+id = "000913"
+ammo = "Fallout4.esm|04CE87"
+name = "mod_ECO_W_AC_38Caliber"
+
+[[part]]
+id = "000914"
+ammo = "Fallout4.esm|09221C"
+name = "mod_ECO_W_AC_44Caliber"
+
+[[part]]
+id = "000915"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_ECO_W_AC_45Caliber"
+
+[[part]]
+id = "000917"
+ammo = "Fallout4.esm|01F279"
+name = "mod_ECO_W_AC_50BMG"
+
+[[part]]
+id = "000918"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_ECO_W_AC_5mm"
+
+[[part]]
+id = "000919"
+ammo = "Fallout4.esm|01F278"
+name = "mod_ECO_W_AC_556mm"
+
+[[part]]
+id = "00091B"
+ammo = "Fallout4.esm|01F276"
+name = "mod_ECO_W_AC_10mm"
+
+[[part]]
+id = "00091C"
+ammo = "Fallout4.esm|01F673"
+name = "mod_ECO_W_AC_Shell12ga"
+
+[[part]]
+id = "000B8F"
+caliber = "127x55"
+name = "mod_ECO_W_AC_127mm"
+
+[[part]]
+id = "000B91"
+caliber = "20ga"
+name = "mod_ECO_W_AC_Shell20ga"
+
+[[part]]
+id = "000B93"
+caliber = "22lr"
+name = "mod_ECO_W_AC_22Caliber"
+
+[[part]]
+id = "000B95"
+caliber = "32"
+name = "mod_ECO_W_AC_32Caliber"
+
+[[part]]
+id = "000BC2"
+caliber = "357mag"
+name = "mod_ECO_W_AC_357Caliber"
+
+[[part]]
+id = "000BC4"
+caliber = "4440"
+name = "mod_ECO_W_AC_4440Caliber"
+
+[[part]]
+id = "000BC5"
+caliber = "9x19"
+name = "mod_ECO_W_AC_9x19"
+
+[[part]]
+id = "000BD5"
+caliber = "223"
+name = "mod_ECO_W_AC_223Caliber"
+
+[[part]]
+id = "000BD6"
+caliber = "28ga"
+name = "mod_ECO_W_AC_Shell28ga"
+
+[[part]]
+id = "000BD7"
+caliber = "300blk"
+name = "mod_ECO_W_AC_300BLK"
+
+[[part]]
+id = "000BD8"
+caliber = "300wm"
+name = "mod_ECO_W_AC_300WM"
+
+[[part]]
+id = "000BD9"
+caliber = "303"
+name = "mod_ECO_W_AC_303Caliber"
+
+[[part]]
+id = "000BDA"
+caliber = "338lm"
+name = "mod_ECO_W_AC_338Caliber"
+
+[[part]]
+id = "000BDB"
+caliber = "40sw"
+name = "mod_ECO_W_AC_40Caliber"
+
+[[part]]
+id = "000BDC"
+caliber = "50ae"
+name = "mod_ECO_W_AC_50AE"
+
+[[part]]
+id = "000BDD"
+caliber = "50beowulf"
+name = "mod_ECO_W_AC_50Beo"
+
+[[part]]
+id = "000BDE"
+caliber = "545x39"
+name = "mod_ECO_W_AC_545mm"
+
+[[part]]
+id = "000BDF"
+caliber = "57x28"
+name = "mod_ECO_W_AC_57mm"
+
+[[part]]
+id = "000BE0"
+caliber = "68spc"
+name = "mod_ECO_W_AC_68mm"
+
+[[part]]
+id = "000BE1"
+caliber = "762x54r"
+name = "mod_ECO_W_AC_762x54"
+
+[[part]]
+id = "000BE2"
+caliber = "8x57"
+name = "mod_ECO_W_AC_8mm"
+
+[[part]]
+id = "000BE3"
+caliber = "9x18"
+name = "mod_ECO_W_AC_9x18"
+
+[[part]]
+id = "000BE4"
+caliber = "9x39"
+name = "mod_ECO_W_AC_9x39"
+
+[[part]]
+id = "000BEF"
+caliber = "20mm"
+name = "mod_ECO_W_AC_20mm"
+
+[[part]]
+id = "000BF0"
+caliber = "416spike"
+name = "mod_ECO_W_AC_416Caliber"
+
+[[part]]
+id = "000BF1"
+caliber = "762x25"
+name = "mod_ECO_W_AC_762x25"
+
+[[part]]
+id = "000BF8"
+caliber = "3006"
+name = "mod_ECO_W_AC_3006Caliber"
+
+[[part]]
+id = "000BF9"
+caliber = "458socom"
+name = "mod_ECO_W_AC_458Caliber"
+
+[[part]]
+id = "000BFC"
+caliber = "bb"
+name = "mod_ECO_W_AC_BB"
+
+[[part]]
+id = "000C09"
+caliber = "280british"
+name = "mod_ECO_W_AC_280Caliber"
+
+[[part]]
+id = "000C59"
+caliber = "762x51"
+name = "mod_ECO_W_AC_762x51"
+
+[[part]]
+id = "000C5A"
+caliber = "30carbine"
+name = "mod_ECO_W_AC_30Caliber"
+
+[[part]]
+id = "000C5F"
+caliber = "410"
+name = "mod_ECO_W_AC_Shell410bore"
+
+[[part]]
+id = "000C65"
+caliber = "47caseless"
+name = "mod_ECO_W_AC_47mmCaseless"
+
+[[part]]
+id = "000C6B"
+caliber = "50ball"
+name = "mod_ECO_W_AC_50CaliberBall"
+
+[[part]]
+id = "000C6F"
+caliber = "792x33mmkurz"
+name = "mod_ECO_W_AC_792x33mm"
+
+[[part]]
+id = "000C79"
+caliber = "65"
+name = "mod_ECO_W_AC_65mm"
+
+[[part]]
+id = "000E25"
+ammo = "DLCCoast.esm|02C8B1"
+name = "mod_ECO_W_AC_4570Caliber"
+
+[[part]]
+id = "000E26"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_ECO_W_AC_762x39"

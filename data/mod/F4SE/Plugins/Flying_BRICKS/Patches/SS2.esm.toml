@@ -1,0 +1,79 @@
+# Flying BRICKS patch for SS2.esm. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "01B69F"
+ammo = "Fallout4.esm|01F673"
+name = "SS2_OdetteShotgun01"
+
+[[weapon]]
+id = "045CDA"
+ammo = "Fallout4.esm|245D6B"
+name = "SS2_AidenCombatRifle"
+
+[[weapon]]
+id = "0498D7"
+ammo = "Fallout4.esm|1943D0"
+name = "SS2_LaserCannon_WeaponAdd_Unused"
+
+[[weapon]]
+id = "0498DD"
+ammo = "Fallout4.esm|01F278"
+name = "SS2_LaserCannon_Weapon"
+
+[[weapon]]
+id = "04B2A1"
+ammo = "Fallout4.esm|01F276"
+name = "SS2_HQ_DebuggingBarterSystem"
+
+[[weapon]]
+id = "04DCDC"
+ammo = "Fallout4.esm|01F276"
+name = "SS2_PlayerCutscene10mm"
+
+[[part]]
+id = "0A4E80"
+ammo = "Fallout4.esm|01F276"
+name = "SS2_Weapon_mod_SubmachineGun_Receiver_AmmoConversion"
+
+[[damage]]
+id = "01BBD8"
+damage = 60
+name = "SS2_WC_Charge44"
+
+[[damage]]
+id = "01BBDA"
+damage = 50
+name = "SS2_ChargeHuntingRifle"
+
+[[damage]]
+id = "04DC44"
+damage = 33
+name = "SS2_C3_ReturnFlareWeapon_Standard"
+
+[[damage]]
+id = "04DC62"
+damage = 33
+name = "SS2_C3_ReturnFlareWeapon_Blue"
+
+[[damage]]
+id = "04DC63"
+damage = 33
+name = "SS2_C3_ReturnFlareWeapon_Orange"
+
+[[damage]]
+id = "04DC64"
+damage = 33
+name = "SS2_C3_ReturnFlareWeapon_Green"
+
+[[damage]]
+id = "04DC65"
+damage = 33
+name = "SS2_C3_ReturnFlareWeapon_White"

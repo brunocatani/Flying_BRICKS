@@ -1,0 +1,27 @@
+FormKey: 000B09:Flying_BRICKS.esp
+EditorID: FlyingBricks_AmmoList_4570
+MaxCount: 0
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Data:
+    Level: 1
+    Reference: 02C8B1:DLCCoast.esm
+    Count: 5
+- Data:
+    Level: 1
+    Reference: 02C8B1:DLCCoast.esm
+    Count: 6
+- Data:
+    Level: 1
+    Reference: 02C8B1:DLCCoast.esm
+    Count: 7
+- Data:
+    Level: 1
+    Reference: 02C8B1:DLCCoast.esm
+    Count: 8
+- Data:
+    Level: 1
+    Reference: 02C8B1:DLCCoast.esm
+    Count: 9

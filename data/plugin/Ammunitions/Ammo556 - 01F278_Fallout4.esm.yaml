@@ -1,0 +1,30 @@
+FormKey: 01F278:Fallout4.esm
+EditorID: Ammo556
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 4
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '5.56 Round'
+Model:
+  File: Ammo\556\556Ammo.nif
+  Data: 0x04000000070000000000000003000000020000006B1828D56464730063761D64B2742EB66464730063761D64706B3B77646473002590D8D3A9073D14646473002590D8D3B7EEE8F4646473002590D8D3AC9DFB566464730063761D647503E0D7646473001CDB88C57BA302586267736D692153EFFC228EDB6267736D95C2215F
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 2
+Weight: 0.035
+Projectile: 000801:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 91
+ShortName:
+  TargetLanguage: English
+  Value: '5.56'
+CasingModel: Ammo\556\556Casing.nif
+ModelInfo: 0x0400000000000000000000000000000000000000

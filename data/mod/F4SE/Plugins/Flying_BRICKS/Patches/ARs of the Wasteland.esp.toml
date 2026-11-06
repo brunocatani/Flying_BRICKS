@@ -1,0 +1,59 @@
+# Flying BRICKS patch for ARs of the Wasteland.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "0006EF"
+ammo = "Fallout4.esm|01F278"
+name = "GeckoARmRifle"
+
+[[weapon]]
+id = "000F99"
+ammo = "Fallout4.esm|01F278"
+name = "GeckoARmRifle"
+
+[[part]]
+id = "00063F"
+ammo = "Fallout4.esm|01F278"
+name = "mod_GeckoARmRifle_CALIBER_556"
+
+[[part]]
+id = "000640"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_GeckoARmRifle_CALIBER_308"
+
+[[part]]
+id = "000641"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_GeckoARmRifle_CALIBER_5mm"
+
+[[part]]
+id = "00066F"
+ammo = "Fallout4.esm|01F276"
+name = "mod_GeckoARmRifle_CALIBER_10mm"
+
+[[part]]
+id = "0036A3"
+ammo = "Fallout4.esm|01F278"
+name = "mod_GeckoARmRifle_CALIBER_556"
+
+[[part]]
+id = "0036A4"
+ammo = "Fallout4.esm|01F66B"
+name = "mod_GeckoARmRifle_CALIBER_308"
+
+[[part]]
+id = "0036A9"
+ammo = "Fallout4.esm|01F66C"
+name = "mod_GeckoARmRifle_CALIBER_5mm"
+
+[[part]]
+id = "0064D5"
+ammo = "Fallout4.esm|01F276"
+name = "mod_GeckoARmRifle_CALIBER_10mm"

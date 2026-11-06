@@ -1,0 +1,59 @@
+# Flying BRICKS patch for M1918nv.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "002F67"
+caliber = "127x108"
+name = "12.7x108mm Soviet"
+
+[[round]]
+id = "002F68"
+caliber = "700nitroexpress"
+name = ".700 Nitro Express"
+
+[[round]]
+id = "0116AE"
+caliber = "132x92tuf"
+name = "13.2x92mmSR TuF"
+
+[[weapon]]
+id = "000800"
+caliber = "132x92tuf"
+name = "WPNM1918"
+
+[[weapon]]
+id = "00466B"
+caliber = "132x92tuf"
+name = "WPNM1918_Craft"
+
+[[part]]
+id = "000805"
+caliber = "132x92tuf"
+name = "mod_M1918_Ammo_1_13mmTuF"
+
+[[part]]
+id = "0017E5"
+ammo = "Fallout4.esm|01F673"
+name = "mod_M1918_Ammo_5_12Gauge"
+
+[[part]]
+id = "002F69"
+caliber = "127x108"
+name = "mod_M1918_Ammo_2_Soviet"
+
+[[part]]
+id = "002F6A"
+ammo = "Fallout4.esm|01F279"
+name = "mod_M1918_Ammo_3_50Cal"
+
+[[part]]
+id = "002F6B"
+caliber = "700nitroexpress"
+name = "mod_M1918_Ammo_4_700Nitro"

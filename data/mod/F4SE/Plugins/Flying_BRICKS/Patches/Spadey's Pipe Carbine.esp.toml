@@ -1,0 +1,29 @@
+# Flying BRICKS patch for Spadey's Pipe Carbine.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "0000B0"
+caliber = "223"
+name = "Spadey_Weap_PipeCarbine"
+
+[[weapon]]
+id = "000EFD"
+ammo = "DLCCoast.esm|02C8B1"
+name = "SKI_Weap_AlaskanCarbine"
+
+[[part]]
+id = "00013A"
+ammo = "Fallout4.esm|01F278"
+name = "Spadey_Mod_PipeCarbine_Ammo_556"
+
+[[damage]]
+id = "000145"
+damage = 15
+name = "Spadey_Weap_PipeCarbineU_SafetyViolation"

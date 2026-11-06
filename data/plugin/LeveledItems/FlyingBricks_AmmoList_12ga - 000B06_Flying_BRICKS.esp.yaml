@@ -1,0 +1,27 @@
+FormKey: 000B06:Flying_BRICKS.esp
+EditorID: FlyingBricks_AmmoList_12ga
+MaxCount: 0
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Data:
+    Level: 1
+    Reference: 01F673:Fallout4.esm
+    Count: 5
+- Data:
+    Level: 1
+    Reference: 01F673:Fallout4.esm
+    Count: 6
+- Data:
+    Level: 1
+    Reference: 01F673:Fallout4.esm
+    Count: 7
+- Data:
+    Level: 1
+    Reference: 01F673:Fallout4.esm
+    Count: 8
+- Data:
+    Level: 1
+    Reference: 01F673:Fallout4.esm
+    Count: 9

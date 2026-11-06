@@ -1,0 +1,15 @@
+# Flying BRICKS patch for StG44.esp. It applies only when that plugin is loaded.
+# Built from an Armament or Munitions patch for this mod, so it holds only what that patch changes.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000800"
+caliber = "792x33mmkurz"
+name = "stg44"

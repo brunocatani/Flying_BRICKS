@@ -1,0 +1,79 @@
+# Flying BRICKS patch for M1014.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "0090E7"
+caliber = "12ga"
+name = "Slug"
+
+[[round]]
+id = "00B722"
+caliber = "12ga"
+name = "Incendiary"
+
+[[round]]
+id = "00BF41"
+caliber = "12ga"
+name = "12 Gauge"
+
+[[round]]
+id = "00BF42"
+caliber = "16gaugevintage"
+name = "16 Gauge"
+
+[[round]]
+id = "00BF43"
+caliber = "20ga"
+name = "20 Gauge"
+
+[[round]]
+id = "00BF44"
+caliber = "28ga"
+name = "28 Gauge"
+
+[[weapon]]
+id = "006337"
+ammo = "Fallout4.esm|01F673"
+name = "M1014"
+
+[[part]]
+id = "0044DC"
+ammo = "Fallout4.esm|01F673"
+name = "mod_M1014_Ammo_Shell"
+
+[[part]]
+id = "00B71F"
+caliber = "12ga"
+name = "mod_M1014_Ammo_Incendiary"
+
+[[part]]
+id = "00B726"
+caliber = "12ga"
+name = "mod_M1014_Ammo_Slug"
+
+[[part]]
+id = "00BF31"
+caliber = "12ga"
+name = "mod_M1014_Ammo_12G"
+
+[[part]]
+id = "00BF32"
+caliber = "16gaugevintage"
+name = "mod_M1014_Ammo_16G"
+
+[[part]]
+id = "00BF33"
+caliber = "20ga"
+name = "mod_M1014_Ammo_20G"
+
+[[part]]
+id = "00BF34"
+caliber = "28ga"
+name = "mod_M1014_Ammo_28G"

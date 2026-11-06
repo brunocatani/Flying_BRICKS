@@ -1,0 +1,24 @@
+# Flying BRICKS patch for Jericho 941.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000F9B"
+caliber = "9x19"
+name = "Jericho"
+
+[[part]]
+id = "006356"
+ammo = "Fallout4.esm|01F276"
+name = "mod_Jericho_Barrel_10mmAmmo"
+
+[[part]]
+id = "006AF2"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_Jericho_Barrel_45Ammo"

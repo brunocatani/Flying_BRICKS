@@ -1,0 +1,39 @@
+# Flying BRICKS patch for SS2_XPAC_Chapter3.esm. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "01298F"
+ammo = "Fallout4.esm|1943D0"
+name = "SS2C3_MQ29Minigun_Vertibird_Player"
+
+[[weapon]]
+id = "014E86"
+ammo = "Fallout4.esm|01F278"
+name = "SS2C3_WEAP_BirdBuster"
+
+[[damage]]
+id = "005586"
+damage = 28
+name = "SS2C3_IDRF_Weapon"
+
+[[damage]]
+id = "005623"
+damage = 24
+name = "SS2C3_IDRFHeavy_Weapon"
+
+[[damage]]
+id = "012AAE"
+damage = 10
+name = "SS2C3_AIFlareGun"
+
+[[damage]]
+id = "016FC8"
+damage = 28
+name = "SS2C3_IDRF_Stheno"

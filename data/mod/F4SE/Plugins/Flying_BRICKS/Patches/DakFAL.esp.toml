@@ -1,0 +1,45 @@
+# Flying BRICKS patch for DakFAL.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00106B"
+caliber = "762x51"
+name = "00DakFAL"
+
+[[weapon]]
+id = "0042F4"
+caliber = "762x51"
+name = "00DakFALUnique"
+
+[[weapon]]
+id = "004B6B"
+caliber = "762x51"
+name = "00DakFALUnique2"
+
+[[weapon]]
+id = "004B71"
+caliber = "762x51"
+name = "00DakFALUnique3"
+
+[[weapon]]
+id = "00006B"
+caliber = "762x51"
+
+[[weapon]]
+id = "0002F4"
+caliber = "762x51"
+
+[[weapon]]
+id = "000B6B"
+caliber = "762x51"
+
+[[weapon]]
+id = "000B71"
+caliber = "762x51"

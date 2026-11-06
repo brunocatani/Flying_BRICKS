@@ -1,0 +1,34 @@
+# Flying BRICKS patch for HK_UMP.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000FCE"
+ammo = "Fallout4.esm|01F66A"
+name = "WPNHuK_UMP"
+
+[[part]]
+id = "002E6C"
+caliber = "9x19"
+name = "mod_HuK_UMP_Mag_9MMQuick"
+
+[[part]]
+id = "003D9F"
+caliber = "9x19"
+name = "mod_HuK_UMP_Mag_9MM"
+
+[[part]]
+id = "0063EB"
+ammo = "Fallout4.esm|01F276"
+name = "mod_HuK_UMP_Mag_40MM"
+
+[[part]]
+id = "006B8F"
+ammo = "Fallout4.esm|01F276"
+name = "mod_HuK_UMP_Mag_40MMQuick"

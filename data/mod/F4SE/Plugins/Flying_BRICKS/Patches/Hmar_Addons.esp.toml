@@ -1,0 +1,39 @@
+# Flying BRICKS patch for Hmar_Addons.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[part]]
+id = "000008"
+caliber = "545x39"
+name = "SRVN_mod_HMAR_SovietMag"
+
+[[part]]
+id = "000019"
+ammo = "Fallout4.esm|01F278"
+name = "SRVN_mod_HMAR_Soviet556Mag"
+
+[[part]]
+id = "00003C"
+caliber = "545x39"
+name = "SRVN_mod_HMAR_SovietBakeliteMag"
+
+[[part]]
+id = "00004B"
+caliber = "545x39"
+name = "SRVN_mod_HMAR_StalkerMag"
+
+[[part]]
+id = "00007B"
+caliber = "545x39"
+name = "SRVN_mod_HMAR_545PolymerPlumMag"
+
+[[part]]
+id = "000084"
+caliber = "545x39"
+name = "SRVN_mod_HMAR_545ExtendedBakeliteMag"

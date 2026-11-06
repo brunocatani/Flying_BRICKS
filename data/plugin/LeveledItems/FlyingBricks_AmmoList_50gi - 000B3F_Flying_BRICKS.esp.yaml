@@ -1,0 +1,27 @@
+FormKey: 000B3F:Flying_BRICKS.esp
+EditorID: FlyingBricks_AmmoList_50gi
+MaxCount: 0
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Data:
+    Level: 1
+    Reference: 000A35:Flying_BRICKS.esp
+    Count: 5
+- Data:
+    Level: 1
+    Reference: 000A35:Flying_BRICKS.esp
+    Count: 6
+- Data:
+    Level: 1
+    Reference: 000A35:Flying_BRICKS.esp
+    Count: 7
+- Data:
+    Level: 1
+    Reference: 000A35:Flying_BRICKS.esp
+    Count: 8
+- Data:
+    Level: 1
+    Reference: 000A35:Flying_BRICKS.esp
+    Count: 9

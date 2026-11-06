@@ -1,0 +1,36 @@
+FormKey: 04D39C:DLCCoast.esm
+MajorRecordFlagsRaw: 4
+EditorID: DLC03_CompAmmo4570
+Fallout4MajorRecordFlags:
+- NotPlayable
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 4
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.45-70 Caliber'
+Model:
+  File: DLC03\Ammo\4570Ammo.nif
+  Data: 0x0400000007000000000000000300000001000000AB041AA76464730008C1CD1372681CC46464730008C1CD1334F537FE646473003A3F8832ED99319D646473003A3F8832F370E47D646473003A3F88326C81C9246464730008C1CD13D000F877646473001CDB88C5D7F9498D6267736DBCE34B8D
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 3
+Weight: 0
+Projectile: 000809:Flying_BRICKS.esp
+Flags:
+- NonPlayable
+- HasCountBased3d
+Damage: 176
+ShortName:
+  TargetLanguage: English
+  Value: '.45-70'
+CasingModel: DLC03\Ammo\4570Casing.nif
+ModelInfo: 0x0400000000000000000000000000000000000000
+MajorFlags:
+- NonPlayable

@@ -1,0 +1,45 @@
+# Flying BRICKS patch for MA37.esp. It applies only when that plugin is loaded.
+# Built from an Armament or Munitions patch for this mod, so it holds only what that patch changes.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00644A"
+caliber = "9x39"
+name = "BR55_ServiceRifle"
+
+[[part]]
+id = "005527"
+caliber = "9x39"
+name = "mod_BR55_AmmoType_APFSDS"
+
+[[part]]
+id = "006BEC"
+caliber = "9x39"
+name = "mod_BR55_AmmoType_AP"
+
+[[part]]
+id = "006BED"
+caliber = "9x39"
+name = "mod_BR55_AmmoType_FMJ"
+
+[[part]]
+id = "006BEE"
+caliber = "9x39"
+name = "mod_BR55_AmmoType_HE"
+
+[[part]]
+id = "006BEF"
+caliber = "127x55"
+name = "mod_BR55_AmmoType_HighCaliber"
+
+[[part]]
+id = "006BF0"
+caliber = "9x39"
+name = "mod_BR55_AmmoType_Incendiary"

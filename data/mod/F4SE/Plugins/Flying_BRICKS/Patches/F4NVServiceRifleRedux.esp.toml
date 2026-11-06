@@ -1,0 +1,119 @@
+# Flying BRICKS patch for F4NVServiceRifleRedux.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00176F"
+ammo = "Fallout4.esm|01F278"
+name = "01F4NV_ServiceRifle"
+
+[[weapon]]
+id = "001857"
+ammo = "Fallout4.esm|01F278"
+name = "01F4NV_ServiceRifleMarksman"
+
+[[weapon]]
+id = "00438C"
+ammo = "Fallout4.esm|01F278"
+name = "01F4NV_ServiceRifleRadium"
+
+[[weapon]]
+id = "004C26"
+ammo = "Fallout4.esm|01F278"
+name = "01F4NV_ServiceRifleHippie"
+
+[[weapon]]
+id = "006587"
+ammo = "Fallout4.esm|01F278"
+name = "01F4NV_ServiceRifleGauss"
+
+[[weapon]]
+id = "0097A5"
+caliber = "127x55"
+name = "01F4NV_ServiceRifleSurvivalist"
+
+[[weapon]]
+id = "00A878"
+ammo = "Fallout4.esm|01F278"
+name = "01F4NV_ServiceRifleAllAmerican"
+
+[[weapon]]
+id = "00A879"
+ammo = "Fallout4.esm|01F278"
+name = "01F4NV_ServiceRiflePatriot"
+
+[[part]]
+id = "00187E"
+ammo = "Fallout4.esm|01F66B"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_308_Standard"
+
+[[part]]
+id = "00187F"
+ammo = "Fallout4.esm|01F66B"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_308_Metal"
+
+[[part]]
+id = "001880"
+ammo = "Fallout4.esm|01F276"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_40_Standard"
+
+[[part]]
+id = "001881"
+ammo = "Fallout4.esm|01F276"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_40_Metal"
+
+[[part]]
+id = "004DD8"
+caliber = "9x19"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_9mm_Standard"
+
+[[part]]
+id = "005C97"
+ammo = "DLCNukaWorld.esm|037897"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_762_Metal"
+
+[[part]]
+id = "005C98"
+ammo = "DLCNukaWorld.esm|037897"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_762_Black"
+
+[[part]]
+id = "005C99"
+caliber = "9x19"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_9mm_Black"
+
+[[part]]
+id = "005C9A"
+caliber = "9x19"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_9mm_Metal"
+
+[[part]]
+id = "006D12"
+ammo = "DLCNukaWorld.esm|037897"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_762_Standard"
+
+[[part]]
+id = "0075FB"
+caliber = "127x55"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_Survivalist"
+
+[[part]]
+id = "009798"
+caliber = "223"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_5mmStandard"
+
+[[part]]
+id = "009799"
+caliber = "223"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_5mmMetal"
+
+[[part]]
+id = "00979A"
+ammo = "Fallout4.esm|01F66C"
+name = "01F4NV_mod_ServiceRifle_LowerReceiver_5mmBlack"

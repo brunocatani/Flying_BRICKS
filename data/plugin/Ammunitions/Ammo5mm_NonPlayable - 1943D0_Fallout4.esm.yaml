@@ -1,0 +1,35 @@
+FormKey: 1943D0:Fallout4.esm
+MajorRecordFlagsRaw: 4
+EditorID: Ammo5mm_NonPlayable
+Fallout4MajorRecordFlags:
+- NotPlayable
+ObjectBounds:
+  First: -10, -6, -3
+  Second: 10, 6, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '5mm Round'
+Model:
+  File: Ammo\Wildcat\WildcatAmmo.nif
+  Data: 0x040000000300000000000000010000000000000011C8D44D6464730089FA1E33C8A4D22E6464730089FA1E33D64D07CE6464730089FA1E33
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 1
+Weight: 0
+Projectile: 000801:Flying_BRICKS.esp
+Flags:
+- NonPlayable
+Damage: 91
+ShortName:
+  TargetLanguage: English
+  Value: '5mm'
+CasingModel: Weapons\HuntingRifle\Casing308.nif
+ModelInfo: 0x0400000000000000000000000000000000000000
+MajorFlags:
+- NonPlayable

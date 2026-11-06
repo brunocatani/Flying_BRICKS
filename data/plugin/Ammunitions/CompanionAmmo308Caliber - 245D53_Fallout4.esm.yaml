@@ -1,0 +1,36 @@
+FormKey: 245D53:Fallout4.esm
+MajorRecordFlagsRaw: 4
+EditorID: CompanionAmmo308Caliber
+Fallout4MajorRecordFlags:
+- NotPlayable
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 5
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.308 Round'
+Model:
+  File: Ammo\308\308Ammo.nif
+  Data: 0x04000000070000000000000003000000020000006B1828D56464730063761D64B2742EB66464730063761D64C2EFFDC86464730081E119A01B83FBAB6464730081E119A0056A2E4B6464730081E119A0AC9DFB566464730063761D647503E0D7646473001CDB88C5A4D569D16267736D99841171FC228EDB6267736D95C2215F
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 3
+Weight: 0
+Projectile: 000804:Flying_BRICKS.esp
+Flags:
+- NonPlayable
+- HasCountBased3d
+Damage: 174
+ShortName:
+  TargetLanguage: English
+  Value: '.308'
+CasingModel: Weapons\HuntingRifle\Casing308.nif
+ModelInfo: 0x0400000000000000000000000000000000000000
+MajorFlags:
+- NonPlayable

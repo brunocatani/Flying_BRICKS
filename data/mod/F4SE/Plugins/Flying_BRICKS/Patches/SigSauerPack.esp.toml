@@ -1,0 +1,54 @@
+# Flying BRICKS patch for SigSauerPack.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000F9B"
+caliber = "9x19"
+name = "WPNSigSauerP320XCP"
+
+[[weapon]]
+id = "014A09"
+caliber = "22lr"
+name = "WPNSigSauerP322"
+
+[[weapon]]
+id = "015202"
+caliber = "9x19"
+name = "WPNSigSauerP365"
+
+[[weapon]]
+id = "015298"
+caliber = "9x19"
+name = "WPNSigSauerP226"
+
+[[weapon]]
+id = "0169F1"
+caliber = "9x19"
+name = "WPNSigSauerP320XFive"
+
+[[weapon]]
+id = "0179A8"
+caliber = "45acp"
+name = "WPNSigSauerP220"
+
+[[weapon]]
+id = "01BEE0"
+caliber = "9x19"
+name = "WPNSigSauerP320RXP"
+
+[[weapon]]
+id = "01F4CC"
+caliber = "9x19"
+name = "WPNSigSauerP320AXG"
+
+[[weapon]]
+id = "01FC97"
+caliber = "9x19"
+name = "WPNSigSauerP320CMArdent"

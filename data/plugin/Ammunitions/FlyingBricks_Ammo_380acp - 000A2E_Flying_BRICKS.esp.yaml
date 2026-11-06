@@ -1,0 +1,28 @@
+FormKey: 000A2E:Flying_BRICKS.esp
+EditorID: FlyingBricks_Ammo_380acp
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.380 ACP Round'
+Model:
+  File: Ammo\10mm\10mmAmmo.nif
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 1
+Weight: 0.015
+Projectile: 000838:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 36
+ShortName:
+  TargetLanguage: English
+  Value: '.380 ACP'
+CasingModel: Ammo\10mm\10mmShellCasing.nif

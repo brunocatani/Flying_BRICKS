@@ -1,0 +1,59 @@
+# Flying BRICKS patch for 1CAS_ServiceRifle.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00213F"
+ammo = "Fallout4.esm|01F278"
+name = "1CAS_ServiceRifle"
+
+[[weapon]]
+id = "005BDD"
+caliber = "300blk"
+name = "1CAS_ServiceRifle_Unique_HoneyBadger"
+
+[[weapon]]
+id = "00D875"
+caliber = "762x51"
+name = "SREP_AR10"
+
+[[weapon]]
+id = "00D8A5"
+ammo = "Fallout4.esm|01F278"
+name = "SREP_XM16E1"
+
+[[part]]
+id = "00C7BA"
+ammo = "Fallout4.esm|01F276"
+name = "mod_SREP_Receiver_Tier3_SMG"
+
+[[part]]
+id = "00C7BD"
+ammo = "Fallout4.esm|01F66A"
+name = "mod_SREP_Receiver_Tier4_SMG45"
+
+[[part]]
+id = "00C80C"
+ammo = "Fallout4.esm|01F276"
+name = "mod_SREP_receiver_Tier4_SMG_commando"
+
+[[part]]
+id = "00D846"
+ammo = "Fallout4.esm|01F673"
+name = "mod_SREP_MasterKeyDummy"
+
+[[part]]
+id = "00D847"
+ammo = "Fallout4.esm|01F673"
+name = "mod_SREP_M26MASSDummy"
+
+[[part]]
+id = "01F02A"
+ammo = "Fallout4.esm|01F276"
+name = "1CAS_mod_ServiceRifle_Receiver_Tier3_SMG_OBSELETE"

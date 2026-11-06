@@ -1,0 +1,25 @@
+FormKey: 000848:Flying_BRICKS.esp
+EditorID: FlyingBricks_Projectile_16gaugevintage
+Model:
+  File: Ammo\ShotgunShell\ProjectileShotPellet.nif
+Unused: '[]'
+Flags:
+- MuzzleFlash
+- PassThroughSmallTransparent
+- PenetratesGeometry
+Type: Missile
+Gravity: 0.25
+Speed: 16900
+Range: 16000
+MuzzleFlash: 004B29:Fallout4.esm
+Sound: 01D565:Fallout4.esm
+MuzzleFlashDuration: 0.08
+FadeDuration: 0.33
+ImpactForce: 10
+CollisionRadius: 0.25
+Lifetime: 0.16
+RelaunchInterval: 0.25
+CollisionLayer: 088767:Fallout4.esm
+TracerFrequency: 1
+MuzzleFlashModel: Effects\MuzShotgun.nif
+SoundLevel: 1

@@ -1,0 +1,25 @@
+FormKey: 000810:Flying_BRICKS.esp
+EditorID: FlyingBricks_Projectile_9x18
+Model:
+  File: Ammo\10mm\Projectile10mm.nif
+Unused: '[]'
+Flags:
+- MuzzleFlash
+- PassThroughSmallTransparent
+- PenetratesGeometry
+Type: Missile
+Gravity: 2
+Speed: 27046
+Range: 16000
+MuzzleFlash: 004B29:Fallout4.esm
+Sound: 01D565:Fallout4.esm
+MuzzleFlashDuration: 0.05
+FadeDuration: 0.5
+ImpactForce: 16
+CollisionRadius: 0.4
+Lifetime: 0.5
+RelaunchInterval: 0.25
+CollisionLayer: 088767:Fallout4.esm
+TracerFrequency: 0
+MuzzleFlashModel: Effects\MuzPistolSmall01.nif
+SoundLevel: 1

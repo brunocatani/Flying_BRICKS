@@ -1,0 +1,94 @@
+# Flying BRICKS patch for MW1Akilo47.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "00C767"
+caliber = "762x39"
+name = "7.62x39mm"
+
+[[round]]
+id = "00C768"
+caliber = "545x39"
+name = "5.45x39mm"
+
+[[weapon]]
+id = "006304"
+caliber = "762x39"
+name = "WPNMW1Akilo47"
+
+[[weapon]]
+id = "00C7D3"
+caliber = "762x39"
+name = "WPNMW1Akilo47V3"
+
+[[weapon]]
+id = "00C7D9"
+caliber = "762x39"
+name = "WPNMW1Akilo47V10"
+
+[[weapon]]
+id = "00C7DF"
+caliber = "762x39"
+name = "WPNMW1Akilo47V26"
+
+[[weapon]]
+id = "00C852"
+caliber = "762x39"
+name = "WPNMW1Akilo56"
+
+[[weapon]]
+id = "00C853"
+caliber = "762x39"
+name = "WPNMW1Akiloakm"
+
+[[weapon]]
+id = "00C854"
+caliber = "762x39"
+name = "WPNMW1AkiloAK74"
+
+[[weapon]]
+id = "00C855"
+caliber = "762x39"
+name = "WPNMW1AkiloAK103"
+
+[[weapon]]
+id = "00C8BF"
+caliber = "762x39"
+name = "WPNMW1AkiloRPK"
+
+[[weapon]]
+id = "00C8C0"
+caliber = "762x39"
+name = "WPNMW1AkiloAK103Dust"
+
+[[part]]
+id = "00C670"
+caliber = "545x39"
+name = "[Mag] 5.45x39mm 30-Round Mags"
+
+[[part]]
+id = "00C7EE"
+caliber = "545x39"
+name = "[Mag] 60 Round Mag"
+
+[[part]]
+id = "00C7F1"
+caliber = "545x39"
+name = "[Mag] 20 Round Mag"
+
+[[part]]
+id = "00C7F4"
+caliber = "545x39"
+name = "[Mag] 45 Round Mag"
+
+[[damage]]
+id = "00C7EC"
+damage = 32
+name = "WPNMW1Akilo47V21"

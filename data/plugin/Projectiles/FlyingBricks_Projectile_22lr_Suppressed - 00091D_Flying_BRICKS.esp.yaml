@@ -1,0 +1,25 @@
+FormKey: 00091D:Flying_BRICKS.esp
+EditorID: FlyingBricks_Projectile_22lr_Suppressed
+Model:
+  File: Ammo\38\Projectile38.nif
+Unused: '[]'
+Flags:
+- MuzzleFlash
+- PassThroughSmallTransparent
+- PenetratesGeometry
+Type: Missile
+Gravity: 2
+Speed: 20805
+Range: 16000
+MuzzleFlash: 1F1E46:Fallout4.esm
+Sound: 01D565:Fallout4.esm
+MuzzleFlashDuration: 0.05
+FadeDuration: 0.5
+ImpactForce: 12
+CollisionRadius: 0.4
+Lifetime: 0.5
+RelaunchInterval: 0.25
+CollisionLayer: 088767:Fallout4.esm
+TracerFrequency: 0
+MuzzleFlashModel: Effects\MuzMachineGunSupp.nif
+SoundLevel: 4

@@ -1,0 +1,54 @@
+# Flying BRICKS patch for S&W_pack.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000800"
+caliber = "9x19"
+name = "S&W_M&P"
+
+[[weapon]]
+id = "000831"
+caliber = "357mag"
+name = "S&W_R8"
+
+[[weapon]]
+id = "000833"
+caliber = "357mag"
+name = "S&W_586"
+
+[[weapon]]
+id = "000884"
+ammo = "Fallout4.esm|09221C"
+name = "S&W_629_Stealth_Hunter"
+
+[[weapon]]
+id = "000886"
+ammo = "Fallout4.esm|09221C"
+name = "S&W_629_Classic"
+
+[[weapon]]
+id = "000888"
+ammo = "Fallout4.esm|09221C"
+name = "S&W_29"
+
+[[part]]
+id = "00087B"
+ammo = "Fallout4.esm|01F276"
+name = "M&P_CCK_10mm"
+
+[[part]]
+id = "00087C"
+ammo = "Fallout4.esm|04CE87"
+name = "M&P_CCK_38"
+
+[[part]]
+id = "00087D"
+ammo = "Fallout4.esm|01F66A"
+name = "M&P_CCK_45"

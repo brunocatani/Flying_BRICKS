@@ -1,0 +1,195 @@
+# Flying BRICKS patch for Uniques Of The Wasteland AIO.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000004"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_GeckoARmRifle_tactical"
+
+[[weapon]]
+id = "000005"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_GeckoARmRifle_SurvivalistRifle"
+
+[[weapon]]
+id = "00000E"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTW_PARA_nonLegendary"
+
+[[weapon]]
+id = "00000F"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTWuniqueZRR_NonLegendary"
+
+[[weapon]]
+id = "000010"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTWuniqueZRR"
+
+[[weapon]]
+id = "000011"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTWunique74U"
+
+[[weapon]]
+id = "000012"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTWuniqueDragunov"
+
+[[weapon]]
+id = "000013"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTWunique112"
+
+[[weapon]]
+id = "000014"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTWuniquePARA"
+
+[[weapon]]
+id = "000015"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_AKsOTWuniqueSVD"
+
+[[weapon]]
+id = "000020"
+caliber = "223"
+name = "UOTWAIO_ThatGunUnique"
+
+[[weapon]]
+id = "00002A"
+ammo = "Fallout4.esm|01F66B"
+name = "UOTWAIO_WasteRev_HuntingPistolUnique"
+
+[[weapon]]
+id = "00002B"
+ammo = "Fallout4.esm|09221C"
+name = "UOTWAIO_WasteRevolver32revUnique"
+
+[[weapon]]
+id = "00002C"
+caliber = "45longcolt"
+name = "UOTWAIO_WasteRevolverSAAUnique"
+
+[[weapon]]
+id = "00002D"
+ammo = "Fallout4.esm|09221C"
+name = "UOTWAIO_WasteRevolverShotgunUinque"
+
+[[weapon]]
+id = "00002E"
+ammo = "Fallout4.esm|09221C"
+name = "UOTWAIO_WasteRevolverUnique2"
+
+[[weapon]]
+id = "000046"
+ammo = "Fallout4.esm|01F673"
+name = "UOTWAIO_GeckoPumpShotgunUniqueMossberg"
+
+[[weapon]]
+id = "000047"
+ammo = "Fallout4.esm|01F673"
+name = "UOTWAIO_GeckoPumpShotgunUniqueSPAS12"
+
+[[weapon]]
+id = "000048"
+ammo = "Fallout4.esm|01F673"
+name = "UOTWAIO_GeckoPumpShotgunUniqueAbomination"
+
+[[weapon]]
+id = "000049"
+ammo = "Fallout4.esm|01F673"
+name = "UOTWAIO_GeckoPumpShotgunUniqueIthaca"
+
+[[weapon]]
+id = "00004A"
+ammo = "Fallout4.esm|01F673"
+name = "UOTWAIO_GeckoPumpShotgunUniqueHuntingShotgun"
+
+[[weapon]]
+id = "00004B"
+ammo = "Fallout4.esm|01F673"
+name = "UOTWAIO_GeckoPumpShotgunUniqueSignalis9"
+
+[[weapon]]
+id = "000059"
+ammo = "Fallout4.esm|01F66B"
+name = "UOTWAIO_GeckoHuntingRifleUnique1"
+
+[[weapon]]
+id = "00005A"
+ammo = "Fallout4.esm|01F66B"
+name = "UOTWAIO_GeckoHuntingRifleUnique2"
+
+[[weapon]]
+id = "00005B"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_GeckoHuntingVarmintRifleUnique"
+
+[[weapon]]
+id = "00005C"
+ammo = "Fallout4.esm|01F66B"
+name = "UOTWAIO_GeckoHuntingRifleUnique3"
+
+[[weapon]]
+id = "00005D"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_GeckoHunting223PistolUnique"
+
+[[weapon]]
+id = "000069"
+ammo = "Fallout4.esm|01F276"
+name = "UOTWAIO_Colt7520Unique"
+
+[[weapon]]
+id = "00006C"
+caliber = "9x19"
+name = "UOTWAIO_ColtBerettaUnique"
+
+[[weapon]]
+id = "00006D"
+caliber = "9x19"
+name = "UOTWAIO_ColtBrowningUnique"
+
+[[weapon]]
+id = "00006E"
+ammo = "Fallout4.esm|01F66A"
+name = "UOTWAIO_Colt1911Unique"
+
+[[weapon]]
+id = "000079"
+caliber = "9x19"
+name = "UOTWAIO_ColtBerettaUniqueStars"
+
+[[weapon]]
+id = "00007C"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_GeckoARmRifle_SWAT"
+
+[[weapon]]
+id = "00008C"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_GeckoARmRifle_Redfield"
+
+[[weapon]]
+id = "000090"
+ammo = "Fallout4.esm|01F278"
+name = "UOTWAIO_GeckoARmRifle_Kitten"
+
+[[damage]]
+id = "00006B"
+damage = 22
+name = "UOTWAIO_ColtClassicPlasmaUnique"
+
+[[default]]
+id = "000079"
+from = "Sidearms of the Wasteland.esp|0026E2"
+to = "Sidearms of the Wasteland.esp|0026E4"
+name = "Samurai's Edge spawns on 9x19, not 10mm"

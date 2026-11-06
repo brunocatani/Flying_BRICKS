@@ -1,0 +1,174 @@
+# Flying BRICKS patch for Munitions - An Ammo Expansion.esl. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "000001"
+caliber = "8ga"
+name = "8 Gauge Shell"
+
+[[round]]
+id = "000005"
+caliber = "4ga"
+name = "4 Gauge Shell"
+
+[[round]]
+id = "000022"
+caliber = "3030"
+name = ".30-30 Round"
+
+[[round]]
+id = "000029"
+caliber = "762x54r"
+name = "7.62mm Rimmed Round"
+
+[[round]]
+id = "000030"
+caliber = "9x39"
+name = "9x39mm Round"
+
+[[round]]
+id = "0000BB"
+caliber = "300wm"
+name = "300 Magnum Round"
+
+[[round]]
+id = "0006C8"
+caliber = "bb"
+name = "BB Pellet"
+
+[[round]]
+id = "0006CA"
+caliber = "762x25"
+name = "7.62mm Tokarev Round"
+
+[[round]]
+id = "0006CB"
+caliber = "47caseless"
+name = "4.7mm Caseless Round"
+
+[[round]]
+id = "0006CC"
+caliber = "50ball"
+name = ".50 Caliber Ball"
+
+[[round]]
+id = "0006D6"
+caliber = "30carbine"
+name = ".30 Carbine"
+
+[[round]]
+id = "0006D7"
+caliber = "303"
+name = ".303 Round"
+
+[[round]]
+id = "0006D8"
+caliber = "280british"
+name = ".280 Round"
+
+[[round]]
+id = "0006E2"
+caliber = "3006"
+name = ".30-06 Round"
+
+[[round]]
+id = "0006E3"
+caliber = "8x57"
+name = "8mm Round"
+
+[[round]]
+id = "0006E4"
+caliber = "20mm"
+name = "20mm Round"
+
+[[round]]
+id = "0006EE"
+caliber = "40sw"
+name = ".40 Round"
+
+[[round]]
+id = "000716"
+caliber = "455"
+name = ".455 Round"
+
+[[round]]
+id = "000717"
+caliber = "57x28"
+name = "5.7mm Round"
+
+[[round]]
+id = "000796"
+caliber = "410"
+name = ".410 Gauge Shell"
+
+[[round]]
+id = "0007A1"
+caliber = "65"
+name = "6.5mm Round"
+
+[[round]]
+id = "0007A2"
+caliber = "545x39"
+name = "5.45mm Round"
+
+[[round]]
+id = "0007EF"
+caliber = "14mm"
+name = "14mm Round"
+
+[[round]]
+id = "0007F3"
+caliber = "500express"
+name = ".500 Express Round"
+
+[[round]]
+id = "000812"
+caliber = "25cal"
+name = ".25 Round"
+
+[[round]]
+id = "000FAA"
+caliber = "223"
+name = ".223 Round"
+
+[[round]]
+id = "000FAC"
+caliber = "20ga"
+name = "20 Gauge Shell"
+
+[[round]]
+id = "000FAE"
+caliber = "127x55"
+name = "12.7mm Round"
+
+[[round]]
+id = "000FAF"
+caliber = "9x19"
+name = "9mm Round"
+
+[[round]]
+id = "000FB0"
+caliber = "32"
+name = ".32 Round"
+
+[[round]]
+id = "000FB1"
+caliber = "22lr"
+name = ".22 Round"
+
+[[round]]
+id = "000FB2"
+caliber = "357mag"
+name = ".357 Round"
+
+[[round]]
+id = "000FCA"
+caliber = "4440"
+name = ".44-40 Round"

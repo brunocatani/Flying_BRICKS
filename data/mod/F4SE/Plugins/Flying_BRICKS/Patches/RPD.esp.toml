@@ -1,0 +1,49 @@
+# Flying BRICKS patch for RPD.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "001066"
+ammo = "DLCNukaWorld.esm|037897"
+name = "RPD"
+
+[[weapon]]
+id = "00B0E3"
+ammo = "DLCNukaWorld.esm|037897"
+name = "RPDChainSaw"
+
+[[weapon]]
+id = "00B9E7"
+ammo = "DLCNukaWorld.esm|037897"
+name = "LeveledList_RPD"
+
+[[weapon]]
+id = "00B9ED"
+ammo = "DLCNukaWorld.esm|037897"
+name = "LeveledList_RPD_ChainSaw"
+
+[[part]]
+id = "00A85A"
+ammo = "Fallout4.esm|01F278"
+name = "mod_RPD_Mag_DSArms"
+
+[[part]]
+id = "00B0EA"
+ammo = "Fallout4.esm|01F278"
+name = "mod_RPD_Mag_DSArms_ChainSaw"
+
+[[part]]
+id = "00B966"
+ammo = "Fallout4.esm|01F278"
+name = "mod_RPD_Mag_DSArms_QuickEject"
+
+[[part]]
+id = "00B967"
+ammo = "Fallout4.esm|01F278"
+name = "mod_RPD_Mag_DSArms_QuickEject_ChainSaw"

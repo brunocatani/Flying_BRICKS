@@ -1,0 +1,29 @@
+# Flying BRICKS patch for ASH127.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "0035C2"
+caliber = "127x55"
+name = "12.7x55mm Caliber"
+
+[[weapon]]
+id = "000FA8"
+caliber = "127x55"
+name = "ASH127"
+
+[[weapon]]
+id = "0017B5"
+caliber = "127x55"
+name = "ASH127_Unique_Vodyanoy"
+
+[[part]]
+id = "001F5F"
+ammo = "Fallout4.esm|01F279"
+name = "mod_ASH127_Receiver_DamageCal"

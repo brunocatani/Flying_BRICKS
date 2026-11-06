@@ -1,0 +1,54 @@
+# Flying BRICKS patch for American180nv.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "00175A"
+caliber = "22lr"
+name = ".22 Long Rifle"
+
+[[round]]
+id = "006454"
+caliber = "22magnum"
+name = ".22 ILARCO Short Magnum"
+
+[[weapon]]
+id = "000800"
+caliber = "22lr"
+name = "American180"
+
+[[weapon]]
+id = "0020EB"
+caliber = "22lr"
+name = "American180_LLinjected"
+
+[[weapon]]
+id = "0020EC"
+caliber = "22lr"
+name = "American180_Unique_Sil22"
+
+[[part]]
+id = "000805"
+caliber = "22lr"
+name = "mod_American180_Magazine_1_22LR_165"
+
+[[part]]
+id = "00177A"
+caliber = "22lr"
+name = "mod_American180_Magazine_2_22LR_270"
+
+[[part]]
+id = "006455"
+caliber = "22magnum"
+name = "mod_American180_Magazine_3_22Mag_220"
+
+[[part]]
+id = "006457"
+caliber = "22magnum"
+name = "mod_American180_Magazine_4_22Mag_365"

@@ -1,0 +1,104 @@
+# Flying BRICKS patch for DLCworkshop02.esm. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[damage]]
+id = "000A96"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponMinutemenFlare"
+
+[[damage]]
+id = "000A97"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPeonyGreen"
+
+[[damage]]
+id = "000A98"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPeonyRed"
+
+[[damage]]
+id = "000A99"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponWeatherClear"
+
+[[damage]]
+id = "000A9A"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponWeatherRadstorm"
+
+[[damage]]
+id = "000A9B"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponWeatherRain"
+
+[[damage]]
+id = "000D27"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPeonyPink"
+
+[[damage]]
+id = "000D28"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPeonyYellow"
+
+[[damage]]
+id = "000D29"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPeonyCrackle"
+
+[[damage]]
+id = "000D2A"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPeonyBlue"
+
+[[damage]]
+id = "000D7B"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPalmSilver"
+
+[[damage]]
+id = "000D81"
+damage = 33
+name = "DLC05WorkshopFireworkWeaponPalmGold"
+
+[[damage]]
+id = "000D92"
+damage = 1
+name = "DLC05PaintballGunBlue"
+
+[[damage]]
+id = "000D95"
+damage = 1
+name = "DLC05PaintballGunGreen"
+
+[[damage]]
+id = "000D96"
+damage = 1
+name = "DLC05PaintballGunRed"
+
+[[damage]]
+id = "000D97"
+damage = 1
+name = "DLC05PaintballGunOrange"
+
+[[damage]]
+id = "000D98"
+damage = 1
+name = "DLC05PaintballGunGlow"
+
+[[damage]]
+id = "000D99"
+damage = 1
+name = "DLC05PaintballGunWhite"
+
+[[damage]]
+id = "000D9A"
+damage = 1
+name = "DLC05PaintballGunYellow"

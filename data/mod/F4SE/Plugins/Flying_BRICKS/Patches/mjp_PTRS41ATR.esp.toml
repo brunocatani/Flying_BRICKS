@@ -1,0 +1,214 @@
+# Flying BRICKS patch for mjp_PTRS41ATR.esp. It applies only when that plugin is loaded.
+# Built from an Armament or Munitions patch for this mod, so it holds only what that patch changes.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "000959"
+caliber = "127x108"
+
+[[weapon]]
+id = "000919"
+caliber = "127x108"
+name = "mjp_PTRS41ATR"
+
+[[weapon]]
+id = "0009CF"
+caliber = "127x108"
+name = "mjp_Type76"
+
+[[weapon]]
+id = "005F8A"
+caliber = "20mm"
+name = "mjp_Type76_20"
+
+[[weapon]]
+id = "00ABA5"
+caliber = "127x108"
+name = "mjp_Type76_Bos1"
+
+[[weapon]]
+id = "00D1AA"
+caliber = "20mm"
+name = "Ballistic_PTRS41Turret_20HE"
+
+[[weapon]]
+id = "01164E"
+caliber = "127x108"
+name = "mjp_Type76_Bos2"
+
+[[weapon]]
+id = "01164F"
+caliber = "127x108"
+name = "mjp_Type76_Gunner"
+
+[[part]]
+id = "00097C"
+caliber = "127x108"
+name = "mod_HuntingRifle_Receiver_MoreDamage3_AmmoConversion22"
+
+[[part]]
+id = "000B11"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEIAPBullets20"
+
+[[part]]
+id = "000B12"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_AP20"
+
+[[part]]
+id = "000B13"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_APFSDS20H"
+
+[[part]]
+id = "000B17"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_APDS20"
+
+[[part]]
+id = "000B18"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_RadiationDamage20H"
+
+[[part]]
+id = "000B43"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_SeekBullets20"
+
+[[part]]
+id = "000B5A"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_Canister20"
+
+[[part]]
+id = "000B80"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_TwoShot20H"
+
+[[part]]
+id = "000B81"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_DamageVsGhouls20mm"
+
+[[part]]
+id = "000B82"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_APIncendiaryBullets20"
+
+[[part]]
+id = "000B83"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_CryoBullets20"
+
+[[part]]
+id = "000B84"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_EMPBullets20"
+
+[[part]]
+id = "000B86"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEIBullets20"
+
+[[part]]
+id = "000B87"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_PlasmaHEATBullets20"
+
+[[part]]
+id = "000B88"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_TwoShotHEATBullets20H"
+
+[[part]]
+id = "000B8A"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEATBullets20"
+
+[[part]]
+id = "000BD1"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_Canister20H_NC"
+
+[[part]]
+id = "007E03"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEIAPBullets20H"
+
+[[part]]
+id = "015AC4"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_APFSDS20H_NoKO"
+
+[[part]]
+id = "015AC5"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_AP20_NoKO"
+
+[[part]]
+id = "015AC6"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_APDS20_NoKO"
+
+[[part]]
+id = "015AC9"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_EMPBullets20_NoKO"
+
+[[part]]
+id = "015ACA"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEATBullets20_NoKO"
+
+[[part]]
+id = "015ACB"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEIAPBullets20_NoKO"
+
+[[part]]
+id = "015ACC"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEIAPBullets20H_NoKO"
+
+[[part]]
+id = "015ACD"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_HEIBullets20_NoKO"
+
+[[part]]
+id = "015ACE"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_PlasmaHEATBullets20_NoKO"
+
+[[part]]
+id = "015ACF"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_RadiationDamage20H_NoKO"
+
+[[part]]
+id = "015AD0"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_SeekBullets20_NoKO"
+
+[[part]]
+id = "015AD1"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_TwoShotHEATBullets20H_NoKO"
+
+[[part]]
+id = "015AD2"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_TwoShot20H_NoKO"
+
+[[part]]
+id = "015AF4"
+caliber = "20mm"
+name = "mod_PTRS41_Ammunition_Weapon_APIncendiaryBullets20_NoKO"

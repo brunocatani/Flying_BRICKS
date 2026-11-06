@@ -1,0 +1,28 @@
+FormKey: 000A21:Flying_BRICKS.esp
+EditorID: FlyingBricks_Ammo_410
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '.410 Bore Shell'
+Model:
+  File: Ammo\ShotgunShell\ShotgunShellAmmo.nif
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 1
+Weight: 0.1
+Projectile: 00082A:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 75
+ShortName:
+  TargetLanguage: English
+  Value: '.410 Bore'
+CasingModel: Ammo\ShotgunShell\SpentShotgunShell.nif

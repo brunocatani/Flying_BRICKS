@@ -1,0 +1,28 @@
+FormKey: 000A10:Flying_BRICKS.esp
+EditorID: FlyingBricks_Ammo_28ga
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '28-Gauge Shotgun Shell'
+Model:
+  File: Ammo\ShotgunShell\ShotgunShellAmmo.nif
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 2
+Weight: 0.054687
+Projectile: 000819:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 107
+ShortName:
+  TargetLanguage: English
+  Value: '28-Gauge Shell'
+CasingModel: Ammo\ShotgunShell\SpentShotgunShell.nif

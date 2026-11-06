@@ -1,0 +1,114 @@
+# Flying BRICKS patch for Skb_RiflesRebirth.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000F99"
+ammo = "Fallout4.esm|01F278"
+name = "skb_WH77"
+
+[[weapon]]
+id = "0063AD"
+ammo = "Fallout4.esm|01F66A"
+name = "skb_TNP45"
+
+[[weapon]]
+id = "00DD5F"
+ammo = "Fallout4.esm|01F66B"
+name = "skb_IF54"
+
+[[weapon]]
+id = "00FC3D"
+ammo = "Fallout4.esm|01F279"
+name = "Skb_IFAM50"
+
+[[weapon]]
+id = "016FA2"
+ammo = "DLCNukaWorld.esm|037897"
+name = "skb_TD64"
+
+[[weapon]]
+id = "0239D5"
+ammo = "Fallout4.esm|01F278"
+name = "Skb_LR72"
+
+[[part]]
+id = "004520"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_WH77_Receiver5mm_Auto1"
+
+[[part]]
+id = "00D5C1"
+ammo = "Fallout4.esm|01F276"
+name = "skb_mod_TNP45_Receiver_Automatic1_10mm"
+
+[[part]]
+id = "01670D"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_IF54_Receiver_556_Auto1"
+
+[[part]]
+id = "01670E"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_IF54_Receiver_556_Auto2"
+
+[[part]]
+id = "01670F"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_IF54_Receiver_556_Auto3"
+
+[[part]]
+id = "016716"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_IF54_Receiver_556_SemiAuto1"
+
+[[part]]
+id = "016717"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_IF54_Receiver_556_SemiAuto2"
+
+[[part]]
+id = "016718"
+ammo = "Fallout4.esm|01F278"
+name = "skb_mod_IF54_Receiver_556_SemiAuto3"
+
+[[part]]
+id = "01671E"
+ammo = "Fallout4.esm|01F276"
+name = "skb_mod_TNP45_Receiver_Automatic1_and_MoreDamage1_10mm"
+
+[[part]]
+id = "01671F"
+ammo = "Fallout4.esm|01F276"
+name = "skb_mod_TNP45_Receiver_Automatic1_and_MoreDamage2_10mm"
+
+[[part]]
+id = "016723"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_WH77_Receiver5mm_Auto2"
+
+[[part]]
+id = "016724"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_WH77_Receiver5mm_Auto3"
+
+[[part]]
+id = "016725"
+ammo = "Fallout4.esm|01F66C"
+name = "skb_mod_WH77_Receiver5mm_Auto4"
+
+[[part]]
+id = "0239E4"
+ammo = "DLCNukaWorld.esm|037897"
+name = "skb_mod_LR72_Receiver_AmmoConversion"
+
+[[part]]
+id = "0239EF"
+ammo = "DLCNukaWorld.esm|037897"
+name = "skb_mod_LR72_Receiver_MoreDamage3_AmmoConversion"

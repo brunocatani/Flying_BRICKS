@@ -1,0 +1,120 @@
+# Flying BRICKS patch for Groza.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000FF1"
+caliber = "9x39"
+name = "WPN_Groza"
+
+[[part]]
+id = "000FA2"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_AK55"
+
+[[part]]
+id = "003EBB"
+caliber = "9x39"
+name = "mod_Groza_Mag_939_20_STD"
+
+[[part]]
+id = "003EC4"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_6L10"
+
+[[part]]
+id = "003EC6"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_USPalm"
+
+[[part]]
+id = "003EE9"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_30_6L20"
+
+[[part]]
+id = "003EEA"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_30_6L23"
+
+[[part]]
+id = "003EED"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_45_6L26"
+
+[[part]]
+id = "003F09"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_30_PMag"
+
+[[part]]
+id = "003F0A"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_PMag"
+
+[[part]]
+id = "003F0B"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_30_AK12"
+
+[[part]]
+id = "003F27"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_30_6L23_Plum"
+
+[[part]]
+id = "003F28"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_30_PMag_Banana"
+
+[[part]]
+id = "003F29"
+caliber = "545x39"
+name = "mod_Groza_Mag_545_30_PMag_Brown"
+
+[[part]]
+id = "003F2A"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_AK103"
+
+[[part]]
+id = "003F2B"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_AK103_Plum"
+
+[[part]]
+id = "003F2C"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_PMag_Banana"
+
+[[part]]
+id = "003F2D"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_PMag_Brown"
+
+[[part]]
+id = "003F2E"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_USPalm_Banana"
+
+[[part]]
+id = "003F2F"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_USPalm_FDE"
+
+[[part]]
+id = "003F30"
+ammo = "DLCNukaWorld.esm|037897"
+name = "mod_Groza_Mag_762_30_USPalm_Plum"
+
+[[default]]
+id = "000FF1"
+from = "Groza.esp|003EE9"
+to = "Groza.esp|003EBB"
+name = "OTs-14 Groza spawns on 9x39, not 5.45"

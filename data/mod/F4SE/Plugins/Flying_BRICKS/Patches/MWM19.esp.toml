@@ -1,0 +1,39 @@
+# Flying BRICKS patch for MWM19.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000800"
+caliber = "9x19"
+name = "WPNMWM19"
+
+[[weapon]]
+id = "000876"
+caliber = "9x19"
+name = "WPNMWM19MoneyMaker"
+
+[[weapon]]
+id = "000877"
+caliber = "9x19"
+name = "WPNMWM19MintChip"
+
+[[weapon]]
+id = "000878"
+caliber = "9x19"
+name = "WPNMWM19Meltwater"
+
+[[weapon]]
+id = "000879"
+caliber = "9x19"
+name = "WPNMWM19SilverMaple"
+
+[[weapon]]
+id = "00087A"
+caliber = "9x19"
+name = "WPNMWM19StateOfWar"

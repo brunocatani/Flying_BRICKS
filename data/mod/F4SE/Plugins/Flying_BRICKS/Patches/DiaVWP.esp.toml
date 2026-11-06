@@ -1,0 +1,49 @@
+# Flying BRICKS patch for DiaVWP.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "00012D"
+caliber = "30carbine"
+name = "DiaM1Carbine"
+
+[[weapon]]
+id = "00019F"
+caliber = "9x19"
+name = "DiaSten"
+
+[[weapon]]
+id = "0001DC"
+caliber = "3006"
+name = "DiaM1Garand"
+
+[[weapon]]
+id = "00043D"
+caliber = "9x19"
+name = "DiaStenRadium"
+
+[[weapon]]
+id = "0004BA"
+caliber = "32"
+name = "DiaWelrod"
+
+[[weapon]]
+id = "000CA2"
+caliber = "3006"
+name = "DiaM1GarandBlue"
+
+[[weapon]]
+id = "000CC3"
+caliber = "9x19"
+name = "DiaStenUnique"
+
+[[weapon]]
+id = "000D0F"
+caliber = "30carbine"
+name = "DiaM1CarbineUnique"

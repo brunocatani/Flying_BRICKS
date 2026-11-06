@@ -1,0 +1,24 @@
+# Flying BRICKS patch for That Gun of the wasteland.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000F99"
+caliber = "223"
+name = "223pistol"
+
+[[part]]
+id = "001EEB"
+ammo = "Fallout4.esm|01F278"
+name = "mod_223pistol_REC_556pistol"
+
+[[part]]
+id = "00BEF5"
+ammo = "Fallout4.esm|09221C"
+name = "mod_223pistol_MOD_44conv1"

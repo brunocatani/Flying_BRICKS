@@ -1,0 +1,114 @@
+# Flying BRICKS patch for Armament.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "000FFA"
+caliber = "57x28"
+name = "[AmmoCaliber] FN 5.7x28mm Round"
+
+[[round]]
+id = "0012FE"
+caliber = "8x57"
+name = "[AmmoCaliber] 8x57mm Round"
+
+[[round]]
+id = "001340"
+caliber = "300wm"
+name = "[AmmoCaliber] .300 Winchester Magnum Round"
+
+[[round]]
+id = "0013B4"
+caliber = "303"
+name = "[AmmoCaliber] .303 British Round"
+
+[[round]]
+id = "0020BE"
+caliber = "762x54r"
+name = "[AmmoCaliber] 7.62x54mmR Round"
+
+[[round]]
+id = "0020BF"
+caliber = "9x18"
+name = "[AmmoCaliber] 9x18 Makarov Round"
+
+[[round]]
+id = "0020C0"
+caliber = "9x39"
+name = "[AmmoCaliber] 9x39mm SP-5 Round"
+
+[[round]]
+id = "0020C1"
+caliber = "40sw"
+name = "[AmmoCaliber] .40 Smith & Wesson Round"
+
+[[round]]
+id = "0020C2"
+caliber = "300blk"
+name = "[AmmoCaliber] .300 AAC Blackout Round"
+
+[[round]]
+id = "0020CB"
+caliber = "338lm"
+name = "[AmmoCaliber] .338 Lapua Magnum Round"
+
+[[round]]
+id = "002173"
+caliber = "223"
+name = "[AmmoCaliber] .223 Remington Round"
+
+[[round]]
+id = "00217B"
+caliber = "50ae"
+name = "[AmmoCaliber] .50 Action Express Round"
+
+[[round]]
+id = "002754"
+caliber = "545x39"
+name = "[AmmoCaliber] 5.45x39mm Round"
+
+[[round]]
+id = "003958"
+caliber = "68spc"
+name = "[AmmoCaliber] 6.8mm Remington SPC"
+
+[[round]]
+id = "003B88"
+caliber = "28ga"
+name = "[AmmoCaliber] 28-Gauge Shotgun Shell"
+
+[[round]]
+id = "003BB4"
+caliber = "50beowulf"
+name = "[AmmoCaliber] .50 Beowulf"
+
+[[round]]
+id = "003BB8"
+caliber = "458socom"
+name = "[AmmoCaliber] .458 SOCOM"
+
+[[round]]
+id = "003BBC"
+caliber = "3006"
+name = "[AmmoCaliber] .30-06 Springfield"
+
+[[round]]
+id = "003BC5"
+caliber = "22lr"
+name = "[AmmoCaliber] .22 Long Rifle"
+
+[[round]]
+id = "003BC8"
+caliber = "762x25"
+name = "[AmmoCaliber] 7.62x25mm Tokarev Round"
+
+[[round]]
+id = "003BD5"
+caliber = "277sig"
+name = "[AmmoCaliber] .277 Sig Fury Round"

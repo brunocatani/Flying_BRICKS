@@ -1,0 +1,33 @@
+MutagenObjectType: ArmorModification
+FormKey: 20DE3F:Fallout4.esm
+EditorID: mod_armor_Railroad_ClothingArmor1
+Version2: 5
+Name:
+  TargetLanguage: English
+  Value: 'Ballistic Weave Mk1 (Level 1)'
+Description:
+  TargetLanguage: English
+  Value: 'Level 1 plating. Stops pistol rounds up to .357 Magnum.'
+AttachPoint: 20DE3E:Fallout4.esm
+TargetOmodKeywords:
+- 20DE40:Fallout4.esm
+LooseMod: 20DE42:Fallout4.esm
+Properties:
+- MutagenObjectType: ObjectModIntProperty<Armor+Property>
+  Property: Rating
+  Value: 30
+  FunctionType: Add
+- MutagenObjectType: ObjectModIntProperty<Armor+Property>
+  Property: Value
+  Value: 20
+  FunctionType: Add
+- MutagenObjectType: ObjectModFormLinkIntProperty<Armor+Property>
+  Property: Keywords
+  Record: 20DE45:Fallout4.esm
+  Value: 1
+  FunctionType: Add
+- MutagenObjectType: ObjectModFormLinkFloatProperty<Armor+Property>
+  Property: DamageTypeValue
+  Record: 060A81:Fallout4.esm
+  Value: 30
+  FunctionType: Add

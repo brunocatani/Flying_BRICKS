@@ -1,0 +1,89 @@
+# Flying BRICKS patch for CWPointLookoutFO4.esm. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "01E8EC"
+caliber = "32"
+name = ".32 Caliber Round"
+
+[[round]]
+id = "01E967"
+caliber = "bb"
+name = "BB"
+
+[[weapon]]
+id = "00879F"
+ammo = "Fallout4.esm|01F673"
+name = "00DCDLC04WeapShotgun"
+
+[[weapon]]
+id = "0087A1"
+ammo = "Fallout4.esm|01F276"
+name = "00DCDLC04WeapRifle"
+
+[[weapon]]
+id = "01E7F2"
+ammo = "Fallout4.esm|01F276"
+name = "00DCDLC04WeapUniqueRewardRifle"
+
+[[weapon]]
+id = "01E8F5"
+caliber = "32"
+name = "00DCDLC04Weap32CaliberPistol"
+
+[[weapon]]
+id = "01E924"
+ammo = "Fallout4.esm|01F66B"
+name = "00DCDLC04WeapSniperRifle"
+
+[[weapon]]
+id = "01E969"
+caliber = "bb"
+name = "00DCDLC04WeapBBGun"
+
+[[weapon]]
+id = "01EB47"
+caliber = "32"
+name = "00DCDLC04WeapHuntingRifle"
+
+[[weapon]]
+id = "02041B"
+ammo = "Fallout4.esm|01F66C"
+name = "00DCDLC04Minigun"
+
+[[weapon]]
+id = "020471"
+ammo = "Fallout4.esm|01F66C"
+name = "00DCDLC04MinigunEugene"
+
+[[weapon]]
+id = "020473"
+ammo = "Fallout4.esm|01F66C"
+name = "00DCDLC04MinigunAvenger"
+
+[[weapon]]
+id = "020483"
+ammo = "Fallout4.esm|01F276"
+name = "00DCDLC04MiniSentryTurretBallistic"
+
+[[part]]
+id = "01EB0A"
+ammo = "Fallout4.esm|04CE87"
+name = "00DCDLC04_mod_32Caliber_Ammo_38Conversion"
+
+[[part]]
+id = "01EB5E"
+ammo = "Fallout4.esm|04CE87"
+name = "00DCDLC04_mod_HuntingRifle_Receiver_AmmoConversion38"
+
+[[part]]
+id = "01EB66"
+ammo = "Fallout4.esm|01F279"
+name = "00DCDLC04_mod_HuntingRifle_Receiver_MoreDamage3_AmmoConversion"

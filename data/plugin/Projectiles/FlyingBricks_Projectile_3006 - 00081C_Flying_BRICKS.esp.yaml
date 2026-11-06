@@ -1,0 +1,25 @@
+FormKey: 00081C:Flying_BRICKS.esp
+EditorID: FlyingBricks_Projectile_3006
+Model:
+  File: Ammo\308\Projectile308cal.nif
+Unused: '[]'
+Flags:
+- MuzzleFlash
+- PassThroughSmallTransparent
+- PenetratesGeometry
+Type: Missile
+Gravity: 2
+Speed: 65189
+Range: 16000
+MuzzleFlash: 004B29:Fallout4.esm
+Sound: 01D565:Fallout4.esm
+MuzzleFlashDuration: 0.05
+FadeDuration: 0.5
+ImpactForce: 25
+CollisionRadius: 0.4
+Lifetime: 0.7
+RelaunchInterval: 0.25
+CollisionLayer: 088767:Fallout4.esm
+TracerFrequency: 4
+MuzzleFlashModel: Effects\MuzMachineGun01.nif
+SoundLevel: 1

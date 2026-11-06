@@ -1,0 +1,214 @@
+# Flying BRICKS patch for AK_AR15FO4.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[weapon]]
+id = "000FA1"
+caliber = "545x39"
+name = "AK74"
+
+[[weapon]]
+id = "002684"
+ammo = "Fallout4.esm|01F278"
+name = "M231"
+
+[[weapon]]
+id = "002697"
+ammo = "Fallout4.esm|01F278"
+name = "M605"
+
+[[weapon]]
+id = "003D92"
+ammo = "Fallout4.esm|01F278"
+name = "SR15E3"
+
+[[weapon]]
+id = "003DA6"
+ammo = "DLCNukaWorld.esm|037897"
+name = "AKS"
+
+[[weapon]]
+id = "003DB9"
+ammo = "DLCNukaWorld.esm|037897"
+name = "Type56"
+
+[[weapon]]
+id = "0054CE"
+caliber = "762x54r"
+name = "PSL"
+
+[[weapon]]
+id = "005C93"
+caliber = "762x54r"
+name = "PKM"
+
+[[weapon]]
+id = "006BE1"
+caliber = "762x54r"
+name = "SVD"
+
+[[weapon]]
+id = "008015"
+ammo = "DLCNukaWorld.esm|037897"
+name = "AKM"
+
+[[weapon]]
+id = "0087D0"
+ammo = "DLCNukaWorld.esm|037897"
+name = "AKMS"
+
+[[weapon]]
+id = "0087E8"
+caliber = "545x39"
+name = "AKS74"
+
+[[weapon]]
+id = "0087FD"
+ammo = "Fallout4.esm|01F278"
+name = "XM16E1"
+
+[[weapon]]
+id = "008AC1"
+caliber = "9x39"
+name = "VSS"
+
+[[weapon]]
+id = "00927E"
+caliber = "9x39"
+name = "VAL"
+
+[[weapon]]
+id = "00B135"
+ammo = "Fallout4.esm|01F278"
+name = "M16K"
+
+[[weapon]]
+id = "00B8DF"
+ammo = "DLCNukaWorld.esm|037897"
+name = "AK104BG"
+
+[[weapon]]
+id = "00D434"
+ammo = "Fallout4.esm|01F278"
+name = "M4A1"
+
+[[weapon]]
+id = "00D445"
+caliber = "545x39"
+name = "AKS74U"
+
+[[weapon]]
+id = "00E539"
+ammo = "Fallout4.esm|01F278"
+name = "M16A1"
+
+[[weapon]]
+id = "00E542"
+ammo = "Fallout4.esm|01F278"
+name = "XM177E2"
+
+[[weapon]]
+id = "00EDB4"
+ammo = "DLCNukaWorld.esm|037897"
+name = "AK"
+
+[[weapon]]
+id = "00EDBC"
+ammo = "DLCNukaWorld.esm|037897"
+name = "RPK"
+
+[[weapon]]
+id = "00EDC6"
+caliber = "545x39"
+name = "AK74M"
+
+[[weapon]]
+id = "00EDD2"
+ammo = "DLCNukaWorld.esm|037897"
+name = "AK103"
+
+[[weapon]]
+id = "00EDD3"
+ammo = "Fallout4.esm|01F278"
+name = "AK101"
+
+[[weapon]]
+id = "00EDD9"
+ammo = "DLCNukaWorld.esm|037897"
+name = "AK104"
+
+[[weapon]]
+id = "00EDDC"
+ammo = "Fallout4.esm|01F278"
+name = "M723"
+
+[[weapon]]
+id = "00EDE7"
+ammo = "Fallout4.esm|01F278"
+name = "M653"
+
+[[weapon]]
+id = "00EDE9"
+ammo = "Fallout4.esm|01F278"
+name = "M651"
+
+[[weapon]]
+id = "010FB1"
+caliber = "8x57"
+name = "M76"
+
+[[weapon]]
+id = "010FE2"
+caliber = "762x51"
+name = "SR25"
+
+[[weapon]]
+id = "01EC2E"
+ammo = "Fallout4.esm|01F278"
+name = "M16A2E3"
+
+[[weapon]]
+id = "020325"
+ammo = "Fallout4.esm|01F278"
+name = "ColtR0901"
+
+[[weapon]]
+id = "020331"
+ammo = "Fallout4.esm|01F278"
+name = "M16A4_AA"
+
+[[weapon]]
+id = "02315C"
+caliber = "545x39"
+name = "AK105"
+
+[[weapon]]
+id = "02315D"
+ammo = "Fallout4.esm|01F278"
+name = "AK102"
+
+[[weapon]]
+id = "02BB51"
+caliber = "545x39"
+name = "RPK74"
+
+[[weapon]]
+id = "02BB68"
+ammo = "DLCNukaWorld.esm|037897"
+name = "M70B1"
+
+[[weapon]]
+id = "02BB76"
+ammo = "DLCNukaWorld.esm|037897"
+name = "M70AB2"
+
+[[weapon]]
+id = "02BBAA"
+ammo = "Fallout4.esm|01F278"
+name = "XM177"

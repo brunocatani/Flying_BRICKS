@@ -1,0 +1,1297 @@
+{
+ "about": "Which other mods' records and assets Flying_BRICKS uses when they are installed. Read by tools/generate_terminal_data.py. ammo maps a foreign AMMO record to our caliber, and the record is replaced by ours in memory. visuals name each caliber's models in Armament and Munitions; exact false means a close caliber's model from the same family. Armament, Munitions and Weapons of Fate entries were checked against those mods' plugins and archives. Caliber Complex ammo and every BIBFX entry were not, because those mods were not available to check.",
+ "providers": {
+  "munitions": {
+   "plugin": "Munitions - An Ammo Expansion.esl",
+   "sampleMesh": "Munitions\\Ammo\\32Caliber\\32CaliberAmmo.nif"
+  },
+  "armament": {
+   "plugin": "Armament.esp",
+   "sampleMesh": "Ammo\\Armament\\308Win_OpenedBox.nif"
+  },
+  "bibfx": {
+   "plugin": "Burst Impact Blast FX.esp",
+   "sampleMesh": "Effects\\DefaultTracerBeamTracer.nif"
+  },
+  "wof": {
+   "plugin": "Weapons of Fate.esp",
+   "sampleMesh": "WeaponsOfFate\\308\\Projectile308_Tracer.nif"
+  }
+ },
+ "caliberComplexPlugin": "CALIBER-COMPLEX.esm",
+ "visuals": {
+  "10x25": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile10mm.nif",
+    "box": "Ammo\\Armament\\10x25mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\10x25mm_Casing.nif",
+    "exact": true
+   }
+  },
+  "556x45": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile556x45mm.nif",
+    "box": "Ammo\\Armament\\556x45mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\556x45mm_Casing.nif",
+    "exact": true
+   }
+  },
+  "50bmg": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": true
+   }
+  },
+  "45acp": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45ACP.nif",
+    "box": "Ammo\\Armament\\45ACP_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\45ACP_Casing.nif",
+    "exact": true
+   }
+  },
+  "308": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": true
+   }
+  },
+  "762x51": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x51mm.nif",
+    "box": "Ammo\\Armament\\762x51mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x51mm_Casing.nif",
+    "exact": true
+   }
+  },
+  "12ga": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile12GaPellet.nif",
+    "box": "Ammo\\Armament\\12GA_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\12GA_Casing.nif",
+    "exact": true
+   }
+  },
+  "9x19": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\9mm\\9mmAmmo.nif",
+    "casing": "Munitions\\Ammo\\9mm\\9mmCasing.nif"
+   }
+  },
+  "44mag": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile44Mag.nif",
+    "box": "Ammo\\Armament\\44Mag_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\44Mag_Casing.nif",
+    "exact": true
+   }
+  },
+  "4570": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45-70.nif",
+    "box": "Ammo\\Armament\\45-70_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\45-70_Casing.nif",
+    "exact": true
+   }
+  },
+  "762x39": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x39mm.nif",
+    "box": "Ammo\\Armament\\762x39mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x39mm_Casing.nif",
+    "exact": true
+   }
+  },
+  "57x28": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile57x28.nif",
+    "box": "Ammo\\Armament\\57x28mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\57x28mm_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\57mm\\57mmAmmo.nif"
+   }
+  },
+  "8x57": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile8mm.nif",
+    "box": "Ammo\\Armament\\8mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\8mm_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\792mm\\792mmAmmo.nif"
+   }
+  },
+  "300wm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\ammo\\300Magnum\\300MagnumAmmo.nif",
+    "casing": "Munitions\\ammo\\300Magnum\\300MagnumCasing.nif"
+   }
+  },
+  "303": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile303.nif",
+    "box": "Ammo\\Armament\\303_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\303_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\303Caliber\\303CaliberAmmo.nif"
+   }
+  },
+  "762x54r": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x54mmR.nif",
+    "box": "Ammo\\Armament\\762x54mmR_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x54mmR_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\ammo\\762x54R\\762x54RAmmo.nif",
+    "casing": "Munitions\\ammo\\762x54R\\762x54RCaliberCasing.nif"
+   }
+  },
+  "9x18": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x18mm.nif",
+    "box": "Ammo\\Armament\\9x18mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x18mm_Casing.nif",
+    "exact": true
+   }
+  },
+  "9x39": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x39mm.nif",
+    "box": "Ammo\\Armament\\9x39mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x39mm_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\ammo\\9x39mm\\9x39Ammo.nif",
+    "casing": "Munitions\\ammo\\9x39mm\\9x39CaliberCasing.nif"
+   }
+  },
+  "40sw": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile40SW.nif",
+    "box": "Ammo\\Armament\\40SW_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\40SW_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\40Caliber\\40CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\40Caliber\\40CaliberCasing.nif"
+   }
+  },
+  "300blk": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300BLK.nif",
+    "box": "Ammo\\Armament\\300BLK_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300BLK_Casing.nif",
+    "exact": true
+   }
+  },
+  "338lm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile338LM.nif",
+    "box": "Ammo\\Armament\\338LM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\338LM_Casing.nif",
+    "exact": true
+   }
+  },
+  "223": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\223Caliber\\223CaliberAmmo.nif"
+   }
+  },
+  "50ae": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": true
+   }
+  },
+  "545x39": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile545x39mm.nif",
+    "box": "Ammo\\Armament\\545x39mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\545x39mm_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\545mm\\545mmAmmo.nif",
+    "casing": "Munitions\\Ammo\\545mm\\545mmCasing.nif"
+   }
+  },
+  "68spc": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile68Spc.nif",
+    "box": "Ammo\\Armament\\68Spc_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\68Spc_Casing.nif",
+    "exact": true
+   }
+  },
+  "28ga": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile28GaPellet.nif",
+    "box": "Ammo\\Armament\\28GA_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\28GA_Casing.nif",
+    "exact": true
+   }
+  },
+  "50beowulf": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50Beowulf.nif",
+    "box": "Ammo\\Armament\\50Beowulf_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50Beowulf_Casing.nif",
+    "exact": true
+   }
+  },
+  "458socom": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile458SOCOM.nif",
+    "box": "Ammo\\Armament\\458SOCOM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\458SOCOM_Casing.nif",
+    "exact": true
+   }
+  },
+  "3006": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile30-06.nif",
+    "box": "Ammo\\Armament\\30-06_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\30-06_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\3006Caliber\\3006CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\3006Caliber\\3006CaliberCasing.nif"
+   }
+  },
+  "22lr": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile22LR.nif",
+    "box": "Ammo\\Armament\\22LR_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\22LR_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\22Caliber\\22CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\22Caliber\\22CaliberCasing.nif"
+   }
+  },
+  "762x25": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x25mm.nif",
+    "box": "Ammo\\Armament\\762x25mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x25mm_Casing.nif",
+    "exact": true
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\762mmTokarev\\762mmTokarevAmmo.nif"
+   }
+  },
+  "277sig": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile277Sig.nif",
+    "box": "Ammo\\Armament\\277Sig_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\277Sig_Casing.nif",
+    "exact": true
+   }
+  },
+  "30carbine": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x39mm.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\30Caliber\\30CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\30Caliber\\30CaliberCasing.nif"
+   }
+  },
+  "32": {
+   "munitions": {
+    "flight": "Munitions\\Ammo\\32Caliber\\32CaliberProjectile.nif",
+    "box": "Munitions\\Ammo\\32Caliber\\32CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\32Caliber\\32CaliberCasing.nif"
+   }
+  },
+  "455": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45ACP.nif",
+    "casing": "Ammo\\45Cal\\45Casing.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\455Caliber\\455CaliberAmmo.nif"
+   }
+  },
+  "47caseless": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile57x28.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\47mmCaseless\\47mmCaselessAmmo.nif"
+   }
+  },
+  "20ga": {
+   "munitions": {
+    "box": "Munitions\\Ammo\\20GaugeShell\\20GaugeAmmo.nif",
+    "casing": "Munitions\\Ammo\\20GaugeShell\\20GaugeShell.nif"
+   }
+  },
+  "50ball": {
+   "armament": {
+    "flight": "Ammo\\ShotgunShell\\ProjectileShotPellet.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\50CaliberBall\\50CaliberBallAmmo.nif"
+   }
+  },
+  "65": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile68Spc.nif",
+    "casing": "Ammo\\38\\38Casing.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\65mm\\65mmAmmo.nif"
+   }
+  },
+  "bb": {
+   "armament": {
+    "flight": "Ammo\\ShotgunShell\\ProjectileShotPellet.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\BBPellet\\BBPelletAmmo.nif"
+   }
+  },
+  "4ga": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile12GaPellet.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\ammo\\4GaugeShell\\4GaugeAmmo.nif",
+    "casing": "Munitions\\ammo\\4GaugeShell\\4GaugeShell.nif"
+   }
+  },
+  "8ga": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile12GaPellet.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\ammo\\8GaugeShell\\8GaugeAmmo.nif",
+    "casing": "Munitions\\ammo\\8GaugeShell\\8GaugeShell.nif"
+   }
+  },
+  "410": {
+   "munitions": {
+    "box": "Munitions\\Ammo\\410GaugeShell\\410GaugeShellAmmo.nif",
+    "casing": "Munitions\\Ammo\\410GaugeShell\\410GaugeShellCasing.nif"
+   }
+  },
+  "3030": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45-70.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\ammo\\3030Caliber\\3030CaliberAmmo.nif",
+    "casing": "Munitions\\ammo\\3030Caliber\\3030CaliberCasing.nif"
+   }
+  },
+  "280british": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x51mm.nif",
+    "box": "Ammo\\Armament\\762x51mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x51mm_Casing.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\280Caliber\\280CaliberAmmo.nif"
+   }
+  },
+  "357mag": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile44Mag.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\357Caliber\\357CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\357Caliber\\357CaliberCasing.nif"
+   }
+  },
+  "4440": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile44Mag.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\4440Caliber\\4440CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\4440Caliber\\4440CaliberCasing.nif"
+   }
+  },
+  "127x55": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50Beowulf.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\127mm\\127mmAmmo.nif",
+    "casing": "Munitions\\Ammo\\127mm\\127mmCasing.nif"
+   }
+  },
+  "14mm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\14mm\\14mmAmmo.nif",
+    "casing": "Munitions\\ammo\\14mm\\14mmCasing.nif"
+   }
+  },
+  "20mm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\20mm\\20mmAmmo.nif"
+   }
+  },
+  "500express": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\500Caliber\\500CaliberAmmo.nif",
+    "casing": "Munitions\\ammo\\500Caliber\\500CalCasing.nif"
+   }
+  },
+  "25cal": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "exact": false
+   },
+   "munitions": {
+    "box": "Munitions\\Ammo\\25Caliber\\25CaliberAmmo.nif",
+    "casing": "Munitions\\Ammo\\32Caliber\\32CaliberCasing.nif"
+   }
+  },
+  "38super": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "38special": {
+   "munitions": {
+    "flight": "Munitions\\Ammo\\32Caliber\\32CaliberProjectile.nif"
+   }
+  },
+  "22spitfire": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "22magnum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile22LR.nif",
+    "box": "Ammo\\Armament\\22LR_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\22LR_Casing.nif",
+    "exact": false
+   }
+  },
+  "380acp": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "9x18ultra": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "9x21mmgyurza": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "9x25mmdillon": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "45super": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45ACP.nif",
+    "box": "Ammo\\Armament\\45ACP_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\45ACP_Casing.nif",
+    "exact": false
+   }
+  },
+  "545x18mmsoviet": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile57x28.nif",
+    "box": "Ammo\\Armament\\57x28mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\57x28mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "400corbon": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45ACP.nif",
+    "box": "Ammo\\Armament\\45ACP_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\45ACP_Casing.nif",
+    "exact": false
+   }
+  },
+  "50gi": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": false
+   }
+  },
+  "357sig": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile10mm.nif",
+    "box": "Ammo\\Armament\\10x25mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\10x25mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "763x25mmmauser": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "765x21mmvintageparabellum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "hk46x30mm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile57x28.nif",
+    "box": "Ammo\\Armament\\57x28mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\57x28mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "224boz": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile57x28.nif",
+    "box": "Ammo\\Armament\\57x28mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\57x28mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "75fk": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile9x19mm.nif",
+    "box": "Ammo\\Armament\\9x19mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\9x19mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "41ae": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile44Mag.nif",
+    "box": "Ammo\\Armament\\44Mag_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\44Mag_Casing.nif",
+    "exact": false
+   }
+  },
+  "16gaugevintage": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile12GaPellet.nif",
+    "box": "Ammo\\Armament\\12GA_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\12GA_Casing.nif",
+    "exact": false
+   }
+  },
+  "10gauge": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile12GaPellet.nif",
+    "box": "Ammo\\Armament\\12GA_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\12GA_Casing.nif",
+    "exact": false
+   }
+  },
+  "222remington": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "6mmacr": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile556x45mm.nif",
+    "box": "Ammo\\Armament\\556x45mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\556x45mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "58x42mmchinese": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile556x45mm.nif",
+    "box": "Ammo\\Armament\\556x45mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\556x45mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "485x49mmbritish": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile556x45mm.nif",
+    "box": "Ammo\\Armament\\556x45mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\556x45mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "224valkyrie": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "300whisper": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300BLK.nif",
+    "box": "Ammo\\Armament\\300BLK_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300BLK_Casing.nif",
+    "exact": false
+   }
+  },
+  "65grendel": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x39mm.nif",
+    "box": "Ammo\\Armament\\762x39mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x39mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "68spear": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x39mm.nif",
+    "box": "Ammo\\Armament\\762x39mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x39mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "792x33mmkurz": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x39mm.nif",
+    "box": "Ammo\\Armament\\762x39mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x39mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "277wolverine": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile762x39mm.nif",
+    "box": "Ammo\\Armament\\762x39mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\762x39mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "22nosler": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "500automaxx": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": false
+   }
+  },
+  "450bushmaster": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile458SOCOM.nif",
+    "box": "Ammo\\Armament\\458SOCOM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\458SOCOM_Casing.nif",
+    "exact": false
+   }
+  },
+  "400ar": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile458SOCOM.nif",
+    "box": "Ammo\\Armament\\458SOCOM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\458SOCOM_Casing.nif",
+    "exact": false
+   }
+  },
+  "416spike": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile458SOCOM.nif",
+    "box": "Ammo\\Armament\\458SOCOM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\458SOCOM_Casing.nif",
+    "exact": false
+   }
+  },
+  "44automag": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": false
+   }
+  },
+  "475widleymagnum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": false
+   }
+  },
+  "458lott": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "45longcolt": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile44Mag.nif",
+    "box": "Ammo\\Armament\\44Mag_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\44Mag_Casing.nif",
+    "exact": false
+   }
+  },
+  "500sw": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": false
+   }
+  },
+  "444marlin": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45-70.nif",
+    "box": "Ammo\\Armament\\45-70_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\45-70_Casing.nif",
+    "exact": false
+   }
+  },
+  "458winmag": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "357supermag": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile44Mag.nif",
+    "box": "Ammo\\Armament\\44Mag_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\44Mag_Casing.nif",
+    "exact": false
+   }
+  },
+  "450alaskan": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile458SOCOM.nif",
+    "box": "Ammo\\Armament\\458SOCOM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\458SOCOM_Casing.nif",
+    "exact": false
+   }
+  },
+  "35remington": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile45-70.nif",
+    "box": "Ammo\\Armament\\45-70_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\45-70_Casing.nif",
+    "exact": false
+   }
+  },
+  "375hhmag": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "500nitroexpress": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "454casull": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": false
+   }
+  },
+  "45schofield": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile44Mag.nif",
+    "box": "Ammo\\Armament\\44Mag_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\44Mag_Casing.nif",
+    "exact": false
+   }
+  },
+  "22250remington": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "300normamagnum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": false
+   }
+  },
+  "65creedmoor": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "338normamagnum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile338LM.nif",
+    "box": "Ammo\\Armament\\338LM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\338LM_Casing.nif",
+    "exact": false
+   }
+  },
+  "300wsm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": false
+   }
+  },
+  "7mmremingtonmagnum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": false
+   }
+  },
+  "2506": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "243winchester": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "792x41mmcetme": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "22cheetah": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "220swift": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "408cheytec": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "375cheytec": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "93x64mmbrenneke": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "75x55mmswiss": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "65x55swedishmauser": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "222remingtonmagnum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "5mm35smc": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile556x45mm.nif",
+    "box": "Ammo\\Armament\\556x45mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\556x45mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "300hamr": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300BLK.nif",
+    "box": "Ammo\\Armament\\300BLK_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300BLK_Casing.nif",
+    "exact": false
+   }
+  },
+  "700nitroexpress": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "300ossm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": false
+   }
+  },
+  "25wssm": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile556x45mm.nif",
+    "box": "Ammo\\Armament\\556x45mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\556x45mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "577450martini": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "204ruger": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile223.nif",
+    "box": "Ammo\\Armament\\223_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\223_Casing.nif",
+    "exact": false
+   }
+  },
+  "510whisper": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "375rum": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "65prc": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": false
+   }
+  },
+  "6xc": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "6mmbr": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "6mmppc": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "6mmdasher": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile308Win.nif",
+    "box": "Ammo\\Armament\\308Win_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\308Win_Casing.nif",
+    "exact": false
+   }
+  },
+  "30378": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": false
+   }
+  },
+  "600nitroexpress": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "782warbird": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile300WM.nif",
+    "box": "Ammo\\Armament\\300WM_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\300WM_Casing.nif",
+    "exact": false
+   }
+  },
+  "2545sharps": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile556x45mm.nif",
+    "box": "Ammo\\Armament\\556x45mm_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\556x45mm_Casing.nif",
+    "exact": false
+   }
+  },
+  "585nyati": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "577tyrannosaur": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "500max": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50AE.nif",
+    "box": "Ammo\\Armament\\50AE_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50AE_Casing.nif",
+    "exact": false
+   }
+  },
+  "127x108": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  },
+  "132x92tuf": {
+   "armament": {
+    "flight": "Ammo\\Armament\\Projectile50BMG.nif",
+    "box": "Ammo\\Armament\\50BMG_OpenedBox.nif",
+    "casing": "Ammo\\Armament\\50BMG_Casing.nif",
+    "exact": false
+   }
+  }
+ },
+ "wofFlight": {
+  "wof_10mm": {
+   "normal": "WeaponsOfFate\\10mm\\Projectile10mm_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\10mm\\Projectile10mm_TracerLight.nif"
+  },
+  "wof_308": {
+   "normal": "WeaponsOfFate\\308\\Projectile308_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\308\\Projectile308_TracerLight.nif"
+  },
+  "wof_38": {
+   "normal": "WeaponsOfFate\\38\\Projectile38_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\38\\Projectile38_TracerLight.nif"
+  },
+  "wof_44": {
+   "normal": "WeaponsOfFate\\44\\Projectile44_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\44\\Projectile44_TracerLight.nif"
+  },
+  "wof_45": {
+   "normal": "WeaponsOfFate\\45Cal\\Projectile45cal_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\45Cal\\Projectile45cal_TracerLight.nif"
+  },
+  "wof_4570": {
+   "normal": "WeaponsOfFate\\4570\\Projectile4570_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\4570\\Projectile4570_TracerLight.nif"
+  },
+  "wof_50": {
+   "normal": "WeaponsOfFate\\50\\Projectile50_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\50\\Projectile50_TracerLight.nif"
+  },
+  "wof_5mm": {
+   "normal": "WeaponsOfFate\\5mm\\Projectile5mm_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\5mm\\Projectile5mm_TracerLight.nif"
+  },
+  "wof_762": {
+   "normal": "WeaponsOfFate\\762\\Projectile762_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\762\\Projectile762_TracerLight.nif"
+  },
+  "wof_556": {
+   "normal": "WeaponsOfFate\\556\\Projectile556_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\556\\Projectile556_TracerLight.nif"
+  },
+  "wof_shotgun": {
+   "normal": "WeaponsOfFate\\Shotgun\\ProjectileShotgun_Tracer.nif",
+   "suppressed": "WeaponsOfFate\\Shotgun\\ProjectileShotgun_Tracer.nif"
+  }
+ },
+ "bibfx": {
+  "flightByClass": {
+   "pistol": {
+    "normal": "Effects\\DefaultTracerBeamTracer.nif",
+    "suppressed": "Effects\\DefaultTracerBeamSupp.nif",
+    "impact": true
+   },
+   "rifle": {
+    "normal": "Effects\\DefaultTracerBeamTracer.nif",
+    "suppressed": "Effects\\DefaultTracerBeamSupp.nif",
+    "impact": true
+   },
+   "shotgun": {
+    "normal": "Effects\\DefaultTracerBeamshotgun.nif",
+    "suppressed": "Effects\\DefaultTracerBeamshotgun.nif",
+    "impact": false
+   }
+  },
+  "normalExplosion": "00080F",
+  "suppressedExplosion": "000810"
+ }
+}

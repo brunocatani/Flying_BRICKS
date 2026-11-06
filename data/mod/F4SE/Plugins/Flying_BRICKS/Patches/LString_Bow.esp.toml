@@ -1,0 +1,74 @@
+# Flying BRICKS patch for LString_Bow.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[damage]]
+id = "00ECBE"
+damage = 40
+name = "LString_Recurvebow"
+
+[[damage]]
+id = "00ED05"
+damage = 55
+name = "LString_CompoundBow"
+
+[[damage]]
+id = "00ED15"
+damage = 30
+name = "LString_Woodbow"
+
+[[damage]]
+id = "0391B2"
+damage = 55
+name = "LString_CompoundBow_WorldSpace"
+
+[[damage]]
+id = "0391B3"
+damage = 40
+name = "LString_Recurvebow_WorldSpace"
+
+[[damage]]
+id = "0391B4"
+damage = 30
+name = "LString_Woodbow_WorldSpace"
+
+[[damage]]
+id = "04A052"
+damage = 40
+name = "LString_Recurvebow_NPC"
+
+[[damage]]
+id = "04A053"
+damage = 55
+name = "LString_CompoundBow_NPC"
+
+[[damage]]
+id = "04A054"
+damage = 30
+name = "LString_Woodbow_NPC"
+
+[[damage]]
+id = "052793"
+damage = 30
+name = "LString_Woodbow_NPC_FireArrow"
+
+[[damage]]
+id = "052794"
+damage = 40
+name = "LString_Recurvebow_NPC_FireArrow"
+
+[[damage]]
+id = "052795"
+damage = 55
+name = "LString_CompoundBow_NPC_Incendiary"
+
+[[damage]]
+id = "056B1D"
+damage = 45
+name = "LString_MongolBow"

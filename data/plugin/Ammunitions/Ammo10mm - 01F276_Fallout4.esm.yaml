@@ -1,0 +1,30 @@
+FormKey: 01F276:Fallout4.esm
+EditorID: Ammo10mm
+ObjectBounds:
+  First: 0, 0, 0
+  Second: 0, 0, 3
+PreviewTransform: 07B9C1:Fallout4.esm
+Name:
+  TargetLanguage: English
+  Value: '10mm Round'
+Model:
+  File: Ammo\10mm\10mmAmmo.nif
+  Data: 0x04000000070000000000000003000000020000003E7A6B136464730028D6D9C4E7166D706464730028D6D9C474EB88046464730028D6D9C4AD878E676464730028D6D9C4B36E5B876464730028D6D9C47503E0D7646473001CDB88C5F9FFB8906464730028D6D9C4ADC5F27E6267736D1B4664D75B72AC8F6267736D1B4664D7
+PickUpSound: 0347DF:Fallout4.esm
+PutDownSound: 0347E0:Fallout4.esm
+Description:
+  TargetLanguage: English
+  Value: ''
+Keywords:
+- 0F4AE8:Fallout4.esm
+Value: 2
+Weight: 0.025
+Projectile: 000800:Flying_BRICKS.esp
+Flags:
+- HasCountBased3d
+Damage: 77
+ShortName:
+  TargetLanguage: English
+  Value: '10mm'
+CasingModel: Ammo\10mm\10mmShellCasing.nif
+ModelInfo: 0x0400000000000000000000000000000000000000

@@ -1,0 +1,109 @@
+# Flying BRICKS patch for CombinedArmsEXPack.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "001F3D"
+caliber = "22magnum"
+name = ".22 Micro Magnum"
+
+[[round]]
+id = "006CB2"
+caliber = "9x18"
+name = "9x18mm Makarov"
+
+[[round]]
+id = "007D04"
+caliber = "57x28"
+name = "FN 5.7x28mm"
+
+[[weapon]]
+id = "001F1B"
+ammo = "Fallout4.esm|01F278"
+name = "CombinedArms_Mk12"
+
+[[weapon]]
+id = "001F88"
+ammo = "Fallout4.esm|01F278"
+name = "LevelledList_CombinedArms_Mk12"
+
+[[weapon]]
+id = "001F89"
+caliber = "9x18"
+name = "LevelledList_CombinedArms_MakarovPM"
+
+[[weapon]]
+id = "001F8A"
+caliber = "57x28"
+name = "LevelledList_CombinedArms_P90"
+
+[[weapon]]
+id = "001F8B"
+caliber = "57x28"
+name = "Cheat_CombinedArms_P90"
+
+[[weapon]]
+id = "001F8C"
+ammo = "Fallout4.esm|01F278"
+name = "Cheat_CombinedArms_Mk12"
+
+[[weapon]]
+id = "001F8D"
+caliber = "9x18"
+name = "Cheat_CombinedArms_MakarovPM"
+
+[[weapon]]
+id = "0055BF"
+caliber = "9x18"
+name = "CombinedArms_MakarovPM"
+
+[[weapon]]
+id = "007557"
+caliber = "57x28"
+name = "CombinedArms_P90"
+
+[[part]]
+id = "001F3C"
+caliber = "22magnum"
+name = "mod_P90_Magazine_2_22_50"
+
+[[part]]
+id = "003DB9"
+caliber = "300blk"
+name = "mod_MK12_Magazine_4_300blk_30"
+
+[[part]]
+id = "0045D8"
+caliber = "50beowulf"
+name = "mod_MK12_Magazine_5_50B_10"
+
+[[part]]
+id = "005D66"
+caliber = "9x18"
+name = "mod_Makarov_Mag_1_9x18_8"
+
+[[part]]
+id = "006CCB"
+caliber = "9x18"
+name = "mod_Makarov_Mag_8_9x18_80"
+
+[[part]]
+id = "007495"
+caliber = "9x19"
+name = "mod_Makarov_Mag_2_9x19_8"
+
+[[part]]
+id = "00749B"
+caliber = "9x19"
+name = "mod_Makarov_Mag_9_9x19_80"
+
+[[part]]
+id = "007556"
+caliber = "57x28"
+name = "mod_P90_Magazine_1_57_50"

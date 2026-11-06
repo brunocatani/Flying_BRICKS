@@ -1,0 +1,48 @@
+# Flying BRICKS patch for CROSS_RugerMkV.esp. It applies only when that plugin is loaded.
+# The file is named after the plugin. Flying BRICKS reads it after RobCo Patcher, so these rows win.
+# To change a row, edit it, or put a file of the same name in a mod that loads later. No rebuild is needed.
+#
+# [[weapon]] sets a gun's round and [[part]] sets an object mod's round:
+#   id = the form's hex ID, then caliber = one of our caliber IDs, or ammo = "Plugin.esp|ID" for an exact record.
+# [[round]] replaces another mod's round with ours everywhere: id, caliber.
+# [[damage]] gives a gun its base damage back if another mod set it to 0: id, damage.
+# name is only a label.
+
+[[round]]
+id = "0020B9"
+caliber = "22lr"
+name = ".22LR Round"
+
+[[weapon]]
+id = "00101D"
+caliber = "22lr"
+name = "crossweap_ruger"
+
+[[weapon]]
+id = "0020C6"
+ammo = "Fallout4.esm|04CE87"
+name = "crossweap_ruger_Crafted"
+
+[[weapon]]
+id = "002105"
+caliber = "22lr"
+name = "crossweap_ruger_USMC"
+
+[[part]]
+id = "0020C1"
+caliber = "22lr"
+name = "crossomod_ruger_Mag01_22"
+
+[[part]]
+id = "0020C2"
+caliber = "22lr"
+name = "crossomod_ruger_Mag02_22"
+
+[[part]]
+id = "0020C3"
+caliber = "22lr"
+name = "crossomod_ruger_Mag03_22"
+
+[[weapon]]
+id = "00206C"
+caliber = "22lr"

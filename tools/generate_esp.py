@@ -266,6 +266,8 @@ def main():
         f"ModKey: {PLUGIN}",
         "GameRelease: Fallout4VR",
         "ModHeader:",
+        "  Flags:",
+        "  - Small",
         "  Stats:",
         "    Version: 0.95",
         "  Author: brunocatani",

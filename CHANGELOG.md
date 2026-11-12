@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- `Flying_BRICKS.esp` is ESL-flagged and no longer takes a load-order slot. Its file
+  name and form IDs are unchanged.
+
 ## 1.0.0
 
 First release.

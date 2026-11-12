@@ -8,8 +8,6 @@
 #include <string_view>
 #include <vector>
 
-#define TOML_ENABLE_WINDOWS_COMPAT 0
-#define TOML_ENABLE_FORMATTERS 0
 #include <toml++/toml.hpp>
 
 // The format of a patch file: one TOML file per plugin, named after it, that anyone can write without building this mod.

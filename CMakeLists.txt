@@ -26,11 +26,14 @@ endif()
 add_library(Flying_BRICKS SHARED
   src/Plugin.cpp src/AmmoTable.cpp src/Compatibility.cpp src/HitLabels.cpp src/Hooks.cpp src/Melee.cpp src/PatchFiles.cpp src/Presets.cpp src/Settings.cpp src/Terminal.cpp
   "${CMAKE_CURRENT_BINARY_DIR}/version.rc")
-# Header only, and vcpkg's port installs no CMake package for it.
+# vcpkg's port installs no CMake package for toml++. The DLL compiles its declarations
+# only and links the one implementation RPS::Settings compiles (src/Settings/TomlImpl.cpp
+# in RPS Framework), so both use toml++'s default configuration; a second, header-only
+# copy clashes with it at link time (LNK2005).
 find_path(TOMLPLUSPLUS_INCLUDE_DIR "toml++/toml.hpp" REQUIRED)
 target_include_directories(Flying_BRICKS PRIVATE "${RPSUI_INCLUDE_DIR}")
 target_compile_features(Flying_BRICKS PRIVATE cxx_std_23)
-target_compile_definitions(Flying_BRICKS PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX NOMMNOSOUND UNICODE _UNICODE)
+target_compile_definitions(Flying_BRICKS PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX NOMMNOSOUND UNICODE _UNICODE TOML_HEADER_ONLY=0)
 target_compile_options(Flying_BRICKS PRIVATE /W4 /wd4715 /utf-8 /Zi /permissive-)
 target_link_options(Flying_BRICKS PRIVATE /DEBUG:FULL)
 target_link_libraries(Flying_BRICKS PRIVATE CommonLibF4::CommonLibF4 RPS::Settings shell32.lib)

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.2)
-project(Flying_BRICKS VERSION 0.1.0 LANGUAGES CXX)
+project(Flying_BRICKS VERSION 1.0.0 LANGUAGES CXX)
 
 set(COMMON_LIB_F4VR_PATH "" CACHE PATH "CommonLibF4VR source checkout")
 if(NOT EXISTS "${COMMON_LIB_F4VR_PATH}/CommonLibF4/include/F4SE/F4SE.h")

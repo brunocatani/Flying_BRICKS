@@ -1,15 +1,12 @@
 # Changelog
 
-## Unreleased
-
-- 77 calibers no supported weapon fires are no longer in the plugin. The real
-  ones are listed in `docs/Calibers.md` as mapped but not shipped; 13 fictional
-  or duplicate rounds are gone. A patch file row naming one of them is logged
-  and skipped.
-
 ## 1.0.0
 
 First release.
+
+- The plugin holds only calibers a supported weapon fires. Other real calibers
+  are listed in `docs/Calibers.md` as mapped but not shipped. A patch file row
+  naming a caliber that is not shipped is logged and skipped.
 
 - Per-caliber damage for conventional ammunition, independent of weapon mods,
   perks, criticals and difficulty, with blocking kept. Damage and armor

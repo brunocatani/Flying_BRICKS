@@ -20,12 +20,34 @@ namespace RE
 // wears the piece. The game keeps the piece's health and takes it off at zero, which exposes that limb, and
 // an exposed limb under the frame takes the round like bare skin.
 //
+// Energy hits (resolveThermal) meet the same armor by material instead of level: a laser is held by reflective
+// metal, polymer plate and above all a power armor piece, plasma goes through most of everything, and heat soaks
+// through soft armor. Nothing is stopped outright and nothing kills outright; a share gets through.
+//
 // Thread model: build() runs once on the F4SE message thread before any hook is patched and the tables
 // never change afterwards. resolve() and the queries run on any hit thread and only read engine data.
 namespace flying_bricks::terminal
 {
     // Above the worn scale, so the hit trace tells a suit piece from any worn armor.
     inline constexpr std::uint8_t kPlateLevel = 6;
+
+    // How an energy attack meets armor. Indexes the generated share tables.
+    enum class Thermal : std::uint8_t
+    {
+        Laser,
+        Plasma,
+        Fire,
+    };
+
+    // What a worn piece is made of, for energy hits. Indexes the generated share tables.
+    enum class Material : std::uint8_t
+    {
+        None,
+        Leather,
+        Scrap,
+        Metal,
+        Polymer,
+    };
 
     // Share of a melee blow that gets through, by worn armor level, then behind an intact suit piece.
     struct Protection
@@ -59,6 +81,7 @@ namespace flying_bricks::terminal
         float limbFactor{ 1.0F };  // Replaces the native body part multiplier.
         bool head{};
         bool vanillaRemoval{};  // The game's own burst and sever rolls decide.
+        bool thermal{};  // An energy hit: armorFraction was applied to its typed damage before the limb step.
     };
 
     struct BuildResult
@@ -90,6 +113,14 @@ namespace flying_bricks::terminal
     // A melee blow against the same armor, on the same limbs. Nothing here kills outright: the blow's own number
     // does that, and only a bare head doubles it.
     [[nodiscard]] Outcome resolveMelee(RE::Actor& target, const Protection& protection, std::uint32_t limb) noexcept;
+
+    // An energy hit: the share that gets through the hit limb's armor, power armor piece or creature zone, and
+    // the limb factor. Inactive for a race neither people nor a listed creature: the native resistance decides.
+    [[nodiscard]] Outcome resolveThermal(RE::Actor& target, Thermal family, std::uint32_t limb) noexcept;
+
+    // What one energy hit of this damage takes from the power armor piece it hits, in the form the native
+    // write expects. The damage is turned back into the energy that gives it on the caliber scale.
+    [[nodiscard]] float thermalPieceDamage(Thermal family, float damage) noexcept;
 
     // Limb removal and head explosion for one body part of a killing hit. Only the hit limb qualifies.
     struct Removal

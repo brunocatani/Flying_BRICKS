@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Added
+
+- Laser, plasma and fire damage on the caliber scale, after the lore: lasers
+  are held by reflective metal, polymer plate and power armor, plasma goes
+  through most armor, fire soaks through soft armor. Attachments and a laser
+  musket's charge scale damage by energy; perks, criticals and difficulty no
+  longer do. Power armor pieces wear under energy fire. A Molotov's burst burns
+  on the same scale.
+
 ### Changed
 
 - `Flying_BRICKS.esp` is ESL-flagged and no longer takes a load-order slot. Its file

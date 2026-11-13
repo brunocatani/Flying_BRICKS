@@ -24,7 +24,7 @@ if(NOT EXISTS "${RPSUI_INCLUDE_DIR}/RPS_UI_Framework/WorldDraw.h")
 endif()
 
 add_library(Flying_BRICKS SHARED
-  src/Plugin.cpp src/AmmoTable.cpp src/Compatibility.cpp src/HitLabels.cpp src/Hooks.cpp src/Melee.cpp src/PatchFiles.cpp src/Presets.cpp src/Settings.cpp src/Terminal.cpp
+  src/Plugin.cpp src/AmmoTable.cpp src/Compatibility.cpp src/Energy.cpp src/HitLabels.cpp src/Hooks.cpp src/Melee.cpp src/PatchFiles.cpp src/Presets.cpp src/Settings.cpp src/Terminal.cpp
   "${CMAKE_CURRENT_BINARY_DIR}/version.rc")
 # vcpkg's port installs no CMake package for toml++. The DLL compiles its declarations
 # only and links the one implementation RPS::Settings compiles (src/Settings/TomlImpl.cpp

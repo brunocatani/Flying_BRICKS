@@ -7,8 +7,9 @@ the armor levels in [Armor](Armor.md) and the creature table in [Creatures](Crea
 
 A hit belongs to the model when it is a round of ammunition Flying BRICKS owns ([Calibers](Calibers.md)) fired from a
 ranged weapon, and it is not an explosion. For those hits the round's own damage replaces the weapon's, and weapon
-mods, perks, criticals, sneak attacks, blocking and difficulty no longer scale it. Everything else keeps the game's
-damage: energy weapons, explosions, thrown weapons, and ammunition from other mods that no patch file hands over.
+mods, perks, criticals, sneak attacks, blocking and difficulty no longer scale it. Laser, plasma and fire shots and a
+Molotov's burst have their own rule ([below](#energy-weapons)). Everything else keeps the game's damage: other
+explosions, thrown weapons, cryo and gamma weapons, and ammunition from other mods that no patch file hands over.
 Melee blows have their own rule ([below](#melee)).
 
 `[General] DamageModel = false` in `Flying_BRICKS.toml` turns the whole model off.
@@ -86,6 +87,45 @@ bare skin.
 A creature's hit zone has a level on the same scale, and a round is stopped the same way as by worn armor: 10% gets
 through soft zones and 5% through hard ones, and a round that gets through keeps the same share. Each zone can carry
 its own damage factor, and a race either dies to a head hit that gets through or not ([Creatures](Creatures.md)).
+
+## Energy weapons
+
+Laser, plasma and fire follow the lore of the series: a laser hits as hard as a service rifle round but is held by
+reflective metal, polymer plate and above all power armor, plasma hits harder and goes through most of everything, and
+fire soaks through soft armor. The values and sources are in `data/EnergyModel.json`.
+
+A weapon belongs to a family by its ammunition (fusion cells and cores: laser; plasma cartridges: plasma; flamer fuel:
+fire), or burns when its barrel fires a flame stream (the plasma gun's flamer barrel). Its energy damage as the game
+computes it, with every attachment and without perks, is its value, and the damage is
+
+```text
+damage = reference damage x (value / reference value)^0.6
+```
+
+the exponent of the caliber formula, so attachments, a laser musket's charge and a splitter's beams scale damage the way
+energy scales a round: a receiver that adds 75% energy adds 40% damage.
+
+| Family | Reference | Damage | Over distance |
+| --- | --- | --- | --- |
+| Laser | laser gun, 24 | 90 | keeps it all |
+| Plasma | plasma gun, 24 (its physical part folds into the bolt) | 125 | the game's falloff |
+| Fire | one flame of the flamer, 9 | 6 | the game's falloff |
+
+So an Institute laser does 83, a Gatling laser beam 65, a six-charge laser musket 301 and a fully modded plasma sniper
+about 215. Perks, criticals, sneak attacks, blocking and difficulty do not scale it, as for rounds.
+
+A Molotov's burst does 30 at its centre where the game's explosion does 50, and meets armor as fire. The fire it leaves
+keeps the game's burn of 10 a second, resisted by the target's energy rating.
+
+Armor lets a share through by material ([Armor](Armor.md#energy-weapons)); nothing is stopped outright and nothing
+kills outright. Behind an intact power armor piece 10% of a laser, 60% of plasma and 40% of fire reaches the wearer, and
+each hit wears the piece: a laser shot ablates its coating about as much as a 5.56 round, plasma about four times as
+much, fire barely. A creature
+reads its zone level as hide or chassis. Arms take x0.5 and legs x0.6; a bare head takes x2 and a covered one x1. A
+burn cripples by what it does to health. Heads and limbs come off only by the game's own rolls. Any other race keeps
+its own energy resistance against the model's damage.
+
+The item card keeps the game's numbers for energy weapons.
 
 ## Shotguns
 

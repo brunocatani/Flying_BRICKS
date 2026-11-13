@@ -25,18 +25,23 @@ armor rated like real body armor.
   bare skin.
 - **Real flight.** Each caliber flies at its own muzzle velocity with G1 air
   drag and true gravity. Pellet weapons fire a real shotgun cone.
+- **Lasers, plasma and fire** follow the lore: a laser hits like a service rifle
+  round but reflective metal, polymer plate and above all power armor hold it,
+  plasma hits harder and goes through most armor, and fire soaks through soft
+  armor. Attachments, a laser musket's charge and a splitter scale damage by
+  energy, the way calibers do. A Molotov's burst burns on the same scale.
 - **Melee**, unarmed hits and gun bashes from anyone go through the same limb
   and armor rules: the weapon's class decides how much of a blow crosses each
   armor level and suit piece, and how much it wears the piece.
 - **New calibers** are added as ammunition items, and our rounds reach vendors
   and loot for every caliber a loaded weapon fires (needs RobCo Patcher).
-- Explosions, energy weapons and thrown weapons are not changed.
+- Other explosions, thrown weapons and cryo and gamma weapons are not changed.
 
 ## How it works
 
 The research behind the numbers, with sources, and the full tables:
 
-- [Damage model](docs/DamageModel.md): the damage formula, range, armor, heads and limbs, power armor, creatures and melee.
+- [Damage model](docs/DamageModel.md): the damage formula, range, armor, heads and limbs, power armor, creatures, energy weapons and melee.
 - [Ballistics](docs/Ballistics.md): flight, air drag, gravity, force presets and the shotgun cone.
 - [Calibers](docs/Calibers.md): every caliber's energy, damage at range, stop level, velocity and sources.
 - [Armor](docs/Armor.md): armor levels, the rules that give each armor its level, and Ballistic Weave.

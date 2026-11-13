@@ -6,7 +6,7 @@ How the model works is published in `docs/`: [DamageModel.md](docs/DamageModel.m
 
 ## What it changes
 
-- Hits from owned ammunition fired by a ranged weapon take the round's damage, with armor, limb and head rules ([DamageModel.md](docs/DamageModel.md)). Melee, unarmed hits and gun bashes go through the same armor and limbs by weapon class. Explosions, energy and thrown weapons are not touched.
+- Hits from owned ammunition fired by a ranged weapon take the round's damage, with armor, limb and head rules ([DamageModel.md](docs/DamageModel.md)). Melee, unarmed hits and gun bashes go through the same armor and limbs by weapon class. Laser, plasma and fire shots and a Molotov's burst take the energy model's damage and meet armor by material. Other explosions, thrown weapons and cryo and gamma weapons are not touched.
 - At fire time the plugin selects the caliber's projectile record; at load it rewrites those records' flight in memory ([Ballistics.md](docs/Ballistics.md)).
 - `Flying_BRICKS.esp` overrides the vanilla and DLC ballistic ammunition, renames the five Ballistic Weave mods to show their armor level, and adds the remaining calibers as new ammunition. It has no models of its own: its records use vanilla models, or borrow other mods' (below).
 - Vanilla weapons move to the added ammunition only through optional per-weapon patches; other mods' weapons through patch files ([PatchFiles.md](docs/PatchFiles.md)).
@@ -18,13 +18,15 @@ How the model works is published in `docs/`: [DamageModel.md](docs/DamageModel.m
 | `data/RealisticDamageModel.json` | The damage formula and each cartridge's energy and diameter, with sources |
 | `data/BallisticRegistry.json` | Every caliber: damage, projectile and ammo form IDs, trajectory class, names, the vanilla ammunition it takes over. `"shipped": false` marks a real caliber no supported weapon fires: it keeps its data and reserved form IDs, gets no records or runtime rows, and is listed in `Calibers.md` as mapped, not shipped |
 | `data/CartridgeFlight.json` | Each cartridge's muzzle velocity and G1 ballistic coefficient, with source |
-| `data/ArmorLevels.json` | Armor levels and rated energies, each caliber's stop level, armor rules, Ballistic Weave tiers, head burst and sever thresholds |
+| `data/ArmorLevels.json` | Armor levels and rated energies, each caliber's stop level, armor rules with each piece's material, Ballistic Weave tiers, head burst and sever thresholds |
+| `data/EnergyModel.json` | Laser, plasma and fire: families by ammunition and flame projectile, reference damage, shares through each material, power armor and creature level, wear, the Molotov burst |
 | `data/CreatureLevels.json` | Each creature race's body levels by hit zone |
 | `data/Compatibility.json` | Other mods' models and flight per caliber |
 | `data/WorldAmmo.json` | The game's lists that host the world ammo list |
 | `data/mod/` | Game data shipped with the DLL: the ESP, the patch files and the RobCo Patcher file |
-| `src/Hooks.cpp` | Every native hook: damage, armor curve, limb multiplier, removal, pellet spread, flight, fire |
-| `src/Terminal.cpp` | What a round does to a target: worn armor, power armor, creatures, heads and limbs |
+| `src/Hooks.cpp` | Every native hook: damage, armor curve, typed damage curve, limb multiplier, removal, pellet spread, flight, fire |
+| `src/Terminal.cpp` | What a round or an energy hit does to a target: worn armor, power armor, creatures, heads and limbs |
+| `src/Energy.cpp` | Energy families, the model's damage for a native energy value, the Molotov burst |
 | `src/Melee.cpp` | Melee blows; a weapon's class comes from its unarmed form, then its `ma_*` keyword, then its animation type |
 | `src/Presets.cpp` | Flight rewrite, drag and force presets |
 | `src/AmmoTable.cpp`, `src/Compatibility.cpp`, `src/PatchFiles.cpp` | Owned ammunition, other mods' rounds and models, patch files |
@@ -40,7 +42,7 @@ How the model works is published in `docs/`: [DamageModel.md](docs/DamageModel.m
 | Generator | Writes | Rerun after |
 | --- | --- | --- |
 | `tools/generate_esp.py` | The Spriggit project `data/plugin`, which Spriggit compiles to `data/mod/Flying_BRICKS.esp` | Any change to the registry or armor levels |
-| `tools/generate_terminal_data.py <game Data folder>` | `src/TerminalData.inl`, `src/AmmoData.inl`, `src/CompatibilityData.inl`, `src/CaliberData.inl` | Any change in `data/` |
+| `tools/generate_terminal_data.py <game Data folder>` | `src/TerminalData.inl`, `src/EnergyData.inl`, `src/AmmoData.inl`, `src/CompatibilityData.inl`, `src/CaliberData.inl` | Any change in `data/` |
 | `tools/generate_docs.py` | `docs/Calibers.md`, `docs/Armor.md`, `docs/Creatures.md` | Any change in `data/` |
 
 The shipped patch files in `data/mod/F4SE/Plugins/Flying_BRICKS/Patches/` are edited directly; the runtime reads them.

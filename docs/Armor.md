@@ -24,60 +24,88 @@ Each vanilla and DLC armor piece takes its level from the first rule its editor 
 **Heavy** is the level with a heavy armor mod attached (an object mod whose editor ID matches
 `^mod_armor_.*_Size_C$`). Armor no rule matches, including other mods' armor, takes a level from its armor
 rating, scaled by the slots it covers: below 5 it is clothing, then levels 1 to 4 from ratings of 5, 15, 25 and 40 in
-torso terms. A helmet is never above level 2.
+torso terms. A helmet is never above level 2. **Material** is what the piece is made of for energy weapons
+([below](#energy-weapons)).
 
-| Editor ID | Level | Heavy |
-| --- | --- | --- |
-| starts with `DLC03_Armor_Marine_UnderArmor_Helmet` | 1 | 1 |
-| contains `_underarmor` | 0 | 0 |
-| contains `_underwear` | 0 | 0 |
-| contains `rags` | 0 | 0 |
-| starts with `MS09LorenzosCrown` | 0 | 0 |
-| starts with `DN028_Armor_Bear_Mascot` | 0 | 0 |
-| starts with `Armor_TinkerHeadgear` | 0 | 0 |
-| starts with `Armor_HardHat` | 1 | 1 |
-| starts with `Armor_MiningHelmet` | 1 | 1 |
-| starts with `Armor_Batting_Helmet` | 1 | 1 |
-| starts with `Armor_FlightHelmet` | 1 | 1 |
-| starts with `Armor_BoS_Engineer_Scribe_Helmet` | 1 | 1 |
-| starts with `Armor_BoS_Knight_Lancer_Helmet` | 1 | 1 |
-| starts with `DLC03_Armor_Trapper_Suit` | 1 | 1 |
-| starts with `SupermutantArmor` | 1 | 1 |
-| starts with `Armor_DeaconLeather_` | 1 | 2 |
-| starts with `DLC03_Armor_Marine_Helmet` | 2 | 2 |
-| starts with `DLC03_Armor_Marine_` | 3 | 3 |
-| starts with `DLC03_Armor_Trapper_Size_C_` | 2 | 2 |
-| starts with `DLC03_Armor_Trapper_Size_B_` | 1 | 1 |
-| starts with `DLC04_Armor_Operators_Light_Helmet` | 1 | 1 |
-| starts with `DLC04_Armor_Disciples_Light_Helmet` | 1 | 1 |
-| starts with `DLC04_Armor_Pack_Light_Helmet` | 1 | 1 |
-| starts with `DLC04_Armor_Pack_Heavy_Helmet` | 2 | 2 |
-| starts with `DLC04_Armor_Disciples_Heavy_Helmet` | 2 | 2 |
-| starts with `DLC04_Armor_Disciples_Helmet` | 2 | 2 |
-| starts with `DLC04_Armor_Operators_Heavy_` | 3 | 3 |
-| starts with `DLC04_Armor_Disciples_Heavy_` | 3 | 3 |
-| starts with `DLC04_Armor_Pack_Heavy_` | 3 | 3 |
-| starts with `DLC04_Armor_Operators_Light_` | 2 | 2 |
-| starts with `DLC04_Armor_Disciples_Light_` | 2 | 2 |
-| starts with `DLC04_Armor_Pack_Light_` | 2 | 2 |
-| starts with `Armor_Combat_Helmet` | 2 | 2 |
-| starts with `Armor_Army_Helmet` | 2 | 2 |
-| starts with `Armor_Metal_Helmet` | 2 | 2 |
-| starts with `Armor_Synth_Helmet` | 2 | 2 |
-| starts with `Armor_Leather_` | 1 | 2 |
-| starts with `Armor_RaiderMod_` | 1 | 2 |
-| starts with `Armor_Raider_Suit` | 1 | 1 |
-| starts with `Armor_Wastelander_Heavy` | 2 | 2 |
-| starts with `Armor_Wastelander_` | 1 | 1 |
-| starts with `Armor_Metal_` | 2 | 3 |
-| starts with `Armor_DCGuard_` | 2 | 2 |
-| starts with `Armor_DeaconDCGuard_` | 2 | 2 |
-| starts with `Armor_VaultTecSecurity` | 2 | 2 |
-| starts with `Armor_Combat_` | 3 | 4 |
-| starts with `Armor_Synth_` | 3 | 4 |
-| contains `hood` | 0 | 0 |
-| contains `gasmask` | 0 | 0 |
-| contains `surgicalmask` | 0 | 0 |
+| Editor ID | Level | Heavy | Material |
+| --- | --- | --- | --- |
+| starts with `DLC03_Armor_Marine_UnderArmor_Helmet` | 1 | 1 | polymer |
+| contains `_underarmor` | 0 | 0 | none |
+| contains `_underwear` | 0 | 0 | none |
+| contains `rags` | 0 | 0 | none |
+| starts with `MS09LorenzosCrown` | 0 | 0 | none |
+| starts with `DN028_Armor_Bear_Mascot` | 0 | 0 | none |
+| starts with `Armor_TinkerHeadgear` | 0 | 0 | none |
+| starts with `Armor_HardHat` | 1 | 1 | leather |
+| starts with `Armor_MiningHelmet` | 1 | 1 | leather |
+| starts with `Armor_Batting_Helmet` | 1 | 1 | leather |
+| starts with `Armor_FlightHelmet` | 1 | 1 | polymer |
+| starts with `Armor_BoS_Engineer_Scribe_Helmet` | 1 | 1 | leather |
+| starts with `Armor_BoS_Knight_Lancer_Helmet` | 1 | 1 | leather |
+| starts with `DLC03_Armor_Trapper_Suit` | 1 | 1 | leather |
+| starts with `SupermutantArmor` | 1 | 1 | scrap |
+| starts with `Armor_DeaconLeather_` | 1 | 2 | leather |
+| starts with `DLC03_Armor_Marine_Helmet` | 2 | 2 | polymer |
+| starts with `DLC03_Armor_Marine_` | 3 | 3 | polymer |
+| starts with `DLC03_Armor_Trapper_Size_C_` | 2 | 2 | scrap |
+| starts with `DLC03_Armor_Trapper_Size_B_` | 1 | 1 | scrap |
+| starts with `DLC04_Armor_Operators_Light_Helmet` | 1 | 1 | leather |
+| starts with `DLC04_Armor_Disciples_Light_Helmet` | 1 | 1 | leather |
+| starts with `DLC04_Armor_Pack_Light_Helmet` | 1 | 1 | leather |
+| starts with `DLC04_Armor_Pack_Heavy_Helmet` | 2 | 2 | scrap |
+| starts with `DLC04_Armor_Disciples_Heavy_Helmet` | 2 | 2 | scrap |
+| starts with `DLC04_Armor_Disciples_Helmet` | 2 | 2 | scrap |
+| starts with `DLC04_Armor_Operators_Heavy_` | 3 | 3 | scrap |
+| starts with `DLC04_Armor_Disciples_Heavy_` | 3 | 3 | scrap |
+| starts with `DLC04_Armor_Pack_Heavy_` | 3 | 3 | scrap |
+| starts with `DLC04_Armor_Operators_Light_` | 2 | 2 | leather |
+| starts with `DLC04_Armor_Disciples_Light_` | 2 | 2 | leather |
+| starts with `DLC04_Armor_Pack_Light_` | 2 | 2 | leather |
+| starts with `Armor_Combat_Helmet` | 2 | 2 | polymer |
+| starts with `Armor_Army_Helmet` | 2 | 2 | metal |
+| starts with `Armor_Metal_Helmet` | 2 | 2 | metal |
+| starts with `Armor_Synth_Helmet` | 2 | 2 | polymer |
+| starts with `Armor_Leather_` | 1 | 2 | leather |
+| starts with `Armor_RaiderMod_` | 1 | 2 | scrap |
+| starts with `Armor_Raider_Suit` | 1 | 1 | leather |
+| starts with `Armor_Wastelander_Heavy` | 2 | 2 | scrap |
+| starts with `Armor_Wastelander_` | 1 | 1 | leather |
+| starts with `Armor_Metal_` | 2 | 3 | metal |
+| starts with `Armor_DCGuard_` | 2 | 2 | polymer |
+| starts with `Armor_DeaconDCGuard_` | 2 | 2 | polymer |
+| starts with `Armor_VaultTecSecurity` | 2 | 2 | polymer |
+| starts with `Armor_Combat_` | 3 | 4 | polymer |
+| starts with `Armor_Synth_` | 3 | 4 | polymer |
+| contains `hood` | 0 | 0 | none |
+| contains `gasmask` | 0 | 0 | none |
+| contains `surgicalmask` | 0 | 0 | none |
+
+## Energy weapons
+
+Lasers, plasma and fire are not stopped by a level: each piece lets a share of the hit through by its material, and
+the most protective piece on the hit limb counts. Polished metal reflects a beam but conducts heat, polymer plate
+resists both, and plasma goes through most of everything. Armor no rule matches takes a material from its energy
+resistance, scaled like the armor rating: none below 5, leather below 15, scrap below 25,
+polymer above. Ballistic Weave counts as leather at least.
+
+| Material | Laser | Plasma | Fire |
+| --- | --- | --- | --- |
+| none | 100% | 100% | 100% |
+| leather | 80% | 90% | 80% |
+| scrap | 55% | 75% | 80% |
+| metal | 25% | 60% | 85% |
+| polymer | 40% | 50% | 70% |
+| power armor piece | 10% | 60% | 40% |
+
+A creature's hit zone level reads as hide or chassis:
+
+| Level | Laser | Plasma | Fire |
+| --- | --- | --- | --- |
+| 0 | 100% | 100% | 100% |
+| 1 | 85% | 90% | 85% |
+| 2 | 70% | 80% | 75% |
+| 3 | 55% | 70% | 65% |
+| 4 | 40% | 60% | 55% |
 
 ## Ballistic Weave
 

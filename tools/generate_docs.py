@@ -167,11 +167,26 @@ Flight: {flight_data['sources']}
 
 def armor():
     levels = load("ArmorLevels.json")
+    energy = load("EnergyModel.json")
     rated = levels["ratedEnergyFtLb"]
     rules = []
     for rule in levels["armorRules"]:
         match = f"starts with `{rule['prefix']}`" if "prefix" in rule else f"contains `{rule['contains']}`"
-        rules.append(f"| {match} | {rule['level']} | {rule['heavyLevel']} |")
+        rules.append(f"| {match} | {rule['level']} | {rule['heavyLevel']} | {rule['thermal']} |")
+    families = ("laser", "plasma", "fire")
+
+    def percent(share):
+        return f"{round(share * 100)}%"
+
+    materials = [
+        f"| {name} | " + " | ".join(percent(energy["materials"][name][family]) for family in families) + " |"
+        for name in ("none", "leather", "scrap", "metal", "polymer")
+    ]
+    materials.append("| power armor piece | " + " | ".join(percent(energy["powerArmor"][family]) for family in families) + " |")
+    creature_levels = [
+        f"| {level} | " + " | ".join(percent(energy["creatureLevels"][family][level]) for family in families) + " |" for level in range(5)
+    ]
+    by_rating = energy["materialByEnergyRating"]["levels"]
     weave = [f"| {row['name']} | `{row['editorID']}` | {row['level']} | {row['description']} |" for row in levels["ballisticWeave"]]
     burst = levels["headBurst"]
     write("Armor.md", f"""# Armor
@@ -198,11 +213,30 @@ Each vanilla and DLC armor piece takes its level from the first rule its editor 
 **Heavy** is the level with a heavy armor mod attached (an object mod whose editor ID matches
 `{levels['heavyModPattern']}`). Armor no rule matches, including other mods' armor, takes a level from its armor
 rating, scaled by the slots it covers: below 5 it is clothing, then levels 1 to 4 from ratings of 5, 15, 25 and 40 in
-torso terms. A helmet is never above level 2.
+torso terms. A helmet is never above level 2. **Material** is what the piece is made of for energy weapons
+([below](#energy-weapons)).
 
-| Editor ID | Level | Heavy |
-| --- | --- | --- |
+| Editor ID | Level | Heavy | Material |
+| --- | --- | --- | --- |
 {chr(10).join(rules)}
+
+## Energy weapons
+
+Lasers, plasma and fire are not stopped by a level: each piece lets a share of the hit through by its material, and
+the most protective piece on the hit limb counts. Polished metal reflects a beam but conducts heat, polymer plate
+resists both, and plasma goes through most of everything. Armor no rule matches takes a material from its energy
+resistance, scaled like the armor rating: {by_rating[0]} below 5, {by_rating[1]} below 15, {by_rating[2]} below 25,
+{by_rating[3]} above. Ballistic Weave counts as {energy['weaveMaterial']} at least.
+
+| Material | Laser | Plasma | Fire |
+| --- | --- | --- | --- |
+{chr(10).join(materials)}
+
+A creature's hit zone level reads as hide or chassis:
+
+| Level | Laser | Plasma | Fire |
+| --- | --- | --- | --- |
+{chr(10).join(creature_levels)}
 
 ## Ballistic Weave
 

@@ -22,6 +22,15 @@ namespace
     static_assert(!policy::isAuthoredHit(policy::kTimedBashFlag, kGun, true));
     static_assert(!policy::isAuthoredHit(policy::kPowerAttackFlag, kGun, true));
     static_assert(!policy::isAuthoredHit(policy::kMeleeAttackFlag, kGun, true));
+
+    constexpr std::uint8_t kGrenade = 10;
+    static_assert(policy::isAuthoredEnergyHit(kNoFlags, kGun, true, false));
+    static_assert(!policy::isAuthoredEnergyHit(kNoFlags, kGun, false, false), "unlisted energy weapons stay native");
+    static_assert(!policy::isAuthoredEnergyHit(policy::kBashFlag, kGun, true, false), "a laser bash is a blow");
+    static_assert(!policy::isAuthoredEnergyHit(kNoFlags, kOneHandSword, true, false), "melee weapons stay native");
+    static_assert(policy::isAuthoredEnergyHit(policy::kExplosionFlag, kGrenade, false, true), "a Molotov's burst burns");
+    static_assert(!policy::isAuthoredEnergyHit(policy::kExplosionFlag, kGrenade, false, false), "other explosions stay native");
+    static_assert(!policy::isAuthoredEnergyHit(policy::kExplosionFlag, kGun, true, false), "an energy shot's explosion stays native");
 }
 
 int main()

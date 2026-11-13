@@ -28,6 +28,7 @@ namespace flying_bricks::terminal
             std::uint32_t local;
             std::uint8_t level;
             std::uint8_t heavyLevel;
+            Material thermal;
         };
 
         struct HeavyModRow
@@ -126,7 +127,10 @@ namespace flying_bricks::terminal
             const RE::TESObjectARMO* form;
             std::uint8_t level;
             std::uint8_t heavyLevel;
+            Material thermal;
         };
+
+        using TypedValues = RE::BSTArray<RE::BSTTuple<RE::TESForm*, RE::BGSTypedFormValuePair::SharedVal>>;
 
         std::vector<ResolvedArmor> s_armor;  // Sorted by form.
         std::vector<std::uint32_t> s_heavyMods;  // Sorted runtime form IDs.
@@ -140,6 +144,7 @@ namespace flying_bricks::terminal
         std::vector<ResolvedCreature> s_creatures;  // Sorted by race.
         std::array<const RE::TESRace*, kInstantKillRaces.size()> s_instantKillRaces{};
         const RE::TESRace* s_superMutantRace = nullptr;
+        const RE::TESForm* s_energyDamageType = nullptr;
         std::array<Caliber, kCaliberRows.size()> s_calibers{};
 
         std::atomic_bool s_playerInstantKill{ true };
@@ -315,6 +320,69 @@ namespace flying_bricks::terminal
             return 0;
         }
 
+        [[nodiscard]] float throughOf(Material material, Thermal family) noexcept
+        {
+            return kMaterialThrough[static_cast<std::size_t>(material)][static_cast<std::size_t>(family)];
+        }
+
+        // Not noexcept, like levelOfItem: it runs inside readWornThrough's structured exception guard.
+        [[nodiscard]] std::uint32_t energyRatingOf(const TypedValues* values)
+        {
+            if (!values || !s_energyDamageType) {
+                return 0;
+            }
+            for (const auto& value : *values) {
+                if (value.first == s_energyDamageType) {
+                    return value.second.i;
+                }
+            }
+            return 0;
+        }
+
+        // A named armor keeps its rule's material; any other takes one from its energy rating.
+        [[nodiscard]] float throughOfItem(const RE::BIPOBJECT& worn, bool head, Thermal family)
+        {
+            const auto* item = worn.parent.object;
+            const auto* armor = item ? item->As<RE::TESObjectARMO>() : nullptr;
+            if (!armor) {
+                return 1.0F;
+            }
+            Material material = Material::None;
+            const auto row = std::ranges::lower_bound(s_armor, armor, {}, &ResolvedArmor::form);
+            if (row != s_armor.end() && row->form == armor) {
+                material = row->thermal;
+            } else {
+                const auto* instance = static_cast<const RE::TESObjectARMO::InstanceData*>(worn.parent.instanceData.get());
+                const auto rating = energyRatingOf(instance ? instance->damageTypes : armor->armorData.damageTypes);
+                material = kMaterialByEnergyLevel[levelFromRating(static_cast<float>(rating), armor->GetSlotMask())];
+            }
+            float through = throughOf(material, family);
+            // Weave plates the body, not a hat: see levelOfItem.
+            if (!head && weaveLevelOf(worn.modExtra) > 0) {
+                through = std::min(through, throughOf(kWeaveMaterial, family));
+            }
+            return through;
+        }
+
+        // The most protective worn piece on the limb. Guarded for the same reason as readWornLevel; a negative
+        // result is no biped (-1) or a fault (-2).
+        [[nodiscard]] float readWornThrough(const RE::Actor& target, std::span<const std::uint32_t> slots, bool head, Thermal family) noexcept
+        {
+            __try {
+                const auto* biped = target.biped.get();
+                if (!biped) {
+                    return -1.0F;
+                }
+                float through = 1.0F;
+                for (const auto slot : slots) {
+                    through = std::min(through, throughOfItem(biped->object[slot], head, family));
+                }
+                return through;
+            } __except (EXCEPTION_EXECUTE_HANDLER) {
+                return -2.0F;
+            }
+        }
+
         [[nodiscard]] float retainedAfter(const Caliber& caliber, std::uint8_t armorLevel) noexcept
         {
             if (armorLevel == 0) {
@@ -452,6 +520,10 @@ namespace flying_bricks::terminal
             }
         }
         s_superMutantRace = RE::TESForm::GetFormByID<RE::TESRace>(kSuperMutantRace);
+        s_energyDamageType = RE::TESForm::GetFormByID(kEnergyDamageType);
+        if (!s_energyDamageType) {
+            spdlog::error("Damage type {:08X} was not found; armor no rule names counts as clothing against energy", kEnergyDamageType);
+        }
 
         auto* dataHandler = RE::TESDataHandler::GetSingleton();
         if (!dataHandler) {
@@ -485,7 +557,7 @@ namespace flying_bricks::terminal
                 return candidate.local == local && candidate.plugin == master;
             });
             if (row != kArmorRows.end()) {
-                s_armor.push_back(ResolvedArmor{ armor, row->level, row->heavyLevel });
+                s_armor.push_back(ResolvedArmor{ armor, row->level, row->heavyLevel, row->thermal });
             } else if (armor->armorData.rating > 0) {
                 ++result.armorByRating;
                 spdlog::info(
@@ -662,6 +734,74 @@ namespace flying_bricks::terminal
         // A helmet spreads the blow even when it does not stop it.
         outcome.limbFactor = head ? (outcome.armorLevel == 0 ? kHeadFactor : 1.0F) : limbFactorOf(hitLimb);
         return outcome;
+    }
+
+    Outcome resolveThermal(RE::Actor& target, Thermal family, std::uint32_t limb) noexcept
+    {
+        const auto* race = target.race;
+        if (!race) {
+            return {};
+        }
+        const auto index = static_cast<std::size_t>(family);
+        Outcome outcome;
+        outcome.active = true;
+        outcome.thermal = true;
+        // Energy never bursts a head or severs a limb on the model's say; the game's rolls stay.
+        outcome.vanillaRemoval = true;
+        const bool person = race == s_superMutantRace || std::ranges::find(s_instantKillRaces, race) != s_instantKillRaces.end();
+        if (!person) {
+            const auto creature = std::ranges::lower_bound(s_creatures, race, {}, &ResolvedCreature::race);
+            if (creature != s_creatures.end() && creature->race == race) {
+                const auto& row = *creature->row;
+                outcome.armorLevel = row.level;
+                for (std::size_t zoneIndex = 0; zoneIndex < row.zoneCount; ++zoneIndex) {
+                    const auto& zone = row.zones[zoneIndex];
+                    if (zone.limb == limb) {
+                        outcome.armorLevel = zone.level;
+                        outcome.limbFactor = zone.factor;
+                        outcome.head = zone.head;
+                        break;
+                    }
+                }
+                outcome.armorFraction = kCreatureThrough[std::min<std::size_t>(outcome.armorLevel, kCreatureThrough.size() - 1)][index];
+                return outcome;
+            }
+        }
+        static const REL::Relocation<ActorInPowerArmorFunction> s_actorInPowerArmor{ REL::Offset(kActorInPowerArmor) };
+        const bool inPowerArmor = target.inventoryList && s_actorInPowerArmor(&target);
+        if (!inPowerArmor && !person) {
+            return {};
+        }
+
+        const auto hitLimb = classifyLimb(limb);
+        const bool head = hitLimb == Limb::Head;
+        outcome.head = head;
+        if (inPowerArmor && readPlateRating(target, plateSlotOf(hitLimb)) > 0) {
+            outcome.armorLevel = kPlateLevel;
+            outcome.armorFraction = kPlateThrough[index];
+            outcome.limbFactor = head ? 1.0F : limbFactorOf(hitLimb);
+            return outcome;
+        }
+        float through = 1.0F;
+        if (!inPowerArmor) {
+            through = readWornThrough(target, slotsOf(hitLimb), head, family);
+            if (through == -2.0F && !s_loggedWornFault.exchange(true, std::memory_order_relaxed)) {
+                spdlog::error("Reading worn armor on {:08X} faulted; the limb counts as unarmored", target.GetFormID());
+            }
+            through = through < 0.0F ? 1.0F : through;
+        }
+        outcome.armorFraction = through;
+        // A helmet spreads the burn, as it spreads a blow; a bare head takes it double.
+        outcome.limbFactor = head ? (through >= 1.0F ? kHeadFactor : 1.0F) : limbFactorOf(hitLimb);
+        return outcome;
+    }
+
+    float thermalPieceDamage(Thermal family, float damage) noexcept
+    {
+        // The energy that gives this damage on the caliber scale, worn like a round's, by the family's factor.
+        const float energy = damage > 0.0F ? kReferenceEnergyFtLb * std::pow(damage / kReferenceHealth, 1.0F / kEnergyExponent) : 0.0F;
+        const float ratio = energy / kWearReferenceEnergy;
+        return pieceDamage(kThermalWear[static_cast<std::size_t>(family)] * ratio * ratio);
     }
 
     Removal removal(const Caliber& caliber, const Outcome& outcome, std::uint32_t hitLimb, std::uint32_t partLimb, std::uint8_t partFlags, float distance) noexcept

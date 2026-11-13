@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "about": "Laser, plasma and fire damage on the same 100-health scale as the calibers. A weapon's own energy damage, with every attachment, perk-free, is its value; the model turns it into damage with the ballistic model's energy exponent, so attachments, charge and pellets scale damage the way energy scales a round. Armor meets each family by material, after the lore of the series: lasers are held by reflective metal, polymer plate and above all power armor, plasma goes through most of everything, and heat soaks through soft armor.",
+  "energyDamageType": { "plugin": "Fallout4.esm", "localFormID": "060A81", "editorID": "dtEnergy" },
+  "families": {
+    "laser": {
+      "referenceValue": 24,
+      "referenceDamage": 90,
+      "rangeFalloff": false,
+      "wear": 1.0,
+      "reason": "The AER9, the US Army's main energy service rifle, does a service rifle round's damage (5.56 NATO 91). Fallout and Fallout 2 put laser weapons at about twice a 10mm pistol (laser rifle 25-50, laser pistol 10-22). A beam keeps its energy over game ranges. Every shot ablates a power armor piece's reflective coating."
+    },
+    "plasma": {
+      "referenceValue": 24,
+      "referenceDamage": 125,
+      "rangeFalloff": true,
+      "wear": 2.0,
+      "reason": "Plasma hits harder than a laser (Fallout plasma rifle 30-65 against the laser rifle's 25-50; a Fallout 4 loading screen says it deals even more energy damage). The bolt carries the whole damage: the weapon's physical part is folded into it. A slow bolt keeps the game's range falloff, and molten plate wears twice as fast."
+    },
+    "fire": {
+      "referenceValue": 9,
+      "referenceDamage": 6,
+      "rangeFalloff": true,
+      "wear": 0.25,
+      "reason": "A flamer burns by many small hits; one flame projectile of the base flamer does 6. Fire barely marks a power armor piece."
+    }
+  },
+  "ammunition": [
+    { "family": "laser", "plugin": "Fallout4.esm", "localFormID": "0C1897", "editorID": "AmmoFusionCell" },
+    { "family": "laser", "plugin": "Fallout4.esm", "localFormID": "1262F2", "editorID": "AmmoFusionCellLtBlue" },
+    { "family": "laser", "plugin": "Fallout4.esm", "localFormID": "0AB4FE", "editorID": "AmmoFusionCellEyebot" },
+    { "family": "laser", "plugin": "Fallout4.esm", "localFormID": "245D69", "editorID": "CompanionAmmoFusionCell" },
+    { "family": "laser", "plugin": "Fallout4.esm", "localFormID": "075FE4", "editorID": "AmmoFusionCore" },
+    { "family": "laser", "plugin": "Fallout4.esm", "localFormID": "1BBFCA", "editorID": "AmmoFusionCoreNoSteal" },
+    { "family": "plasma", "plugin": "Fallout4.esm", "localFormID": "01DBB7", "editorID": "AmmoPlasmaCartridge" },
+    { "family": "fire", "plugin": "Fallout4.esm", "localFormID": "0CAC78", "editorID": "AmmoFlamerFuel" },
+    { "family": "fire", "plugin": "Fallout4.esm", "localFormID": "2491A7", "editorID": "CompanionAmmoFlamerFuel" }
+  ],
+  "flameProjectiles": {
+    "about": "A weapon whose projectile override is one of these burns, whatever it loads: the plasma gun's flamer barrel fires plasma cartridges as a flame stream.",
+    "projectiles": [
+      { "plugin": "Fallout4.esm", "localFormID": "0F06DA", "editorID": "FlamerProjectileStreamLong" },
+      { "plugin": "Fallout4.esm", "localFormID": "1C5AB6", "editorID": "FlamerProjectileStreamMedium" },
+      { "plugin": "Fallout4.esm", "localFormID": "1C5AB5", "editorID": "FlamerProjectileStreamVaporizer" },
+      { "plugin": "Fallout4.esm", "localFormID": "1B637B", "editorID": "PlasmaFlamerProjectileStream" }
+    ]
+  },
+  "incendiaryThrow": {
+    "keyword": { "plugin": "Fallout4.esm", "localFormID": "21A29F", "editorID": "WeaponTypeMolotov" },
+    "referenceValue": 50,
+    "referenceDamage": 30,
+    "reason": "A Molotov's burst of burning fuel (the game's explosion does 50) does 30 at its centre; the fire it leaves keeps the game's burn of 10 a second, which armor resists through its energy rating."
+  },
+  "materials": {
+    "about": "Share of an energy hit that gets through a worn piece, by the piece's material. The most protective piece on the hit limb counts. Lore anchors (Fallout and Fallout 2 laser, plasma and fire resistance): leather 20/10/20%, combat armor 60/50/30%, metal armor second only to power armor against lasers. Polished metal reflects a beam but conducts heat; polymer plate resists both.",
+    "none": { "laser": 1.0, "plasma": 1.0, "fire": 1.0 },
+    "leather": { "laser": 0.8, "plasma": 0.9, "fire": 0.8 },
+    "scrap": { "laser": 0.55, "plasma": 0.75, "fire": 0.8 },
+    "metal": { "laser": 0.25, "plasma": 0.6, "fire": 0.85 },
+    "polymer": { "laser": 0.4, "plasma": 0.5, "fire": 0.7 }
+  },
+  "materialByEnergyRating": {
+    "about": "Armor no rule names takes a material from its energy resistance, scaled like the ballistic rating: below 5 in torso terms it is clothing, below 15 leather, below 25 scrap, above that polymer.",
+    "levels": ["none", "leather", "scrap", "polymer", "polymer"]
+  },
+  "weaveMaterial": "leather",
+  "powerArmor": {
+    "about": "Share that reaches the wearer behind an intact suit piece (Fallout 2 power armor: laser 80%, plasma 40%, fire 60% resistance; T-51b's 10 micron silver ablative coating reflects laser fire).",
+    "laser": 0.1,
+    "plasma": 0.6,
+    "fire": 0.4
+  },
+  "creatureLevels": {
+    "about": "A creature's hit zone level read as hide or chassis: the share that gets through, by level 0 to 4.",
+    "laser": [1.0, 0.85, 0.7, 0.55, 0.4],
+    "plasma": [1.0, 0.9, 0.8, 0.7, 0.6],
+    "fire": [1.0, 0.85, 0.75, 0.65, 0.55]
+  },
+  "sources": [
+    "https://fallout-archive.fandom.com/wiki/Fallout_weapons",
+    "https://fallout-archive.fandom.com/wiki/Laser_rifle_(Fallout_4)",
+    "https://fallout.fandom.com/wiki/Plasma_rifle_(Fallout)",
+    "https://fallout.fandom.com/wiki/Metal_armor_(Fallout)",
+    "https://fallout-archive.fandom.com/wiki/T-51_power_armor",
+    "https://lilura1.blogspot.com/2022/03/Power-Armor-Fallout-2.html",
+    "https://www.ludo.guide/guide/fallout-2/armor",
+    "https://fallout.wiki/wiki/Microfusion_Cell_(Fallout:_New_Vegas)",
+    "Fallout4.esm: weapon energy values (laser gun 24, Institute laser 21, Gatling laser 14, laser musket 30 per charge, plasma gun 24 physical and 24 energy, flamer 9), object mod energy multipliers, ExplosionMolotovCocktail 50, ExplosionFireHazardSpell 10 a second"
+  ]
+}

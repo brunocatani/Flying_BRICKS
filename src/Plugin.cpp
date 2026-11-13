@@ -2,6 +2,7 @@
 
 #include "AmmoTable.h"
 #include "Compatibility.h"
+#include "Energy.h"
 #include "HitLabels.h"
 #include "Hooks.h"
 #include "Melee.h"
@@ -76,6 +77,9 @@ namespace
         spdlog::info("Armor: {} by template, {} by rating, {} heavy mods, {} weave mods, {} creature races", armor.armorRows, armor.armorByRating, armor.heavyMods, armor.weaveMods, armor.creatures);
 
         melee::build();
+
+        const auto energyWeapons = energy::build();
+        spdlog::info("Energy: {} ammunition, {} flame projectiles, incendiary throw {}", energyWeapons.ammunition, energyWeapons.flameProjectiles, energyWeapons.incendiaryThrow);
 
         const auto patches = patch_files::load();
         spdlog::info("Patch files: {} read, {} for plugins not loaded, {} problems, {} rows name a form the plugin does not have", patches.filesRead, patches.filesNotLoaded, patches.problems, patches.formsNotFound);

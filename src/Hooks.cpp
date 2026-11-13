@@ -4,6 +4,7 @@
 
 #include "AmmoTable.h"
 #include "DamagePolicy.h"
+#include "Energy.h"
 #include "HitLabels.h"
 #include "Melee.h"
 #include "Presets.h"
@@ -162,6 +163,12 @@ namespace flying_bricks::hooks
         // ReduceDamage's one armor curve call. The curve has other callers (AI estimates, armor display).
         constexpr std::array<std::uintptr_t, 1> kArmorCurveCallsites{ 0x01044899 };
 
+        // CollectDamage's per-type step (0x141046950) reduces each typed damage by the same curve: RCX the type's
+        // resistance, XMM1 the weapon's value times the hit's power (range falloff, charge, projectile count), XMM2
+        // the target's rating, and the result multiplies the value (raw disassembly 141046A0B..141046A35). It is
+        // only called when the hit has a target and the type has a resistance.
+        constexpr std::array<std::uintptr_t, 1> kTypedCurveCallsites{ 0x01046A1A };
+
         // The body part multiplier, which runs after the pellet divide and just before the fatal check.
         constexpr std::array<std::uintptr_t, 2> kLimbMultiplierCallsites{ 0x01042FC9, 0x0104339F };
 
@@ -250,6 +257,25 @@ namespace flying_bricks::hooks
         thread_local bool s_reducingMeleeBlow = false;
         thread_local bool s_processingAuthoredActorHit = false;
         thread_local bool s_firingOwnedAmmo = false;
+        thread_local bool s_displayingDamage = false;
+
+        // An energy hit's typed damage, between CollectDamage, which sets it without armor because the hit has no
+        // limb yet, and ReduceDamage, which takes the armor share off once the limb is known. Keyed by the hit, so
+        // a collect no reduction follows (a prediction) never reaches another hit.
+        struct EnergyCollect
+        {
+            terminal::Thermal family{};
+            bool modelReadsTarget{};  // False leaves the target's own energy resistance on the typed damage.
+            float authored{};         // The model's typed damage this hit received.
+            float resistedCorrection{};
+        };
+        thread_local std::optional<EnergyCollect> s_energyCollect{};
+        struct EnergyCollected
+        {
+            const RE::HitData* hit{};
+            float authored{};
+        };
+        thread_local EnergyCollected s_energyCollected{};
 
         // Set by ReduceDamage's hook for the limb multiplier that follows it on this thread.
         thread_local terminal::Outcome s_outcome{};
@@ -313,6 +339,40 @@ namespace flying_bricks::hooks
             return &melee::classify(*weapon, hit.weapon.instanceData.get(), bash);
         }
 
+        // The energy family of a weapon's shots. The override projectile is the weapon's own (a flamer barrel's
+        // stream): Fire swaps it only for our ballistic rounds.
+        [[nodiscard]] std::optional<terminal::Thermal> energyFamilyOf(const InstanceData& instance, const RE::TESAmmo* ammo) noexcept
+        {
+            if (!s_damageModelActive.load(std::memory_order_relaxed)) {
+                return std::nullopt;
+            }
+            const auto* ranged = instance.rangedData;
+            return energy::familyOf(ranged ? ranged->overrideProjectile : nullptr, ammo ? ammo : instance.ammo);
+        }
+
+        struct EnergyHit
+        {
+            terminal::Thermal family{};
+            bool incendiaryThrow{};
+        };
+
+        [[nodiscard]] std::optional<EnergyHit> energyHitOf(const RE::HitData& hit) noexcept
+        {
+            const auto* instance = resolveInstanceData(hit.weapon);
+            if (!instance || !s_damageModelActive.load(std::memory_order_relaxed)) {
+                return std::nullopt;
+            }
+            const auto flags = hit.flags.underlying();
+            const bool explosion = (flags & damage_policy::kExplosionFlag) != 0;
+            const auto* weapon = hit.weapon.object ? hit.weapon.object->As<RE::TESObjectWEAP>() : nullptr;
+            const bool incendiaryThrow = explosion && weapon && energy::isIncendiaryThrow(*weapon);
+            const auto family = explosion ? std::nullopt : energyFamilyOf(*instance, hit.ammo);
+            if (!damage_policy::isAuthoredEnergyHit(flags, instance->type.underlying(), family.has_value(), incendiaryThrow)) {
+                return std::nullopt;
+            }
+            return EnergyHit{ incendiaryThrow ? terminal::Thermal::Fire : *family, incendiaryThrow };
+        }
+
         [[nodiscard]] bool isAuthoredHit(const RE::HitData* hit) noexcept
         {
             if (!hit) {
@@ -322,10 +382,10 @@ namespace flying_bricks::hooks
                 return true;
             }
             const auto* instance = resolveInstanceData(hit->weapon);
-            return instance && damage_policy::isAuthoredHit(
-                                   hit->flags.underlying(),
-                                   instance->type.underlying(),
-                                   findEffectiveAmmo(instance, hit->ammo) != nullptr);
+            if (instance && damage_policy::isAuthoredHit(hit->flags.underlying(), instance->type.underlying(), findEffectiveAmmo(instance, hit->ammo) != nullptr)) {
+                return true;
+            }
+            return energyHitOf(*hit).has_value();
         }
 
         [[nodiscard]] const terminal::Caliber* caliberOfHit(const RE::HitData& hit) noexcept;
@@ -355,11 +415,13 @@ namespace flying_bricks::hooks
             constexpr float kGameUnitsPerMetre = 70.0F;
             const float distance = shotDistance(hit) / kGameUnitsPerMetre;
             const float energyKept = caliber ? atImpact(hit, *caliber).energyKept : 1.0F;
+            const auto energyHit = energyHitOf(hit);
             spdlog::info(
-                "Hit: target={:08X} ammo={:08X} authored={} flags={:08X} limb={} distance={:.1f}m energyKept={:.3f} incoming={:.1f} afterReduction={:.1f} resolved={} level={} stopped={} kill={} armor={:.3f} limbFactor={:.2f} weapon={:08X}",
+                "Hit: target={:08X} ammo={:08X} authored={} family={} flags={:08X} limb={} distance={:.1f}m energyKept={:.3f} incoming={:.1f} afterReduction={:.1f} resolved={} level={} stopped={} kill={} armor={:.3f} limbFactor={:.2f} weapon={:08X}",
                 target ? target->GetFormID() : 0u,
                 ammo ? ammo->GetFormID() : 0u,
                 authored,
+                energyHit ? static_cast<int>(energyHit->family) : -1,
                 static_cast<std::uint32_t>(flags),
                 hit.damageLimb.underlying(),
                 distance,
@@ -429,6 +491,10 @@ namespace flying_bricks::hooks
                 const auto target = hit.target.get();
                 return target ? terminal::resolveMelee(*target, *blow->protection, hit.damageLimb.underlying()) : terminal::Outcome{};
             }
+            if (const auto energyHit = energyHitOf(hit)) {
+                const auto target = hit.target.get();
+                return target ? terminal::resolveThermal(*target, energyHit->family, hit.damageLimb.underlying()) : terminal::Outcome{};
+            }
             const auto* caliber = caliberOfHit(hit);
             if (!caliber) {
                 return {};
@@ -444,6 +510,11 @@ namespace flying_bricks::hooks
                 const auto* entry = findEffectiveAmmo(instance, ammo);
                 if (damage_policy::usesAuthoredDamage(instance->type.underlying(), entry != nullptr, false)) {
                     return entry->damage;
+                }
+                // An energy shot's whole damage is its typed damage, which the model sets; a plasma bolt's
+                // physical part is folded into it. The item card keeps the game's numbers.
+                if (!s_displayingDamage && damage_policy::isRangedWeaponType(instance->type.underlying()) && energyFamilyOf(*instance, ammo)) {
+                    return 0.0F;
                 }
             }
             return original(attacker, instance, ammo, condition, range);
@@ -466,6 +537,7 @@ namespace flying_bricks::hooks
                     return entry->damage;
                 }
             }
+            ScopedFlag displaying(s_displayingDamage, true);
             return original(weapon, ammo, condition);
         }
 
@@ -489,6 +561,13 @@ namespace flying_bricks::hooks
                     return terminal::damageShare(presets::atDistance(*entry->caliber, distance));
                 }
                 return 1.0F;
+            }
+            // A beam keeps its energy over game ranges; a plasma bolt and a flame keep the game's falloff.
+            if (instance && !s_meleeActionContext && damage_policy::isRangedWeaponType(instance->type.underlying())) {
+                const auto family = energyFamilyOf(*instance, nullptr);
+                if (family && !energy::keepsRangeFalloff(*family)) {
+                    return 1.0F;
+                }
             }
             return original(attacker, weapon, distance);
         }
@@ -524,7 +603,39 @@ namespace flying_bricks::hooks
             const bool authored = isAuthoredHit(hit);
             s_hitPipelineAuthored = authored;
             ScopedFlag scope(s_collectingAuthoredHit, authored);
+            const auto energyHit = authored ? energyHitOf(*hit) : std::nullopt;
+            if (!energyHit || energyHit->incendiaryThrow) {
+                original(hit, weapon, power);
+                return;
+            }
+            // Whether the model reads this target's armor depends on its race and suit, not the limb.
+            constexpr std::uint32_t kAnyLimb = 0;
+            const auto target = hit->target.get();
+            EnergyCollect collect;
+            collect.family = energyHit->family;
+            collect.modelReadsTarget = target && terminal::resolveThermal(*target, energyHit->family, kAnyLimb).active;
+            s_energyCollect = collect;
             original(hit, weapon, power);
+            hit->resistedTypedDamage += s_energyCollect->resistedCorrection;
+            s_energyCollected = EnergyCollected{ hit, s_energyCollect->authored };
+            s_energyCollect.reset();
+        }
+
+        // The model's damage replaces an energy hit's typed value. Without a target the model reads, the target's
+        // own resistance still applies to it; with one, armor is taken off in ReduceDamage once the limb is known.
+        float typedCurveHook(void* resistance, float value, float rating) noexcept
+        {
+            const auto original = through(_ReturnAddress(), s_armorCurve);
+            if (!s_energyCollect || value <= 0.0F || resistance != static_cast<const void*>(energy::energyResistance())) {
+                return original(resistance, value, rating);
+            }
+            auto& collect = *s_energyCollect;
+            const float authored = energy::authoredDamage(collect.family, value);
+            const float kept = collect.modelReadsTarget ? 1.0F : original(resistance, authored, rating);
+            collect.authored += collect.modelReadsTarget ? authored : 0.0F;
+            // The native step books value - value x result as resisted; the model's resisted share is authored - authored x kept.
+            collect.resistedCorrection += authored - value;
+            return authored * kept / value;
         }
 
         void typedEntryPointHook(std::uint32_t entryPoint, RE::Actor* perkOwner, void* argument1, void* argument2, void* argument3, void* argument4) noexcept
@@ -539,10 +650,25 @@ namespace flying_bricks::hooks
         {
             const auto original = through(_ReturnAddress(), s_reduceDamage);
             const bool authored = isAuthoredHit(hit);
-            const float incoming = hit ? hit->healthDamage : 0.0F;
             s_hitPipelineAuthored = authored;
             s_outcome = authored ? resolveOutcome(*hit) : terminal::Outcome{};
+            const auto collected = std::exchange(s_energyCollected, EnergyCollected{});
+            const auto energyHit = s_outcome.thermal && hit ? energyHitOf(*hit) : std::nullopt;
+            if (energyHit && energyHit->incendiaryThrow) {
+                // The burst's damage is physical in the game; the native armor curve call below applies the
+                // outcome's share to it through armorCurveHook.
+                const float native = hit->physicalDamage;
+                const float authoredBurst = energy::incendiaryThrowDamage(native);
+                hit->healthDamage += authoredBurst - native;
+                hit->physicalDamage = authoredBurst;
+            }
+            const float incoming = hit ? hit->healthDamage : 0.0F;
             s_incomingDamage = incoming;
+            if (energyHit && !energyHit->incendiaryThrow && collected.hit == hit) {
+                const float lost = collected.authored * (1.0F - s_outcome.armorFraction);
+                hit->healthDamage -= lost;
+                hit->resistedTypedDamage += lost;
+            }
             {
                 ScopedFlag scope(s_reducingAuthoredHit, authored);
                 ScopedFlag melee(s_reducingMeleeBlow, authored && meleeBlowOf(*hit));
@@ -569,7 +695,13 @@ namespace flying_bricks::hooks
                 return;
             }
             hit->healthDamage *= outcome.limbFactor;
-            hit->targetedLimbDamage *= outcome.armorFraction * outcome.limbFactor;
+            if (outcome.thermal) {
+                // The native limb damage comes from the physical part, which an energy shot no longer has: a burn
+                // cripples by what it does to health.
+                hit->targetedLimbDamage = hit->healthDamage;
+            } else {
+                hit->targetedLimbDamage *= outcome.armorFraction * outcome.limbFactor;
+            }
             // The suit's belly reports no limb, and the hit event skips the piece damage for that. It is the
             // torso piece the round struck, so name it for the event that reads this hit next.
             if (outcome.armorLevel == terminal::kPlateLevel && hit->damageLimb.underlying() == kNoLimb) {
@@ -662,6 +794,14 @@ namespace flying_bricks::hooks
             const auto original = through(_ReturnAddress(), s_pieceDamage);
             const auto* blow = hit ? meleeBlowOf(*hit) : nullptr;
             const auto* caliber = !blow && hit && isAuthoredHit(hit) ? caliberOfHit(*hit) : nullptr;
+            const auto energyHit = !blow && !caliber && hit ? energyHitOf(*hit) : std::nullopt;
+            if (energyHit && wearer) {
+                // The hit's damage before the suit's share and the limb factor, which the outcome gives back.
+                const auto outcome = terminal::resolveThermal(*wearer, energyHit->family, hit->damageLimb.underlying());
+                const float scale = outcome.armorFraction * outcome.limbFactor;
+                const float damage = outcome.active && scale > 0.0F ? hit->healthDamage / scale : 0.0F;
+                return terminal::thermalPieceDamage(energyHit->family, damage);
+            }
             if (!blow && !caliber) {
                 return original(wearer, hit, piece, extra);
             }
@@ -847,7 +987,7 @@ namespace flying_bricks::hooks
             original(weapon, shooter, equipIndex, ammo, poison);
         }
 
-        [[nodiscard]] std::array<HookFamily, 25> hookFamilies() noexcept
+        [[nodiscard]] std::array<HookFamily, 26> hookFamilies() noexcept
         {
             const auto address = [](auto hook) { return reinterpret_cast<std::uintptr_t>(hook); };
             return {
@@ -871,6 +1011,7 @@ namespace flying_bricks::hooks
                 HookFamily{ "fatal check difficulty", kDifficultyScaleTarget, kFatalCheckDifficultyCallsites, address(&fatalCheckDifficultyHook) },
                 HookFamily{ "weapon fire", kFireTarget, kFireCallsites, address(&fireHook) },
                 HookFamily{ "armor curve", kArmorCurveTarget, kArmorCurveCallsites, address(&armorCurveHook) },
+                HookFamily{ "typed damage curve", kArmorCurveTarget, kTypedCurveCallsites, address(&typedCurveHook) },
                 HookFamily{ "limb multiplier", kLimbMultiplierTarget, kLimbMultiplierCallsites, address(&limbMultiplierHook) },
                 HookFamily{ "pellet spread", kPelletSpreadTarget, kPelletSpreadCallsites, address(&pelletSpreadHook) },
                 HookFamily{ "removal decision", kRemovalDecisionTarget, kRemovalDecisionCallsites, address(&removalDecisionHook) },

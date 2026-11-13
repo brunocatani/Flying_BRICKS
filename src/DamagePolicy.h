@@ -3,7 +3,7 @@
 #include <cstdint>
 
 // Decides which attacks the authored damage model owns. Everything it rejects stays on the
-// untouched native formula, so explosions, energy weapons and foreign ammunition keep their damage.
+// untouched native formula, so explosions, unlisted energy weapons and foreign ammunition keep their damage.
 namespace flying_bricks::damage_policy
 {
     // WEAPON_TYPE values; 0..6 are hand-to-hand and melee.
@@ -52,5 +52,15 @@ namespace flying_bricks::damage_policy
     [[nodiscard]] constexpr bool isAuthoredHit(std::uint32_t hitFlags, std::uint8_t weaponType, bool ownedAmmo) noexcept
     {
         return (hitFlags & kExplosionFlag) == 0 && usesAuthoredDamage(weaponType, ownedAmmo, isMeleeAction(hitFlags));
+    }
+
+    // An energy hit the model owns: a laser, plasma or fire shot from a ranged weapon, or the explosion of an
+    // incendiary throw (a Molotov). Any other explosion, energy weapon or bash stays native.
+    [[nodiscard]] constexpr bool isAuthoredEnergyHit(std::uint32_t hitFlags, std::uint8_t weaponType, bool energyShot, bool incendiaryThrow) noexcept
+    {
+        if (isMeleeAction(hitFlags) || !isRangedWeaponType(weaponType)) {
+            return false;
+        }
+        return (hitFlags & kExplosionFlag) != 0 ? incendiaryThrow : energyShot;
     }
 }

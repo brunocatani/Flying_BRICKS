@@ -22,7 +22,7 @@ How the model works is published in `docs/`: [DamageModel.md](docs/DamageModel.m
 | `data/EnergyModel.json` | Laser, plasma and fire: families by ammunition and flame projectile, reference damage, shares through each material, power armor and creature level, wear, the Molotov burst |
 | `data/CreatureLevels.json` | Each creature race's body levels by hit zone |
 | `data/Compatibility.json` | Other mods' models and flight per caliber |
-| `data/WorldAmmo.json` | The game's lists that host the world ammo list |
+| `data/WorldAmmo.json` | The game's lists that host the world ammo list, the providers' lists injected into them, and the game's ammo list of each trajectory class that sets the loot scale |
 | `data/mod/` | Game data shipped with the DLL: the ESP, the patch files and the RobCo Patcher file |
 | `src/Hooks.cpp` | Every native hook: damage, armor curve, typed damage curve, limb multiplier, removal, pellet spread, flight, fire |
 | `src/Terminal.cpp` | What a round or an energy hit does to a target: worn armor, power armor, creatures, heads and limbs |
@@ -72,6 +72,7 @@ Munitions, Armament, BIBFX and Weapons of Fate are optional and never masters; p
 - `Flying_BRICKS.esp` loads last; an earlier position is logged and only costs fields such as names.
 - Caliber Complex is incompatible: loading it logs a warning and shows a notification after each load.
 - Our rounds reach vendors and loot through one world list the DLL fills with the calibers loaded weapons fire; a RobCo Patcher file generated from `data/WorldAmmo.json` adds it to the game's lists. Without RobCo Patcher the list is not reached, which is logged. Per-gun lists such as `LL_Ammo_10mm` never host it, because they also feed the NPC carrying that gun.
+- A loot overhaul is followed at load, after the world list is filled. Our lists and every list of a round we added take counts scaled by the live mean count of the game's own ammo list of the caliber's trajectory class over its base game mean (`lootReferences` in `data/WorldAmmo.json`); lists of base game rounds from other mods are left to the overhaul. Our world list and the providers' ammo lists in each host count one pick in a host that picks one entry, and are removed from a use-all host that rolls no caliber list of its own, since the lists it rolls carry ours. Without an overhaul both passes change nothing.
 
 ## Invariants
 

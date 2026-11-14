@@ -15,6 +15,46 @@ inline constexpr std::string_view kOurPlugin = "Flying_BRICKS.esp";
 inline constexpr std::uint32_t kWorldAmmoList = 0x000BA0;
 inline constexpr std::uint32_t kWorldAmmoHost = 0x06738B;  // LL_Ammo_Any, read to tell whether RobCo Patcher added the list.
 
+// The game's lists that host the world list, from data/WorldAmmo.json.
+inline constexpr std::array<FormRow, 17> kWorldAmmoHosts{
+    FormRow{ "Fallout4.esm", 0x1FE31C },  // LLI_Vendor_Ammo_Base
+    FormRow{ "Fallout4.esm", 0x1FE31D },  // LLI_Vendor_Ammo_WeaponStore
+    FormRow{ "Fallout4.esm", 0x07580A },  // LLI_Vendor_Ammo_Basic
+    FormRow{ "Fallout4.esm", 0x18F658 },  // LLC_DCShopAmmo
+    FormRow{ "Fallout4.esm", 0x06738B },  // LL_Ammo_Any
+    FormRow{ "Fallout4.esm", 0x06738C },  // LL_Ammo_Any_25
+    FormRow{ "Fallout4.esm", 0x06738D },  // LL_Ammo_Any_50
+    FormRow{ "Fallout4.esm", 0x06738E },  // LL_Ammo_Any_75
+    FormRow{ "Fallout4.esm", 0x18DFE2 },  // LL_Ammo_Any_Raider
+    FormRow{ "Fallout4.esm", 0x087926 },  // LL_Ammo_Any_Same
+    FormRow{ "Fallout4.esm", 0x18DFE0 },  // LL_Ammo_Any_Same_Raider
+    FormRow{ "Fallout4.esm", 0x0CFC91 },  // LLI_Loot_Ammo_Basic
+    FormRow{ "Fallout4.esm", 0x085318 },  // LLC_Ammo_Basic
+    FormRow{ "Fallout4.esm", 0x18F653 },  // LLC_DCAmmo_Any
+    FormRow{ "Fallout4.esm", 0x18F654 },  // LLC_DCAmmo_Any_75
+    FormRow{ "Fallout4.esm", 0x05859B },  // LLE_Perk_Scrounger100
+    FormRow{ "Fallout4.esm", 0x1081B9 },  // LLE_Perk_ScroungerSmall
+};
+// Other mods' ammo lists injected into the same hosts.
+inline constexpr std::array<FormRow, 1> kProviderAmmoLists{
+    FormRow{ "Armament.esp", 0x003BD3 },  // LL_Ammo_Armament
+};
+// The game's own ammo list of each trajectory class and its mean count in the base game; CaliberRow::lootReference
+// indexes this array.
+inline constexpr std::array<LootReference, 11> kLootReferences{
+    LootReference{ "Fallout4.esm", 0x067381, 7.0F },  // wof_10mm LL_Ammo_10mm
+    LootReference{ "Fallout4.esm", 0x067382, 3.0F },  // wof_308 LL_Ammo_308Caliber
+    LootReference{ "Fallout4.esm", 0x067384, 6.0F },  // wof_38 LL_Ammo_38Caliber
+    LootReference{ "Fallout4.esm", 0x0DB29E, 5.0F },  // wof_44 LL_Ammo_44
+    LootReference{ "Fallout4.esm", 0x067383, 7.0F },  // wof_45 LL_Ammo_45Caliber
+    LootReference{ "DLCCoast.esm", 0x042E73, 5.0F },  // wof_4570 DLC03_LL_Ammo_4570
+    LootReference{ "Fallout4.esm", 0x067387, 5.0F },  // wof_50 LL_Ammo_50Cal
+    LootReference{ "Fallout4.esm", 0x067385, 5.0F },  // wof_556 LL_Ammo_556
+    LootReference{ "Fallout4.esm", 0x067386, 5.0F },  // wof_5mm LL_Ammo_5mm
+    LootReference{ "DLCNukaWorld.esm", 0x037895, 5.0F },  // wof_762 DLC04_LL_Ammo_HandmadeRound
+    LootReference{ "Fallout4.esm", 0x06738A, 3.0F },  // wof_shotgun LL_Ammo_ShotgunShell
+};
+
 // Sorted by the caliber's normal projectile.
 inline constexpr std::array<VisualRow, 78> kVisualRows{
     VisualRow{ 0x000800, "Ammo\\Armament\\Projectile10mm.nif", "Ammo\\Armament\\10x25mm_OpenedBox.nif", "Ammo\\Armament\\10x25mm_Casing.nif", true, "", "", "", "WeaponsOfFate\\10mm\\Projectile10mm_Tracer.nif", "WeaponsOfFate\\10mm\\Projectile10mm_TracerLight.nif", "Effects\\DefaultTracerBeamTracer.nif", "Effects\\DefaultTracerBeamSupp.nif", true },  // 10x25

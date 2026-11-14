@@ -65,6 +65,10 @@ The research behind the numbers, with sources, and the full tables:
   rounds borrow their models: boxes and casings from Armament or Munitions,
   bullets from Weapons of Fate, BIBFX or those two, impact effects from BIBFX.
   Without them our rounds use vanilla models. The numbers always stay ours.
+- **Loot overhauls** such as Damn Apocalypse are followed. Our rounds come in
+  the amounts the overhaul gives the game's own rounds of the same class, and
+  reach vendors and loot only through the lists it gates, so ammunition stays
+  as scarce as the overhaul intends.
 - **Caliber Complex is not compatible.** Its rounds are not replaced and its
   lists flood vendors and loot; with it loaded you get a warning after each
   load.

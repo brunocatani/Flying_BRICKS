@@ -38,11 +38,27 @@ namespace flying_bricks::compatibility
             bool bibfxImpact;  // BIBFX's own shotgun projectiles have no impact explosion, so pellets get none.
         };
 
+        struct FormRow
+        {
+            std::string_view plugin;
+            std::uint32_t local;
+        };
+
+        struct LootReference
+        {
+            std::string_view plugin;
+            std::uint32_t list;
+            float vanillaMean;  // Mean count of the list's entries in the master that defines it.
+        };
+
 #include "CompatibilityData.inl"
 
         // BGSProjectile flags and the object mod property holding a weapon's ammunition.
         constexpr std::uint32_t kProjectileAltTrigger = 1u << 2;
         constexpr std::uint32_t kAmmoProperty = 61;
+        // TESLeveledList::llFlags holds the record's LVLF flags as written: GetMultCalc (vtable slot 8) returns bit 0x02 of
+        // the byte at +0x2B, and the constructor zeroes that byte with the other byte fields at +0x28..+0x2C.
+        constexpr std::int8_t kLeveledUseAll = 0x04;
 
         struct Active
         {
@@ -438,6 +454,185 @@ namespace flying_bricks::compatibility
                 spdlog::warn("World ammo: {} calibers in {} slots, but the list is not in the game's lists. Is RobCo Patcher installed?", result.worldCalibers, used);
             }
         }
+
+        // Whether a form comes from this file, by its form ID and the file's compile indices (see plugin_forms::find).
+        [[nodiscard]] bool fromFile(const RE::TESForm& form, const RE::TESFile& file) noexcept
+        {
+            const auto id = form.GetFormID();
+            if (file.GetCompileIndex() == plugin_forms::kLightSlot) {
+                return (id >> 24) == plugin_forms::kLightSlot && ((id >> 12) & 0xFFF) == file.GetSmallFileCompileIndex();
+            }
+            return (id >> 24) == file.GetCompileIndex();
+        }
+
+        // The item of ours that stands for each caliber, after applyReplacements put ours in every list.
+        [[nodiscard]] std::unordered_map<const RE::TESForm*, const patch_format::CaliberRow*> caliberRounds(RE::TESDataHandler& dataHandler)
+        {
+            std::unordered_map<const RE::TESForm*, const patch_format::CaliberRow*> rounds;
+            rounds.reserve(patch_files::calibers().size());
+            for (const auto& row : patch_files::calibers()) {
+                if (const auto* ammo = plugin_forms::find<RE::TESAmmo>(dataHandler, row.local, row.plugin)) {
+                    rounds.emplace(ammo, &row);
+                }
+            }
+            return rounds;
+        }
+
+        // The one round every entry of a list gives, or none.
+        [[nodiscard]] const RE::TESForm* singleRound(const RE::TESLeveledList& list) noexcept
+        {
+            const auto count = entryCount(list.baseListCount);
+            if (!list.leveledLists || count == 0) {
+                return nullptr;
+            }
+            const auto* round = list.leveledLists[0].form;
+            for (std::size_t index = 1; index < count; ++index) {
+                if (list.leveledLists[index].form != round) {
+                    return nullptr;
+                }
+            }
+            return round;
+        }
+
+        // A loot overhaul tunes the game's own ammo lists and cannot know ours or the rounds we added. Those lists follow
+        // its scale instead: our lists, and every list of a round we added, which after applyReplacements includes the
+        // Munitions, Armament and weapon mod lists of a replaced round. A list's counts are scaled by the live mean count of
+        // the game's list of its caliber's class over that list's mean in the base game, so without an overhaul the scale is
+        // 1 and nothing changes. Lists of base game rounds from other mods stay as their author or the overhaul left them.
+        // Counts change in place; no list grows or shrinks.
+        void applyLootScale(RE::TESDataHandler& dataHandler, const std::unordered_map<const RE::TESForm*, const patch_format::CaliberRow*>& rounds, ApplyResult& result)
+        {
+            std::array<float, kLootReferences.size()> scales{};
+            std::array<const RE::TESLevItem*, kLootReferences.size()> references{};
+            bool scaled = false;
+            for (std::size_t index = 0; index < kLootReferences.size(); ++index) {
+                const auto& row = kLootReferences[index];
+                scales[index] = 1.0F;
+                const auto* list = plugin_forms::find<RE::TESLevItem>(dataHandler, row.list, row.plugin);
+                const auto count = list && list->leveledLists ? entryCount(list->baseListCount) : 0;
+                if (count == 0) {
+                    spdlog::warn("Loot scale: {}|{:06X} is missing or empty; its calibers keep their counts", row.plugin, row.list);
+                    continue;
+                }
+                references[index] = list;
+                float total = 0.0F;
+                for (std::size_t entry = 0; entry < count; ++entry) {
+                    total += list->leveledLists[entry].count;
+                }
+                const auto mean = total / static_cast<float>(count);
+                scales[index] = mean / row.vanillaMean;
+                if (std::abs(scales[index] - 1.0F) > 0.01F) {
+                    scaled = true;
+                    spdlog::info("Loot scale: {}|{:06X} gives {:.2f} per pick against {:.2f} in the base game, scale {:.2f}", row.plugin, row.list, mean, row.vanillaMean, scales[index]);
+                }
+            }
+            if (!scaled) {
+                spdlog::info("Loot scale: the game's ammo lists are as in the base game; counts unchanged");
+                return;
+            }
+
+            const auto* ours = plugin_forms::findLoaded(dataHandler, kOurPlugin);
+            for (auto* leveledItem : dataHandler.GetFormArray<RE::TESLevItem>()) {
+                if (!leveledItem || std::ranges::find(references, leveledItem) != references.end()) {
+                    continue;
+                }
+                auto& list = static_cast<RE::TESLeveledList&>(*leveledItem);
+                const auto found = rounds.find(singleRound(list));
+                if (found == rounds.end()) {
+                    continue;
+                }
+                const auto& caliber = *found->second;
+                if (!ours || !(fromFile(*found->first, *ours) || fromFile(*leveledItem, *ours))) {
+                    continue;
+                }
+                const auto scale = scales[caliber.lootReference];
+                if (std::abs(scale - 1.0F) <= 0.01F) {
+                    continue;
+                }
+                const auto count = entryCount(list.baseListCount);
+                for (std::size_t index = 0; index < count; ++index) {
+                    auto& entry = list.leveledLists[index];
+                    entry.count = static_cast<std::uint16_t>(std::clamp(std::lround(entry.count * scale), 1L, 0xFFFFL));
+                }
+                ++result.scaledLists;
+            }
+            spdlog::info("Loot scale: {} lists of our rounds scaled", result.scaledLists);
+        }
+
+        // RobCo Patcher adds our world list and the providers' ammo lists to the hosts with fixed counts. Each host gets them
+        // the way its own entries are written in this load order: one pick in a list that picks one entry, and none in a
+        // use-all list that rolls no caliber list of its own, because the lists it rolls carry ours. Damn Apocalypse's weapon
+        // store rolls only its basic and rare lists, which its drop-rate global gates, so our rounds stay behind that gate.
+        // A host only shrinks in place, as applyWorldAmmo's list does.
+        void applyHostShape(RE::TESDataHandler& dataHandler, const std::unordered_map<const RE::TESForm*, const patch_format::CaliberRow*>& rounds, ApplyResult& result)
+        {
+            std::vector<const RE::TESForm*> added;
+            if (const auto* world = plugin_forms::find<RE::TESLevItem>(dataHandler, kWorldAmmoList, kOurPlugin)) {
+                added.push_back(world);
+            }
+            for (const auto& row : kProviderAmmoLists) {
+                if (const auto* list = plugin_forms::find<RE::TESLevItem>(dataHandler, row.local, row.plugin)) {
+                    added.push_back(list);
+                }
+            }
+            const auto isAdded = [&](const RE::TESForm* form) { return std::ranges::find(added, form) != added.end(); };
+            // A caliber list: a round of ours, or a list whose entries are rounds of ours.
+            const auto isCaliber = [&](const RE::TESForm* form) {
+                if (rounds.contains(form)) {
+                    return true;
+                }
+                const auto* list = form ? form->As<RE::TESLevItem>() : nullptr;
+                if (!list || !list->leveledLists) {
+                    return false;
+                }
+                const auto count = entryCount(list->baseListCount);
+                for (std::size_t index = 0; index < count; ++index) {
+                    if (rounds.contains(list->leveledLists[index].form)) {
+                        return true;
+                    }
+                }
+                return false;
+            };
+
+            for (const auto& row : kWorldAmmoHosts) {
+                auto* host = plugin_forms::find<RE::TESLevItem>(dataHandler, row.local, row.plugin);
+                if (!host || !host->leveledLists) {
+                    continue;
+                }
+                auto& list = static_cast<RE::TESLeveledList&>(*host);
+                const auto count = entryCount(list.baseListCount);
+                if ((list.llFlags & kLeveledUseAll) == 0) {
+                    for (std::size_t index = 0; index < count; ++index) {
+                        auto& entry = list.leveledLists[index];
+                        if (isAdded(entry.form) && entry.count != 1) {
+                            entry.count = 1;
+                            ++result.hostEntriesRecounted;
+                        }
+                    }
+                    continue;
+                }
+                bool ownCalibers = false;
+                for (std::size_t index = 0; index < count && !ownCalibers; ++index) {
+                    const auto* form = list.leveledLists[index].form;
+                    ownCalibers = !isAdded(form) && isCaliber(form);
+                }
+                if (ownCalibers) {
+                    continue;
+                }
+                std::size_t kept = 0;
+                for (std::size_t index = 0; index < count; ++index) {
+                    if (!isAdded(list.leveledLists[index].form)) {
+                        list.leveledLists[kept++] = list.leveledLists[index];
+                    }
+                }
+                if (kept != count) {
+                    result.hostEntriesRemoved += count - kept;
+                    list.baseListCount = static_cast<std::int8_t>(kept);
+                    spdlog::info("Host shape: {}|{:06X} rolls only other lists; {} entries of ours and the providers' removed", row.plugin, row.local, count - kept);
+                }
+            }
+            spdlog::info("Host shape: {} entries set to one pick, {} removed", result.hostEntriesRecounted, result.hostEntriesRemoved);
+        }
     }
 
     void warnIfIncompatible()
@@ -490,6 +685,9 @@ namespace flying_bricks::compatibility
         }
         applyWeaponPatches(patches, result);
         applyWorldAmmo(*dataHandler, result);
+        const auto rounds = caliberRounds(*dataHandler);
+        applyLootScale(*dataHandler, rounds, result);
+        applyHostShape(*dataHandler, rounds, result);
         spdlog::info("Weapon patches: {} weapons, {} object mods set, {} zeroed guns given their damage back, {} guns given another default part", result.patchedWeapons, result.patchedObjectMods, result.restoredDamage, result.swappedDefaults);
         return result;
     }

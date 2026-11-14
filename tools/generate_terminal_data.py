@@ -1,5 +1,6 @@
 """Write src/TerminalData.inl from data/ArmorLevels.json, data/EnergyModel.json, the registry and the game's
-masters, and src/EnergyData.inl from data/EnergyModel.json.
+masters, src/EnergyData.inl from data/EnergyModel.json, and src/AmmoData.inl, src/CompatibilityData.inl and
+src/CaliberData.inl from the registry, data/Compatibility.json, data/WorldAmmo.json and the game's own ammo lists.
 
 python -I tools/generate_terminal_data.py <game Data folder>
 
@@ -230,7 +231,7 @@ def main():
         if row[2] > 0:
             print(row)
     write_energy(energy)
-    write_compatibility()
+    write_compatibility(data_folder)
 
 
 def form_row(entry):
@@ -280,11 +281,44 @@ def literal(text):
     return json.dumps(text or "")
 
 
-def write_compatibility():
+def vanilla_mean_count(data_folder, plugin, local):
+    """Mean count of a leveled item list's entries in the master that defines it."""
+    buffer = (data_folder / plugin).read_bytes()
+    position = 24 + struct.unpack_from("<I", buffer, 4)[0]
+    while position + 24 <= len(buffer):
+        kind = buffer[position : position + 4]
+        size = struct.unpack_from("<I", buffer, position + 4)[0]
+        if kind == b"GRUP":
+            position += 24
+            continue
+        flags, form_id = struct.unpack_from("<II", buffer, position + 8)
+        if kind == b"LVLI" and form_id & 0xFFFFFF == local:
+            body = buffer[position + 24 : position + 24 + size]
+            if flags & 0x00040000:
+                body = zlib.decompress(body[4:])
+            counts = [struct.unpack_from("<H", value, 8)[0] for name, value in subrecords(body) if name == b"LVLO"]
+            if not counts:
+                raise SystemExit(f"{plugin}|{local:06X} has no entries")
+            return sum(counts) / len(counts)
+        position += 24 + size
+    raise SystemExit(f"{plugin}|{local:06X} is not a leveled item list there")
+
+
+def write_compatibility(data_folder):
     registry = json.loads((ROOT / "data" / "BallisticRegistry.json").read_text(encoding="utf-8"))
     compat = json.loads((ROOT / "data" / "Compatibility.json").read_text(encoding="utf-8"))
+    world = json.loads((ROOT / "data" / "WorldAmmo.json").read_text(encoding="utf-8"))
     plugin_name = registry["plugin"]
     profiles = shipped(registry)
+    references = sorted(world["lootReferences"].items())
+    reference_index = {trajectory: index for index, (trajectory, _) in enumerate(references)}
+    unmapped = sorted({profile["trajectory"] for profile in profiles.values()} - set(reference_index))
+    if unmapped:
+        raise SystemExit(f"trajectories with no loot reference: {unmapped}")
+    reference_rows = []
+    for trajectory, row in references:
+        mean = vanilla_mean_count(data_folder, row["plugin"], int(row["id"], 16))
+        reference_rows.append(f'    LootReference{{ {literal(row["plugin"])}, 0x{int(row["id"], 16):06X}, {mean}F }},  // {trajectory} {row["editorID"]}')
 
     # The item of ours that stands for each caliber: its added item, or the playable vanilla record.
     ours = {}
@@ -350,24 +384,38 @@ def write_compatibility():
         f"inline constexpr std::uint32_t kWorldAmmoList = 0x{WORLD_AMMO_LIST:06X};",
         "inline constexpr std::uint32_t kWorldAmmoHost = 0x06738B;  // LL_Ammo_Any, read to tell whether RobCo Patcher added the list.",
         "",
+        "// The game's lists that host the world list, from data/WorldAmmo.json.",
+        f"inline constexpr std::array<FormRow, {len(world['hosts'])}> kWorldAmmoHosts{{",
+        *(f'    FormRow{{ {literal(row["plugin"])}, 0x{int(row["id"], 16):06X} }},  // {row["editorID"]}' for row in world["hosts"]),
+        "};",
+        "// Other mods' ammo lists injected into the same hosts.",
+        f"inline constexpr std::array<FormRow, {len(world['providerLists'])}> kProviderAmmoLists{{",
+        *(f'    FormRow{{ {literal(row["plugin"])}, 0x{int(row["id"], 16):06X} }},  // {row["editorID"]}' for row in world["providerLists"]),
+        "};",
+        "// The game's own ammo list of each trajectory class and its mean count in the base game; CaliberRow::lootReference",
+        "// indexes this array.",
+        f"inline constexpr std::array<LootReference, {len(reference_rows)}> kLootReferences{{",
+        *reference_rows,
+        "};",
+        "",
         "// Sorted by the caliber's normal projectile.",
         f"inline constexpr std::array<VisualRow, {len(visual_rows)}> kVisualRows{{",
         *visual_rows,
         "};",
         "",
     ]), encoding="ascii", newline="\n")
-    print(f"{len(rows)} ammo rows, {len(visual_rows)} visual rows")
-    write_calibers(ours, profiles)
+    print(f"{len(rows)} ammo rows, {len(visual_rows)} visual rows, {len(reference_rows)} loot references")
+    write_calibers(ours, profiles, reference_index)
 
 
-def write_calibers(ours, profiles):
+def write_calibers(ours, profiles, reference_index):
     def row_text(caliber, profile):
         normal = int(profile["normalLocalFormID"], 16)
         plugin, local = ours[caliber]
         world = "false" if plugin.lower() == "fallout4.esm" else "true"
         return (
             f'    CaliberRow{{ {literal(caliber)}, {literal(plugin)}, 0x{local:06X}, 0x{normal:06X}, '
-            f'{float(profile["damage"])}F, 0x{normal + AMMO_LIST_OFFSET:06X}, {world} }},'
+            f'{float(profile["damage"])}F, 0x{normal + AMMO_LIST_OFFSET:06X}, {world}, {reference_index[profile["trajectory"]]} }},'
         )
 
     rows = [row_text(caliber, profile) for caliber, profile in profiles.items()]

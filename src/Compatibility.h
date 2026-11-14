@@ -33,6 +33,9 @@ namespace flying_bricks::compatibility
         std::size_t restoredDamage{};
         std::size_t swappedDefaults{};
         std::size_t worldCalibers{};
+        std::size_t scaledLists{};
+        std::size_t hostEntriesRecounted{};
+        std::size_t hostEntriesRemoved{};
     };
 
     [[nodiscard]] ApplyResult apply(const patch_files::Patches& patches);

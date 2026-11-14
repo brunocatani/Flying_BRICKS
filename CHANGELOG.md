@@ -10,6 +10,13 @@
   musket's charge scale damage by energy; perks, criticals and difficulty no
   longer do. Power armor pieces wear under energy fire. A Molotov's burst burns
   on the same scale.
+- Ammunition follows a loot overhaul. When one changes the game's own ammo
+  lists, such as Damn Apocalypse, our lists and those of every round we added
+  (Munitions, Armament and weapon mod rounds included) give counts scaled the
+  same way, and our rounds join vendor and loot lists the way the overhaul built
+  them, so they stay behind its scarcity instead of adding to it. Without an
+  overhaul nothing changes.
+- Patch files for More Uniques, the EBR-14 and Tumbajamba's Gunner Collection.
 
 ### Changed
 

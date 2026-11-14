@@ -33,7 +33,8 @@ namespace flying_bricks::patch_format
         std::uint32_t normalProjectile;
         float damage;
         std::uint32_t ammoList;
-        bool worldList;  // Base game rounds stay out: the game's own lists already hold them.
+        bool worldList;              // Base game rounds stay out: the game's own lists already hold them.
+        std::uint8_t lootReference;  // The game's own ammo list of the caliber's class, which sets its loot scale.
     };
 
     struct TargetRow

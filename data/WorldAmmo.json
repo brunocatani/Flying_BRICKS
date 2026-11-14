@@ -18,5 +18,23 @@
   { "plugin": "Fallout4.esm", "id": "18F654", "editorID": "LLC_DCAmmo_Any_75", "entries": 3, "count": 1 },
   { "plugin": "Fallout4.esm", "id": "05859B", "editorID": "LLE_Perk_Scrounger100", "entries": 2, "count": 1 },
   { "plugin": "Fallout4.esm", "id": "1081B9", "editorID": "LLE_Perk_ScroungerSmall", "entries": 2, "count": 1 }
- ]
+ ],
+ "aboutHostShape": "At load the plugin fits our entries to each host as the load order left it: one pick in a host that picks one entry, and none in a use-all host that only rolls other lists, since those lists carry ours. A loot overhaul that gates its stores through such lists (Damn Apocalypse's weapon store rolls its gated basic and rare lists) keeps our rounds behind its gate. providerLists are other mods' ammo lists injected into the same hosts and fitted the same way.",
+ "providerLists": [
+  { "plugin": "Armament.esp", "id": "003BD3", "editorID": "LL_Ammo_Armament" }
+ ],
+ "aboutLootScale": "Each trajectory class names the game's own ammo list of that class. At load, our lists and every list of a round we added take counts scaled by the live mean count of that list over its mean in the base game, so a loot overhaul that shrinks the vanilla lists shrinks ours alike. Without one the scale is 1.",
+ "lootReferences": {
+  "wof_10mm": { "plugin": "Fallout4.esm", "id": "067381", "editorID": "LL_Ammo_10mm" },
+  "wof_308": { "plugin": "Fallout4.esm", "id": "067382", "editorID": "LL_Ammo_308Caliber" },
+  "wof_38": { "plugin": "Fallout4.esm", "id": "067384", "editorID": "LL_Ammo_38Caliber" },
+  "wof_44": { "plugin": "Fallout4.esm", "id": "0DB29E", "editorID": "LL_Ammo_44" },
+  "wof_45": { "plugin": "Fallout4.esm", "id": "067383", "editorID": "LL_Ammo_45Caliber" },
+  "wof_4570": { "plugin": "DLCCoast.esm", "id": "042E73", "editorID": "DLC03_LL_Ammo_4570" },
+  "wof_50": { "plugin": "Fallout4.esm", "id": "067387", "editorID": "LL_Ammo_50Cal" },
+  "wof_5mm": { "plugin": "Fallout4.esm", "id": "067386", "editorID": "LL_Ammo_5mm" },
+  "wof_762": { "plugin": "DLCNukaWorld.esm", "id": "037895", "editorID": "DLC04_LL_Ammo_HandmadeRound" },
+  "wof_556": { "plugin": "Fallout4.esm", "id": "067385", "editorID": "LL_Ammo_556" },
+  "wof_shotgun": { "plugin": "Fallout4.esm", "id": "06738A", "editorID": "LL_Ammo_ShotgunShell" }
+ }
 }

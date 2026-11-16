@@ -30,18 +30,25 @@ namespace flying_bricks::energy
     struct BuildResult
     {
         std::size_t ammunition{};
-        std::size_t patchedAmmunition{};
+        std::size_t projectiles{};
         std::size_t flameProjectiles{};
+        std::size_t patchedAmmunition{};
+        std::size_t patchedProjectiles{};
         bool incendiaryThrow{};
     };
 
-    // patched: other mods' ammunition from patch files. A row for ammunition the model already has replaces its
-    // family, so a patch file's later row wins.
+    // patched: other mods' ammunition and projectiles from patch files. A row for a form the model already has
+    // replaces its family, so a patch file's row wins.
     [[nodiscard]] BuildResult build(std::span<const patch_files::EnergyPatch> patched);
 
-    // The family of a ranged weapon's shots, from the weapon's projectile override and the ammunition it fires,
-    // or nothing for a weapon the model does not own.
+    // The family of a ranged weapon's shots: its projectile override's family when the model knows the projectile
+    // (a converted plasma gun firing a laser's cell), else its ammunition's, else nothing for a weapon the model
+    // does not own.
     [[nodiscard]] std::optional<terminal::Thermal> familyOf(const RE::BGSProjectile* overrideProjectile, const RE::TESAmmo* ammo) noexcept;
+
+    // True when the weapon instance, with its attachments, deals energy typed damage: the model's input. A gun on an
+    // energy round that deals only physical damage (a converted Gauss rifle on fusion cells) is not an energy shot.
+    [[nodiscard]] bool carriesEnergyDamage(const RE::TESObjectWEAP::InstanceData& instance) noexcept;
 
     // A thrown weapon whose explosion burns (a Molotov).
     [[nodiscard]] bool isIncendiaryThrow(const RE::TESObjectWEAP& weapon) noexcept;

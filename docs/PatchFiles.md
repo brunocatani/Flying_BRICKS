@@ -53,7 +53,7 @@ family = "laser"
 | `[[round]]` | The plugin's own ammunition `id` becomes Flying BRICKS' round of that caliber everywhere: weapons, object mods, leveled lists, form lists, recipes and containers |
 | `[[damage]]` | The weapon `id`, on a round Flying BRICKS does not own (spikes, 2mm, nails, arrows), gets this base damage back if another mod set it to 0. A whole number from 1 to 65535 |
 | `[[default]]` | The weapon `id` spawns with object mod `to` instead of `from` on the same attach point, for a gun whose default part is on the wrong round |
-| `[[energy]]` | The plugin's own ammunition `id` is an energy round: shots firing it take the [energy model](DamageModel.md) as `laser`, `plasma` or `fire`, like the base game's fusion cells, plasma cartridges and flamer fuel. The weapon keeps its own damage value, which the model scales |
+| `[[energy]]` | The plugin's own ammunition or projectile `id` is energy: shots firing that ammunition, or flying as that projectile, take the [energy model](DamageModel.md) as `laser`, `plasma` or `fire`, like the base game's fusion cells, plasma cartridges and flamer fuel. A projectile's family beats its ammunition's, for weapons whose cell is shared by lasers and plasma guns. The model scales the weapon's own energy damage; a weapon that deals no energy damage keeps the game's damage |
 
 - `id` is the record's hex form ID in quotes, from the plugin the file is named after. A load order prefix is
   dropped, so an ID copied from the game console or an editor works, including a light plugin's `FE` form.

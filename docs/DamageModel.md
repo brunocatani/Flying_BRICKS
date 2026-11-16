@@ -95,7 +95,9 @@ reflective metal, polymer plate and above all power armor, plasma hits harder an
 fire soaks through soft armor. The values and sources are in `data/EnergyModel.json`.
 
 A weapon belongs to a family by its ammunition (fusion cells and cores: laser; plasma cartridges: plasma; flamer fuel:
-fire), or burns when its barrel fires a flame stream (the plasma gun's flamer barrel). Its energy damage as the game
+fire), or burns when its barrel fires a flame stream (the plasma gun's flamer barrel). [Patch files](PatchFiles.md) add
+other mods' ammunition and projectiles; a projectile's family beats its ammunition's. A weapon that deals no energy
+damage is not in a family and keeps the game's damage. Its energy damage as the game
 computes it, with every attachment and without perks, is its value, and the damage is
 
 ```text

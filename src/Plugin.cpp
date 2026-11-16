@@ -82,7 +82,7 @@ namespace
         spdlog::info("Patch files: {} read, {} for plugins not loaded, {} problems, {} rows name a form the plugin does not have", patches.filesRead, patches.filesNotLoaded, patches.problems, patches.formsNotFound);
 
         const auto energyWeapons = energy::build(patches.energy);
-        spdlog::info("Energy: {} ammunition ({} from patch files), {} flame projectiles, incendiary throw {}", energyWeapons.ammunition, energyWeapons.patchedAmmunition, energyWeapons.flameProjectiles, energyWeapons.incendiaryThrow);
+        spdlog::info("Energy: {} ammunition ({} from patch files), {} projectiles ({} flame, {} from patch files), incendiary throw {}", energyWeapons.ammunition, energyWeapons.patchedAmmunition, energyWeapons.projectiles, energyWeapons.flameProjectiles, energyWeapons.patchedProjectiles, energyWeapons.incendiaryThrow);
 
         const auto ammo = ammo_table::build(patches.rounds);
         spdlog::info("Ammo table: {} owned, {} from other mods, {} overridden by a later plugin", ammo.owned, ammo.foreign, ammo.overriddenByLaterPlugin);

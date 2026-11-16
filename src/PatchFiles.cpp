@@ -177,11 +177,12 @@ namespace flying_bricks::patch_files
             }
             for (const auto& row : file.energy) {
                 const auto* ammo = plugin_forms::find<RE::TESAmmo>(dataHandler, row.local, plugin);
-                if (!ammo) {
+                const auto* projectile = ammo ? nullptr : plugin_forms::find<RE::BGSProjectile>(dataHandler, row.local, plugin);
+                if (!ammo && !projectile) {
                     notFound("energy", row.local);
                     continue;
                 }
-                patches.energy.push_back(EnergyPatch{ ammo, row.family });
+                patches.energy.push_back(EnergyPatch{ ammo, projectile, row.family });
                 ++counts.applied;
             }
             patches.formsNotFound += counts.missing;

@@ -19,8 +19,9 @@
 //   [[damage]]  id = "000805"  damage = 36                      the gun's base damage, if another mod set it to 0
 //   [[default]] id = "000F99"  from = "A.esp|003607"  to = "A.esp|003606"
 //                                                               this gun spawns with part to instead of part from
-//   [[energy]]  id = "020772"  family = "laser"                 this ammunition's shots take the energy model as
-//                                                               laser, plasma or fire
+//   [[energy]]  id = "020772"  family = "laser"                 shots firing this ammunition, or flying as this
+//                                                               projectile, take the energy model as laser, plasma
+//                                                               or fire; a projectile's row beats its ammunition's
 //
 // An id is the form's hex ID. A load order prefix is dropped, so an ID copied from the game or an editor works. name is an
 // optional label on any row. A bad row is reported and skipped, and the other rows of the file still apply.

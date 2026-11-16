@@ -347,7 +347,10 @@ namespace flying_bricks::hooks
                 return std::nullopt;
             }
             const auto* ranged = instance.rangedData;
-            return energy::familyOf(ranged ? ranged->overrideProjectile : nullptr, ammo ? ammo : instance.ammo);
+            const auto family = energy::familyOf(ranged ? ranged->overrideProjectile : nullptr, ammo ? ammo : instance.ammo);
+            // The model replaces the shot's physical damage with its energy damage, so a shot without energy damage
+            // keeps the game's damage instead of losing it.
+            return family && energy::carriesEnergyDamage(instance) ? family : std::nullopt;
         }
 
         struct EnergyHit

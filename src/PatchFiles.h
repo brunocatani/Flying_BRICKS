@@ -50,9 +50,11 @@ namespace flying_bricks::patch_files
         RE::BGSMod::Attachment::Mod* to{};
     };
 
+    // Exactly one of ammo and projectile is set.
     struct EnergyPatch
     {
         const RE::TESAmmo* ammo{};
+        const RE::BGSProjectile* projectile{};
         patch_format::EnergyFamily family{};
     };
 

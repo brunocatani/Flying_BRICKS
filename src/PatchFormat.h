@@ -19,6 +19,8 @@
 //   [[damage]]  id = "000805"  damage = 36                      the gun's base damage, if another mod set it to 0
 //   [[default]] id = "000F99"  from = "A.esp|003607"  to = "A.esp|003606"
 //                                                               this gun spawns with part to instead of part from
+//   [[energy]]  id = "020772"  family = "laser"                 this ammunition's shots take the energy model as
+//                                                               laser, plasma or fire
 //
 // An id is the form's hex ID. A load order prefix is dropped, so an ID copied from the game or an editor works. name is an
 // optional label on any row. A bad row is reported and skipped, and the other rows of the file still apply.
@@ -66,6 +68,20 @@ namespace flying_bricks::patch_format
         std::uint32_t toLocal{};
     };
 
+    // The energy model's families (data/EnergyModel.json); the order matches terminal::Thermal.
+    enum class EnergyFamily : std::uint8_t
+    {
+        Laser,
+        Plasma,
+        Fire,
+    };
+
+    struct EnergyRow
+    {
+        std::uint32_t local{};
+        EnergyFamily family{};
+    };
+
     struct File
     {
         std::vector<TargetRow> weapons;
@@ -73,8 +89,23 @@ namespace flying_bricks::patch_format
         std::vector<RoundRow> rounds;
         std::vector<DamageRow> damage;
         std::vector<DefaultRow> defaults;
+        std::vector<EnergyRow> energy;
         std::vector<std::string> problems;
     };
+
+    [[nodiscard]] inline bool parseFamily(std::string_view text, EnergyFamily& family) noexcept
+    {
+        if (text == "laser") {
+            family = EnergyFamily::Laser;
+        } else if (text == "plasma") {
+            family = EnergyFamily::Plasma;
+        } else if (text == "fire") {
+            family = EnergyFamily::Fire;
+        } else {
+            return false;
+        }
+        return true;
+    }
 
     [[nodiscard]] inline bool parseLocal(std::string_view text, std::uint32_t& local) noexcept
     {
@@ -168,8 +199,8 @@ namespace flying_bricks::patch_format
         }
         for (const auto& [key, value] : root) {
             const auto name = key.str();
-            if (name != "weapon" && name != "part" && name != "round" && name != "damage" && name != "default") {
-                file.problems.push_back("unknown section " + std::string{ name } + ": use weapon, part, round, damage or default");
+            if (name != "weapon" && name != "part" && name != "round" && name != "damage" && name != "default" && name != "energy") {
+                file.problems.push_back("unknown section " + std::string{ name } + ": use weapon, part, round, damage, default or energy");
             } else if (!value.is_array_of_tables()) {
                 file.problems.push_back(std::string{ name } + " must be written [[" + std::string{ name } + "]]");
             }
@@ -222,6 +253,21 @@ namespace flying_bricks::patch_format
                     continue;
                 }
                 file.defaults.push_back(std::move(swap));
+            }
+        }
+        if (const auto* array = root["energy"].as_array()) {
+            for (std::size_t index = 0; index < array->size(); ++index) {
+                const auto* row = array->get(index)->as_table();
+                EnergyRow energy;
+                if (!row || !detail::readId(*row, "energy", index, file, energy.local)) {
+                    continue;
+                }
+                const auto family = (*row)["family"].value<std::string_view>();
+                if (!family || !parseFamily(*family, energy.family)) {
+                    file.problems.push_back(detail::describe("energy", index, "family must be laser, plasma or fire"));
+                    continue;
+                }
+                file.energy.push_back(energy);
             }
         }
         return file;

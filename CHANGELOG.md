@@ -17,6 +17,8 @@
   them, so they stay behind its scarcity instead of adding to it. Without an
   overhaul nothing changes.
 - Patch files for More Uniques, the EBR-14 and Tumbajamba's Gunner Collection.
+- Patch files can mark another mod's ammunition as laser, plasma or fire
+  (`[[energy]]` rows), so its energy weapons take the energy model too.
 
 ### Changed
 

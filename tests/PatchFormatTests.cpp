@@ -55,6 +55,14 @@ damage = 36
 id = "000F99"
 from = "A.esp|003607"
 to = "B.esm|003606"
+
+[[energy]]
+id = "020772"
+family = "laser"
+
+[[energy]]
+id = "01DBB7"
+family = "plasma"
 )");
         check(file.problems.empty(), "a good file has no problems");
         check(file.defaults.size() == 1 && file.defaults[0].fromPlugin == "A.esp" && file.defaults[0].fromLocal == 0x3607 && file.defaults[0].toPlugin == "B.esm" && file.defaults[0].toLocal == 0x3606, "a default part row is read");
@@ -65,6 +73,7 @@ to = "B.esm|003606"
         check(file.weapons[1].ammoPlugin == "Fallout4.esm" && file.weapons[1].ammoLocal == 0x1F276 && file.weapons[1].caliber.empty(), "an exact round is read");
         check(file.parts[0].local == 0x12AB && file.parts[0].caliber == "45acp", "a part row is read");
         check(file.damage[0].damage == 36, "a damage row is read");
+        check(file.energy.size() == 2 && file.energy[0].local == 0x20772 && file.energy[0].family == format::EnergyFamily::Laser && file.energy[1].family == format::EnergyFamily::Plasma, "energy rows are read");
     }
 
     void testBadRows()
@@ -97,10 +106,15 @@ caliber = "9x19"
 [[damage]]
 id = "000005"
 damage = 0
+
+[[energy]]
+id = "000006"
+family = "cryo"
 )");
-        check(file.problems.size() == 5, "each bad row is reported");
+        check(file.problems.size() == 6, "each bad row is reported");
         check(file.weapons.size() == 1 && file.weapons[0].local == 4, "a bad row does not cost the good ones");
         check(file.damage.empty(), "zero damage is refused");
+        check(file.energy.empty(), "an unknown energy family is refused");
     }
 
     bool knownCaliber(std::string_view id)

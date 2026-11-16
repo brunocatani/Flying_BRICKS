@@ -175,6 +175,15 @@ namespace flying_bricks::patch_files
                 patches.defaults.push_back(DefaultPatch{ weapon, from, to });
                 ++counts.applied;
             }
+            for (const auto& row : file.energy) {
+                const auto* ammo = plugin_forms::find<RE::TESAmmo>(dataHandler, row.local, plugin);
+                if (!ammo) {
+                    notFound("energy", row.local);
+                    continue;
+                }
+                patches.energy.push_back(EnergyPatch{ ammo, row.family });
+                ++counts.applied;
+            }
             patches.formsNotFound += counts.missing;
             spdlog::info("Patch file {}: {} rows, {} not in the plugin", plugin, counts.applied, counts.missing);
         }

@@ -1,9 +1,11 @@
 #pragma once
 
+#include "PatchFiles.h"
 #include "Terminal.h"
 
 #include <cstddef>
 #include <optional>
+#include <span>
 
 namespace RE
 {
@@ -15,7 +17,8 @@ namespace RE
 
 // Laser, plasma and fire attacks on the caliber scale (data/EnergyModel.json, docs/DamageModel.md).
 //
-// A weapon's family comes from its projectile override when that is a flame stream, else from its ammunition.
+// A weapon's family comes from its projectile override when that is a flame stream, else from its ammunition: the
+// base game's in data/EnergyModel.json, other mods' through [[energy]] rows of their patch files.
 // The engine applies each typed damage of a hit as the weapon's value times a power (range falloff, charge,
 // projectile count); the model turns that native value into damage with the caliber model's energy exponent,
 // so every attachment, a musket's charge and a splitter's beams scale damage the way energy scales a round.
@@ -27,11 +30,14 @@ namespace flying_bricks::energy
     struct BuildResult
     {
         std::size_t ammunition{};
+        std::size_t patchedAmmunition{};
         std::size_t flameProjectiles{};
         bool incendiaryThrow{};
     };
 
-    [[nodiscard]] BuildResult build();
+    // patched: other mods' ammunition from patch files. A row for ammunition the model already has replaces its
+    // family, so a patch file's later row wins.
+    [[nodiscard]] BuildResult build(std::span<const patch_files::EnergyPatch> patched);
 
     // The family of a ranged weapon's shots, from the weapon's projectile override and the ammunition it fires,
     // or nothing for a weapon the model does not own.

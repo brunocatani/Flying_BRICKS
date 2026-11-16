@@ -50,6 +50,12 @@ namespace flying_bricks::patch_files
         RE::BGSMod::Attachment::Mod* to{};
     };
 
+    struct EnergyPatch
+    {
+        const RE::TESAmmo* ammo{};
+        patch_format::EnergyFamily family{};
+    };
+
     struct Patches
     {
         std::vector<RoundPatch> rounds;
@@ -57,6 +63,7 @@ namespace flying_bricks::patch_files
         std::vector<PartPatch> parts;
         std::vector<DamagePatch> damage;
         std::vector<DefaultPatch> defaults;
+        std::vector<EnergyPatch> energy;
         std::size_t filesRead{};
         std::size_t filesNotLoaded{};
         std::size_t problems{};

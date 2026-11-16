@@ -40,6 +40,10 @@ damage = 36
 id = "000F99"
 from = "MyWeaponMod.esp|003607"
 to = "MyWeaponMod.esp|003606"
+
+[[energy]]
+id = "000A12"
+family = "laser"
 ```
 
 | Row | Effect |
@@ -49,6 +53,7 @@ to = "MyWeaponMod.esp|003606"
 | `[[round]]` | The plugin's own ammunition `id` becomes Flying BRICKS' round of that caliber everywhere: weapons, object mods, leveled lists, form lists, recipes and containers |
 | `[[damage]]` | The weapon `id`, on a round Flying BRICKS does not own (spikes, 2mm, nails, arrows), gets this base damage back if another mod set it to 0. A whole number from 1 to 65535 |
 | `[[default]]` | The weapon `id` spawns with object mod `to` instead of `from` on the same attach point, for a gun whose default part is on the wrong round |
+| `[[energy]]` | The plugin's own ammunition `id` is an energy round: shots firing it take the [energy model](DamageModel.md) as `laser`, `plasma` or `fire`, like the base game's fusion cells, plasma cartridges and flamer fuel. The weapon keeps its own damage value, which the model scales |
 
 - `id` is the record's hex form ID in quotes, from the plugin the file is named after. A load order prefix is
   dropped, so an ID copied from the game console or an editor works, including a light plugin's `FE` form.

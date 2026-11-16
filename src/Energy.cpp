@@ -53,7 +53,11 @@ namespace flying_bricks::energy
         }
     }
 
-    BuildResult build()
+    static_assert(static_cast<int>(patch_format::EnergyFamily::Laser) == static_cast<int>(Thermal::Laser));
+    static_assert(static_cast<int>(patch_format::EnergyFamily::Plasma) == static_cast<int>(Thermal::Plasma));
+    static_assert(static_cast<int>(patch_format::EnergyFamily::Fire) == static_cast<int>(Thermal::Fire));
+
+    BuildResult build(std::span<const patch_files::EnergyPatch> patched)
     {
         BuildResult result;
         auto* dataHandler = RE::TESDataHandler::GetSingleton();
@@ -68,7 +72,22 @@ namespace flying_bricks::energy
                 spdlog::error("Energy ammunition {:06X} from {} was not found", row.local, row.plugin);
             }
         }
-        std::ranges::sort(s_ammo, {}, &ResolvedAmmo::form);
+        for (const auto& row : patched) {
+            s_ammo.push_back(ResolvedAmmo{ row.ammo, static_cast<Thermal>(row.family) });
+        }
+        // A stable sort keeps each form's rows in the order above; the last one wins, so a patch file overrides.
+        std::ranges::stable_sort(s_ammo, {}, &ResolvedAmmo::form);
+        std::vector<ResolvedAmmo> merged;
+        merged.reserve(s_ammo.size());
+        for (const auto& row : s_ammo) {
+            if (!merged.empty() && merged.back().form == row.form) {
+                merged.back() = row;
+            } else {
+                merged.push_back(row);
+            }
+        }
+        s_ammo = std::move(merged);
+        result.patchedAmmunition = patched.size();
         for (const auto& row : kFlameProjectileRows) {
             if (const auto* projectile = plugin_forms::find<RE::BGSProjectile>(*dataHandler, row.local, row.plugin)) {
                 s_flameProjectiles.push_back(projectile);

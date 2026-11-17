@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.2
 
 ### Added
 
@@ -20,6 +20,15 @@
 - Patch files can mark another mod's ammunition or projectile as laser,
   plasma or fire (`[[energy]]` rows), so its energy weapons take the energy
   model too.
+
+### Fixed
+
+- Ammunition works again with the ESL-flagged `Flying_BRICKS.esp`. Since 1.0.1
+  its rounds were not matched to their calibers, so they lost Flying BRICKS
+  damage; creatures, armor and weapon mods from ESL-flagged plugins were missed
+  the same way.
+
+## 1.0.1
 
 ### Changed
 

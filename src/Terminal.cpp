@@ -2,6 +2,8 @@
 
 #include "Terminal.h"
 
+#include "PluginForms.h"
+
 #include <bit>
 #include <cmath>
 #include <random>
@@ -536,7 +538,7 @@ namespace flying_bricks::terminal
                 continue;
             }
             const auto master = masterOf(*race);
-            const auto local = race->GetFormID() & 0xFFFFFF;
+            const auto local = plugin_forms::localOf(race->GetFormID());
             const auto row = std::ranges::find_if(kCreatureRows, [&](const CreatureRow& candidate) {
                 return candidate.local == local && candidate.plugin == master;
             });
@@ -552,7 +554,7 @@ namespace flying_bricks::terminal
                 continue;
             }
             const auto master = masterOf(*armor);
-            const auto local = armor->GetFormID() & 0xFFFFFF;
+            const auto local = plugin_forms::localOf(armor->GetFormID());
             const auto row = std::ranges::find_if(kArmorRows, [&](const ArmorRow& candidate) {
                 return candidate.local == local && candidate.plugin == master;
             });
@@ -575,7 +577,7 @@ namespace flying_bricks::terminal
                 continue;
             }
             const auto master = masterOf(*mod);
-            const auto local = mod->GetFormID() & 0xFFFFFF;
+            const auto local = plugin_forms::localOf(mod->GetFormID());
             if (std::ranges::any_of(kHeavyModRows, [&](const HeavyModRow& row) { return row.local == local && row.plugin == master; })) {
                 s_heavyMods.push_back(mod->GetFormID());
             }
@@ -593,7 +595,7 @@ namespace flying_bricks::terminal
 
     const Caliber* findCaliber(const RE::BGSProjectile& normalProjectile) noexcept
     {
-        const auto local = normalProjectile.GetFormID() & 0xFFFFFF;
+        const auto local = plugin_forms::localOf(normalProjectile.GetFormID());
         const auto row = std::ranges::lower_bound(kCaliberRows, local, {}, &CaliberRow::normalProjectile);
         if (row == kCaliberRows.end() || row->normalProjectile != local) {
             return nullptr;

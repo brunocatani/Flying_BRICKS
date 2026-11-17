@@ -119,7 +119,7 @@ namespace flying_bricks::compatibility
 
         [[nodiscard]] const VisualRow* findVisual(const RE::BGSProjectile& normal) noexcept
         {
-            const auto local = normal.GetFormID() & 0xFFFFFF;
+            const auto local = plugin_forms::localOf(normal.GetFormID());
             const auto row = std::ranges::lower_bound(kVisualRows, local, {}, &VisualRow::normalProjectile);
             return row != kVisualRows.end() && row->normalProjectile == local ? std::to_address(row) : nullptr;
         }

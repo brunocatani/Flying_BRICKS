@@ -21,6 +21,13 @@ namespace flying_bricks::plugin_forms
         return nullptr;
     }
 
+    // The ID a form has inside its own plugin, as the generated tables key it: a light plugin's runtime ID carries
+    // its light slot above the low 12 bits, a full plugin's only its load index above the low 24.
+    [[nodiscard]] inline constexpr std::uint32_t localOf(std::uint32_t formID) noexcept
+    {
+        return (formID >> 24) == kLightSlot ? formID & 0xFFF : formID & 0xFFFFFF;
+    }
+
     template <class T>
     [[nodiscard]] T* find(RE::TESDataHandler& dataHandler, std::uint32_t local, std::string_view plugin) noexcept
     {
